@@ -1,8 +1,4 @@
-// Configuração de login
-const LOGIN_CREDENTIALS = {
-    username: "funcionario",
-    password: "sterileno"
-};
+// Sistema de login apenas com credenciais temporárias
 
 // Configuração EmailJS - STERILENO
 const EMAILJS_CONFIG = {
@@ -27,15 +23,7 @@ function checkLogin() {
     const username = usernameInput.value.toLowerCase().trim();
     const password = passwordInput.value;
     
-    // Verificar credenciais padrão
-    if (username === LOGIN_CREDENTIALS.username && password === LOGIN_CREDENTIALS.password) {
-        // Login correto - mostrar conteúdo
-        loginScreen.style.display = 'none';
-        mainContent.style.display = 'block';
-        return;
-    }
-    
-    // Verificar credenciais temporárias (formato: temp_xxxxxx / access_xxx)
+    // Verificar apenas credenciais temporárias (formato: temp_xxxxxx / access_xxx)
     if (username.startsWith('temp_') && password.startsWith('access_')) {
         // Credenciais temporárias válidas
         loginScreen.style.display = 'none';
@@ -45,7 +33,7 @@ function checkLogin() {
     
     // Login incorreto - mostrar erro
     errorMessage.style.display = 'flex';
-    errorMessage.innerHTML = '<i class="fas fa-exclamation-triangle"></i>Usuário ou senha incorretos! Tente novamente.';
+    errorMessage.innerHTML = '<i class="fas fa-exclamation-triangle"></i>Credenciais temporárias inválidas! Use as credenciais do email ou solicite acesso.';
     usernameInput.value = '';
     passwordInput.value = '';
     usernameInput.focus();
