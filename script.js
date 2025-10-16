@@ -107,6 +107,7 @@ function processAccessRequest(event) {
         to_name: formData.name,
         to_email: formData.email,
         from_name: 'Equipe de TI - STERILENO',
+        from_email: 'sgi@sterileno.com.br',
         subject: 'Acesso Temporário - Manual de Segurança',
         username: formData.credentials.username,
         password: formData.credentials.password,
