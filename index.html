@@ -27,7 +27,58 @@
                 </div>
                 <div id="error-message" class="error-message" style="display: none;">
                     <i class="fas fa-exclamation-triangle"></i>
-                    Senha incorreta! Tente novamente.
+                    Usuário ou senha incorretos! Tente novamente.
+                </div>
+                
+                <div class="login-footer">
+                    <p>Não tem acesso? <a href="#" onclick="showRequestForm()" class="request-link">Solicite aqui</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Request Access Form -->
+    <div id="request-form" class="request-form" style="display: none;">
+        <div class="request-container">
+            <div class="request-content">
+                <div class="request-header">
+                    <h3>🔐 Solicitar Acesso ao Manual</h3>
+                    <button class="request-close" onclick="hideRequestForm()">&times;</button>
+                </div>
+                <div class="request-body">
+                    <p>Preencha os dados abaixo para solicitar acesso temporário:</p>
+                    <form id="access-request-form">
+                        <div class="form-group">
+                            <label for="request-name">Nome Completo:</label>
+                            <input type="text" id="request-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="request-email">Email Corporativo:</label>
+                            <input type="email" id="request-email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="request-department">Departamento:</label>
+                            <input type="text" id="request-department" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="request-reason">Motivo do Acesso:</label>
+                            <select id="request-reason" required>
+                                <option value="">Selecione...</option>
+                                <option value="treinamento">Treinamento em Segurança</option>
+                                <option value="consulta">Consulta às ITOs</option>
+                                <option value="auditoria">Auditoria Interna</option>
+                                <option value="novo-funcionario">Novo Funcionário</option>
+                                <option value="outro">Outro</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="request-notes">Observações (opcional):</label>
+                            <textarea id="request-notes" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-request">
+                            <i class="fas fa-paper-plane"></i> Enviar Solicitação
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>

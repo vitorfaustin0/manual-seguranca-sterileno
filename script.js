@@ -51,6 +51,96 @@ function handleKeyPress(event) {
     }
 }
 
+// Sistema de Solicitação de Acesso
+function showRequestForm() {
+    document.getElementById('request-form').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+
+function hideRequestForm() {
+    document.getElementById('request-form').style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+// Gerar credenciais temporárias
+function generateTemporaryCredentials() {
+    const timestamp = Date.now().toString().slice(-6);
+    const random = Math.random().toString(36).substring(2, 5);
+    return {
+        username: `temp_${timestamp}`,
+        password: `access_${random}`
+    };
+}
+
+// Processar solicitação de acesso
+function processAccessRequest(event) {
+    event.preventDefault();
+    
+    const formData = {
+        name: document.getElementById('request-name').value,
+        email: document.getElementById('request-email').value,
+        department: document.getElementById('request-department').value,
+        reason: document.getElementById('request-reason').value,
+        notes: document.getElementById('request-notes').value,
+        timestamp: new Date().toLocaleString('pt-BR'),
+        credentials: generateTemporaryCredentials()
+    };
+    
+    // Criar email de solicitação
+    const emailSubject = `Solicitação de Acesso - Manual de Segurança - ${formData.name}`;
+    const emailBody = `
+Nova solicitação de acesso ao Manual de Segurança da Informação:
+
+👤 DADOS DO SOLICITANTE:
+Nome: ${formData.name}
+Email: ${formData.email}
+Departamento: ${formData.department}
+Motivo: ${formData.reason}
+Observações: ${formData.notes || 'Nenhuma'}
+Data/Hora: ${formData.timestamp}
+
+🔐 CREDENCIAIS TEMPORÁRIAS GERADAS:
+Usuário: ${formData.credentials.username}
+Senha: ${formData.credentials.password}
+
+⚠️ IMPORTANTE:
+- Estas credenciais são temporárias e de uso único
+- O acesso expira após 24 horas
+- Para novo acesso, solicite novamente
+
+📧 EMAIL PARA O SOLICITANTE:
+Prezado(a) ${formData.name},
+
+Sua solicitação de acesso ao Manual de Segurança da Informação foi processada.
+
+🔐 CREDENCIAIS DE ACESSO:
+Usuário: ${formData.credentials.username}
+Senha: ${formData.credentials.password}
+
+🌐 LINK DE ACESSO:
+https://vitorfaustin0.github.io/manual-seguranca-sterileno
+
+⚠️ IMPORTANTE:
+- Estas credenciais são temporárias
+- O acesso expira após 24 horas
+- Para novo acesso, solicite novamente
+
+Atenciosamente,
+Equipe de TI - STERILENO
+    `;
+    
+    // Abrir cliente de email
+    const mailtoLink = `mailto:helpdesk@sterileno.com.br?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+    window.open(mailtoLink);
+    
+    // Mostrar confirmação
+    alert(`✅ Solicitação processada!\n\n📧 Um email foi gerado com as credenciais temporárias.\n\n🔐 Credenciais geradas:\nUsuário: ${formData.credentials.username}\nSenha: ${formData.credentials.password}\n\n⚠️ IMPORTANTE: Estas credenciais são temporárias e expiram em 24 horas!`);
+    
+    // Limpar formulário
+    document.getElementById('access-request-form').reset();
+    hideRequestForm();
+}
+
 // Dados das ITOs resumidos em linguagem simples
 const itosData = {
     'backup': {
@@ -666,6 +756,12 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     if (passwordInput) {
         passwordInput.addEventListener('keypress', handleKeyPress);
+    }
+    
+    // Adicionar evento do formulário de solicitação
+    const requestForm = document.getElementById('access-request-form');
+    if (requestForm) {
+        requestForm.addEventListener('submit', processAccessRequest);
     }
     // Navegação do menu
     const navLinks = document.querySelectorAll('.nav-link');
