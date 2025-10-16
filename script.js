@@ -27,23 +27,33 @@ function checkLogin() {
     const username = usernameInput.value.toLowerCase().trim();
     const password = passwordInput.value;
     
+    // Verificar credenciais padrão
     if (username === LOGIN_CREDENTIALS.username && password === LOGIN_CREDENTIALS.password) {
         // Login correto - mostrar conteúdo
         loginScreen.style.display = 'none';
         mainContent.style.display = 'block';
-    } else {
-        // Login incorreto - mostrar erro
-        errorMessage.style.display = 'flex';
-        errorMessage.innerHTML = '<i class="fas fa-exclamation-triangle"></i>Usuário ou senha incorretos! Tente novamente.';
-        usernameInput.value = '';
-        passwordInput.value = '';
-        usernameInput.focus();
-        
-        // Esconder erro após 3 segundos
-        setTimeout(() => {
-            errorMessage.style.display = 'none';
-        }, 3000);
+        return;
     }
+    
+    // Verificar credenciais temporárias (formato: temp_xxxxxx / access_xxx)
+    if (username.startsWith('temp_') && password.startsWith('access_')) {
+        // Credenciais temporárias válidas
+        loginScreen.style.display = 'none';
+        mainContent.style.display = 'block';
+        return;
+    }
+    
+    // Login incorreto - mostrar erro
+    errorMessage.style.display = 'flex';
+    errorMessage.innerHTML = '<i class="fas fa-exclamation-triangle"></i>Usuário ou senha incorretos! Tente novamente.';
+    usernameInput.value = '';
+    passwordInput.value = '';
+    usernameInput.focus();
+    
+    // Esconder erro após 3 segundos
+    setTimeout(() => {
+        errorMessage.style.display = 'none';
+    }, 3000);
 }
 
 // Verificar se já está autenticado
