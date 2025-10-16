@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Segurança da Informação - STERILENO</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-shield-alt"></i>
+                    <h1>Manual de Segurança da Informação</h1>
+                </div>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="#home" class="nav-link active">Início</a></li>
+                        <li><a href="#itos" class="nav-link">ITOs</a></li>
+                        <li><a href="#quiz" class="nav-link">Quiz</a></li>
+                        <li><a href="#contato" class="nav-link">Contato</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Alert Banner -->
+    <section class="alert-banner">
+        <div class="container">
+            <div class="alert-content">
+                <div class="alert-icon">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <div class="alert-text">
+                    <h3>🚨 Atenção Colaboradores 🚨</h3>
+                    <p>Para garantir o correto acompanhamento e resolução de todos os problemas relacionados à TI, <strong>todos os chamados devem ser abertos enviando um e-mail para helpdesk@sterileno.com.br</strong></p>
+                </div>
+                <div class="alert-action">
+                    <button class="btn btn-alert" onclick="openITO('chamados')">Ver Como Abrir Chamados</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2 class="hero-title">Proteja as Informações da Empresa</h2>
+                <p class="hero-subtitle">Seu guia prático para segurança da informação no trabalho</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <i class="fas fa-file-alt"></i>
+                        <span>8 ITOs</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-users"></i>
+                        <span>Todos os Funcionários</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-lock"></i>
+                        <span>100% Seguro</span>
+                    </div>
+                </div>
+                <a href="#itos" class="btn btn-primary">Começar Agora</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ITOs Section -->
+    <section id="itos" class="itos-section">
+        <div class="container">
+            <h2 class="section-title">Instruções de Operação (ITOs)</h2>
+            <p class="section-subtitle">Conheça as principais políticas de segurança da informação</p>
+            
+            <div class="itos-grid">
+                <!-- ITO 187 - Backup -->
+                <div class="ito-card" data-ito="backup">
+                    <div class="ito-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Backup e Recuperação</h3>
+                    <p>Como proteger seus arquivos importantes e recuperá-los em caso de problemas</p>
+                    <div class="ito-tags">
+                        <span class="tag">Crítico</span>
+                        <span class="tag">Diário</span>
+                    </div>
+                    <button class="btn btn-outline" onclick="openITO('backup')">Ver Detalhes</button>
+                </div>
+
+                <!-- ITO 258 - Mesa Limpa -->
+                <div class="ito-card" data-ito="mesa-limpa">
+                    <div class="ito-icon">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                    <h3>Mesa e Tela Limpas</h3>
+                    <p>Mantenha sua área de trabalho organizada e segura</p>
+                    <div class="ito-tags">
+                        <span class="tag">Organização</span>
+                        <span class="tag">Segurança</span>
+                    </div>
+                    <button class="btn btn-outline" onclick="openITO('mesa-limpa')">Ver Detalhes</button>
+                </div>
+
+                <!-- ITO 259 - Classificação -->
+                <div class="ito-card" data-ito="classificacao">
+                    <div class="ito-icon">
+                        <i class="fas fa-tags"></i>
+                    </div>
+                    <h3>Classificação da Informação</h3>
+                    <p>Entenda os níveis de confidencialidade das informações</p>
+                    <div class="ito-tags">
+                        <span class="tag">Confidencial</span>
+                        <span class="tag">Pública</span>
+                    </div>
+                    <button class="btn btn-outline" onclick="openITO('classificacao')">Ver Detalhes</button>
+                </div>
+
+                <!-- ITO 260 - Segurança -->
+                <div class="ito-card" data-ito="seguranca">
+                    <div class="ito-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Segurança e Proteção</h3>
+                    <p>Princípios fundamentais para proteger as informações da empresa</p>
+                    <div class="ito-tags">
+                        <span class="tag">Fundamental</span>
+                        <span class="tag">Obrigatório</span>
+                    </div>
+                    <button class="btn btn-outline" onclick="openITO('seguranca')">Ver Detalhes</button>
+                </div>
+
+                <!-- ITO 261 - Email -->
+                <div class="ito-card" data-ito="email">
+                    <div class="ito-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Uso do Email</h3>
+                    <p>Como usar o correio eletrônico de forma segura e profissional</p>
+                    <div class="ito-tags">
+                        <span class="tag">Comunicação</span>
+                        <span class="tag">Profissional</span>
+                    </div>
+                    <button class="btn btn-outline" onclick="openITO('email')">Ver Detalhes</button>
+                </div>
+
+                <!-- ITO 265 - Internet -->
+                <div class="ito-card" data-ito="internet">
+                    <div class="ito-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Uso da Internet</h3>
+                    <p>Regras para navegar na internet de forma segura e produtiva</p>
+                    <div class="ito-tags">
+                        <span class="tag">Navegação</span>
+                        <span class="tag">Produtividade</span>
+                    </div>
+                    <button class="btn btn-outline" onclick="openITO('internet')">Ver Detalhes</button>
+                </div>
+
+                <!-- ITO 266 - Treinamento -->
+                <div class="ito-card" data-ito="treinamento">
+                    <div class="ito-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Treinamento e Conscientização</h3>
+                    <p>A importância do treinamento contínuo em segurança</p>
+                    <div class="ito-tags">
+                        <span class="tag">Educação</span>
+                        <span class="tag">Contínuo</span>
+                    </div>
+                    <button class="btn btn-outline" onclick="openITO('treinamento')">Ver Detalhes</button>
+                </div>
+
+                <!-- ITO 267 - Rede -->
+                <div class="ito-card" data-ito="rede">
+                    <div class="ito-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3>Utilização de Rede</h3>
+                    <p>Como usar a rede corporativa de forma segura e adequada</p>
+                    <div class="ito-tags">
+                        <span class="tag">Rede</span>
+                        <span class="tag">Acesso</span>
+                    </div>
+                    <button class="btn btn-outline" onclick="openITO('rede')">Ver Detalhes</button>
+                </div>
+
+                <!-- Abertura de Chamados -->
+                <div class="ito-card" data-ito="chamados">
+                    <div class="ito-icon">
+                        <i class="fas fa-ticket-alt"></i>
+                    </div>
+                    <h3>Abertura de Chamados</h3>
+                    <p>Como abrir chamados corretamente para o suporte de TI</p>
+                    <div class="ito-tags">
+                        <span class="tag">Suporte</span>
+                        <span class="tag">TI</span>
+                    </div>
+                    <button class="btn btn-outline" onclick="openITO('chamados')">Ver Detalhes</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiz Section -->
+    <section id="quiz" class="quiz-section">
+        <div class="container">
+            <h2 class="section-title">Teste Seus Conhecimentos</h2>
+            <p class="section-subtitle">Responda algumas perguntas para verificar seu conhecimento sobre segurança da informação</p>
+            
+            <div class="quiz-container">
+                <div class="quiz-question" id="quiz-question">
+                    <h3>Pergunta 1 de 5</h3>
+                    <p>Qual é a frequência recomendada para backup dos arquivos importantes?</p>
+                    <div class="quiz-options">
+                        <button class="quiz-option" onclick="selectAnswer('a')">A) Semanalmente</button>
+                        <button class="quiz-option" onclick="selectAnswer('b')">B) Diariamente</button>
+                        <button class="quiz-option" onclick="selectAnswer('c')">C) Mensalmente</button>
+                        <button class="quiz-option" onclick="selectAnswer('d')">D) Anualmente</button>
+                    </div>
+                </div>
+                <div class="quiz-result" id="quiz-result" style="display: none;">
+                    <h3>Resultado do Quiz</h3>
+                    <div class="quiz-score">
+                        <span id="quiz-score-text">0/5</span>
+                    </div>
+                    <p id="quiz-feedback">Parabéns! Continue assim!</p>
+                    <button class="btn btn-primary" onclick="restartQuiz()">Fazer Novamente</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contato" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Precisa de Ajuda?</h2>
+            <p class="section-subtitle">Entre em contato com a equipe de TI para esclarecer dúvidas</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h4>Email</h4>
+                        <p>helpdesk@sterileno.com.br</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h4>Telefone</h4>
+                        <p>Ramal: 3313<br>WhatsApp: (15) 99707-4818</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-user-tie"></i>
+                    <div>
+                        <h4>Supervisor Imediato</h4>
+                        <p>Consulte seu gestor direto</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 STERILENO - Manual de Segurança da Informação. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- ITO Modal -->
+    <div id="ito-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title">Título da ITO</h2>
+                <button class="modal-close" onclick="closeITO()">&times;</button>
+            </div>
+            <div class="modal-body" id="modal-body">
+                <!-- Conteúdo será inserido dinamicamente -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
