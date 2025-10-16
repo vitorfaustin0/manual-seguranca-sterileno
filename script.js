@@ -4,11 +4,11 @@ const LOGIN_CREDENTIALS = {
     password: "sterileno"
 };
 
-// Configuração EmailJS (você precisa substituir pelas suas chaves)
+// Configuração EmailJS - STERILENO
 const EMAILJS_CONFIG = {
-    serviceId: 'YOUR_SERVICE_ID',        // Substitua pela sua Service ID
-    templateId: 'YOUR_TEMPLATE_ID',       // Substitua pela sua Template ID
-    publicKey: 'YOUR_PUBLIC_KEY'          // Substitua pela sua Public Key
+    serviceId: 'service_jrw7o5l',        // Service ID do STERILENO
+    templateId: 'template_n7m6c49',     // Template ID do STERILENO
+    publicKey: 'xv1eljA7l7HgOGzm1'       // Public Key do STERILENO
 };
 
 // Inicializar EmailJS
