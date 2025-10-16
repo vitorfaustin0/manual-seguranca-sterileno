@@ -4,6 +4,18 @@ const LOGIN_CREDENTIALS = {
     password: "sterileno"
 };
 
+// Configuração EmailJS (você precisa substituir pelas suas chaves)
+const EMAILJS_CONFIG = {
+    serviceId: 'YOUR_SERVICE_ID',        // Substitua pela sua Service ID
+    templateId: 'YOUR_TEMPLATE_ID',       // Substitua pela sua Template ID
+    publicKey: 'YOUR_PUBLIC_KEY'          // Substitua pela sua Public Key
+};
+
+// Inicializar EmailJS
+(function() {
+    emailjs.init(EMAILJS_CONFIG.publicKey);
+})();
+
 // Função para verificar login
 function checkLogin() {
     const usernameInput = document.getElementById('username-input');
@@ -86,59 +98,53 @@ function processAccessRequest(event) {
         credentials: generateTemporaryCredentials()
     };
     
-    // Criar email de solicitação
-    const emailSubject = `Solicitação de Acesso - Manual de Segurança - ${formData.name}`;
-    const emailBody = `
-Nova solicitação de acesso ao Manual de Segurança da Informação:
-
-👤 DADOS DO SOLICITANTE:
-Nome: ${formData.name}
-Email: ${formData.email}
-Departamento: ${formData.department}
-Motivo: ${formData.reason}
-Observações: ${formData.notes || 'Nenhuma'}
-Data/Hora: ${formData.timestamp}
-
-🔐 CREDENCIAIS TEMPORÁRIAS GERADAS:
-Usuário: ${formData.credentials.username}
-Senha: ${formData.credentials.password}
-
-⚠️ IMPORTANTE:
-- Estas credenciais são temporárias e de uso único
-- O acesso expira após 24 horas
-- Para novo acesso, solicite novamente
-
-📧 EMAIL PARA O SOLICITANTE:
-Prezado(a) ${formData.name},
-
-Sua solicitação de acesso ao Manual de Segurança da Informação foi processada.
-
-🔐 CREDENCIAIS DE ACESSO:
-Usuário: ${formData.credentials.username}
-Senha: ${formData.credentials.password}
-
-🌐 LINK DE ACESSO:
-https://vitorfaustin0.github.io/manual-seguranca-sterileno
-
-⚠️ IMPORTANTE:
-- Estas credenciais são temporárias
-- O acesso expira após 24 horas
-- Para novo acesso, solicite novamente
-
-Atenciosamente,
-Equipe de TI - STERILENO
-    `;
+    // Mostrar loading
+    const submitBtn = event.target.querySelector('button[type="submit"]');
+    const originalText = submitBtn.innerHTML;
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+    submitBtn.disabled = true;
     
-    // Abrir cliente de email
-    const mailtoLink = `mailto:helpdesk@sterileno.com.br?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
-    window.open(mailtoLink);
+    // Dados para o template do EmailJS
+    const templateParams = {
+        to_name: formData.name,
+        to_email: formData.email,
+        from_name: 'Equipe de TI - STERILENO',
+        subject: 'Acesso Temporário - Manual de Segurança',
+        username: formData.credentials.username,
+        password: formData.credentials.password,
+        access_link: 'https://vitorfaustin0.github.io/manual-seguranca-sterileno',
+        department: formData.department,
+        reason: formData.reason,
+        timestamp: formData.timestamp
+    };
     
-    // Mostrar confirmação
-    alert(`✅ Solicitação processada!\n\n📧 Um email foi gerado com as credenciais temporárias.\n\n🔐 Credenciais geradas:\nUsuário: ${formData.credentials.username}\nSenha: ${formData.credentials.password}\n\n⚠️ IMPORTANTE: Estas credenciais são temporárias e expiram em 24 horas!`);
-    
-    // Limpar formulário
-    document.getElementById('access-request-form').reset();
-    hideRequestForm();
+    // Enviar email via EmailJS
+    emailjs.send(EMAILJS_CONFIG.serviceId, EMAILJS_CONFIG.templateId, templateParams)
+        .then(function(response) {
+            console.log('Email enviado com sucesso!', response.status, response.text);
+            
+            // Mostrar sucesso
+            alert(`✅ Solicitação processada com sucesso!\n\n📧 Email enviado automaticamente para: ${formData.email}\n\n🔐 Credenciais geradas:\nUsuário: ${formData.credentials.username}\nSenha: ${formData.credentials.password}\n\n⚠️ IMPORTANTE: Estas credenciais são temporárias e expiram em 24 horas!`);
+            
+            // Limpar formulário
+            document.getElementById('access-request-form').reset();
+            hideRequestForm();
+        })
+        .catch(function(error) {
+            console.error('Erro ao enviar email:', error);
+            
+            // Mostrar erro
+            alert(`❌ Erro ao enviar email automaticamente.\n\n🔐 Credenciais geradas:\nUsuário: ${formData.credentials.username}\nSenha: ${formData.credentials.password}\n\n📧 Por favor, entre em contato com a TI para receber as credenciais.\n\nContato: helpdesk@sterileno.com.br`);
+            
+            // Limpar formulário
+            document.getElementById('access-request-form').reset();
+            hideRequestForm();
+        })
+        .finally(function() {
+            // Restaurar botão
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+        });
 }
 
 // Dados das ITOs resumidos em linguagem simples
