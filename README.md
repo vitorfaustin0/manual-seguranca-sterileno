@@ -17,11 +17,6 @@ Manual interativo e atrativo para funcionários sobre segurança da informação
 4. Teste seus conhecimentos no quiz
 5. Use os contatos para esclarecer dúvidas
 
-## 📞 Contatos
-- **Email:** helpdesk@sterileno.com.br
-- **Ramal:** 3313
-- **WhatsApp:** (15) 99707-4818
-
 ## 🛠️ Tecnologias
 - HTML5
 - CSS3
