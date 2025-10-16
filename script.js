@@ -19,9 +19,6 @@ function checkLogin() {
         // Login correto - mostrar conteúdo
         loginScreen.style.display = 'none';
         mainContent.style.display = 'block';
-        
-        // Salvar no localStorage para não pedir novamente na mesma sessão
-        localStorage.setItem('manual_authenticated', 'true');
     } else {
         // Login incorreto - mostrar erro
         errorMessage.style.display = 'flex';
@@ -39,17 +36,12 @@ function checkLogin() {
 
 // Verificar se já está autenticado
 function checkAuthentication() {
-    const isAuthenticated = localStorage.getItem('manual_authenticated');
+    // Sempre mostrar tela de login (removido localStorage)
     const loginScreen = document.getElementById('login-screen');
     const mainContent = document.getElementById('main-content');
     
-    if (isAuthenticated === 'true') {
-        loginScreen.style.display = 'none';
-        mainContent.style.display = 'block';
-    } else {
-        loginScreen.style.display = 'flex';
-        mainContent.style.display = 'none';
-    }
+    loginScreen.style.display = 'flex';
+    mainContent.style.display = 'none';
 }
 
 // Permitir login com Enter
