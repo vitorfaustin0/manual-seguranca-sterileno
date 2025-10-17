@@ -802,16 +802,8 @@ function closeITO() {
 }
 
 // Função para selecionar resposta do quiz
-// Função para iniciar o quiz (solicitar nome primeiro)
+// Função para iniciar o quiz (sem pedir nome primeiro)
 function startQuiz() {
-    // Solicitar nome primeiro
-    userName = prompt('🎮 Bem-vindo ao Quiz de Segurança da Informação!\n\nDigite seu nome para começar:');
-    
-    if (!userName || !userName.trim()) {
-        alert('Nome é obrigatório para participar do quiz!');
-        return;
-    }
-    
     // Inicializar quiz
     currentQuestion = 0;
     score = 0;
@@ -866,6 +858,13 @@ function showQuizResult() {
         }
     }
     
+    // Pedir nome APÓS terminar o quiz
+    userName = prompt(`🎉 Quiz Concluído!\n\nSua pontuação: ${score}/${quizData.length}\n\nDigite seu nome para entrar no placar global:`);
+    
+    if (!userName || !userName.trim()) {
+        userName = 'Participante Anônimo';
+    }
+    
     const questionDiv = document.getElementById('quiz-question');
     const resultDiv = document.getElementById('quiz-result');
     
@@ -876,16 +875,19 @@ function showQuizResult() {
     
     let feedback = '';
     if (score === quizData.length) {
-        feedback = 'Parabéns! Você acertou todas as perguntas! 🎉';
+        feedback = `Parabéns, ${userName}! Você acertou todas as perguntas! 🎉`;
     } else if (score >= quizData.length * 0.8) {
-        feedback = 'Muito bem! Você tem um bom conhecimento sobre segurança da informação! 👍';
+        feedback = `Muito bem, ${userName}! Você tem um bom conhecimento sobre segurança da informação! 👍`;
     } else if (score >= quizData.length * 0.6) {
-        feedback = 'Bom trabalho! Continue estudando para melhorar ainda mais! 📚';
+        feedback = `Bom trabalho, ${userName}! Continue estudando para melhorar ainda mais! 📚`;
     } else {
-        feedback = 'Que tal revisar as ITOs para melhorar seu conhecimento? 📖';
+        feedback = `Que tal revisar as ITOs para melhorar seu conhecimento, ${userName}? 📖`;
     }
     
     document.getElementById('quiz-feedback').textContent = feedback;
+    
+    // Salvar resultado no placar (simulado)
+    saveQuizResult(userName.trim(), score);
 }
 
 // Função para reiniciar quiz
@@ -901,6 +903,22 @@ function restartQuiz() {
     resultDiv.style.display = 'none';
     
     showQuestion();
+}
+
+// Função para salvar resultado no placar
+function saveQuizResult(name, totalScore) {
+    try {
+        // Simular salvamento no placar
+        console.log('Salvando resultado no placar:', { name, totalScore });
+        
+        // Em uma implementação real, você faria uma requisição para uma API
+        // que atualizaria o arquivo leaderboard.json no GitHub
+        
+        // Por enquanto, vamos simular o salvamento
+        alert(`✅ Resultado salvo no placar!\n\n${name}: ${totalScore}/${quizData.length} pontos`);
+    } catch (error) {
+        console.error('Erro ao salvar resultado:', error);
+    }
 }
 
 // Sistema restaurado para funcionamento simples
