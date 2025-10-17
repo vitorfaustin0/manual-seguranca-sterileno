@@ -820,6 +820,74 @@ function closeITO() {
 }
 
 // Função para selecionar resposta do quiz
+// Função para iniciar o quiz
+function startQuiz() {
+    currentQuestion = 0;
+    currentPhase = 1;
+    score = 0;
+    userAnswers = [];
+    phaseScores = [0, 0, 0];
+    startTime = Date.now();
+    
+    showQuizPhase();
+}
+
+// Função para mostrar a fase atual do quiz
+function showQuizPhase() {
+    const phaseKey = `phase${currentPhase}`;
+    const phase = quizPhases[phaseKey];
+    
+    if (!phase) {
+        // Quiz completo - mostrar resultado
+        showQuizResult();
+        return;
+    }
+    
+    // Atualizar interface da fase
+    updateQuizInterface(phase);
+}
+
+// Função para atualizar interface do quiz
+function updateQuizInterface(phase) {
+    const quizContainer = document.querySelector('.quiz-container');
+    if (!quizContainer) return;
+    
+    const question = phase.questions[currentQuestion];
+    const questionNumber = currentQuestion + 1;
+    const totalQuestions = phase.questions.length;
+    
+    quizContainer.innerHTML = `
+        <div class="quiz-header">
+            <h3>${phase.title}</h3>
+            <div class="quiz-progress">
+                <span>Pergunta ${questionNumber} de ${totalQuestions}</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: ${(questionNumber / totalQuestions) * 100}%"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="quiz-question">
+            <h4>${question.question}</h4>
+        </div>
+        
+        <div class="quiz-options">
+            ${question.options.map((option, index) => `
+                <div class="quiz-option" onclick="selectAnswer('${option.charAt(0).toLowerCase()}')">
+                    ${option}
+                </div>
+            `).join('')}
+        </div>
+        
+        <div class="quiz-actions">
+            <button class="btn btn-primary" onclick="nextQuestion()" id="next-btn" disabled>
+                ${currentQuestion === phase.questions.length - 1 ? 'Finalizar Fase' : 'Próxima Pergunta'}
+            </button>
+        </div>
+    `;
+}
+
+// Função para selecionar resposta do quiz
 function selectAnswer(answer) {
     const options = document.querySelectorAll('.quiz-option');
     options.forEach(option => option.classList.remove('selected'));
@@ -827,15 +895,156 @@ function selectAnswer(answer) {
     event.target.classList.add('selected');
     userAnswers[currentQuestion] = answer;
     
-    // Auto avançar para próxima pergunta após 1 segundo
-    setTimeout(() => {
-        if (currentQuestion < quizData.length - 1) {
-            currentQuestion++;
-            showQuestion();
-        } else {
-            showQuizResult();
-        }
-    }, 1000);
+    // Habilitar botão próximo
+    document.getElementById('next-btn').disabled = false;
+}
+
+// Função para próxima pergunta
+function nextQuestion() {
+    const phaseKey = `phase${currentPhase}`;
+    const phase = quizPhases[phaseKey];
+    const question = phase.questions[currentQuestion];
+    
+    // Verificar resposta
+    if (userAnswers[currentQuestion] === question.correct) {
+        score++;
+        phaseScores[currentPhase - 1]++;
+    }
+    
+    currentQuestion++;
+    
+    // Verificar se terminou a fase
+    if (currentQuestion >= phase.questions.length) {
+        // Fase terminada
+        showPhaseResult();
+    } else {
+        // Próxima pergunta
+        showQuizPhase();
+    }
+}
+
+// Função para mostrar resultado da fase
+function showPhaseResult() {
+    const phaseKey = `phase${currentPhase}`;
+    const phase = quizPhases[phaseKey];
+    const phaseScore = phaseScores[currentPhase - 1];
+    const totalQuestions = phase.questions.length;
+    
+    const quizContainer = document.querySelector('.quiz-container');
+    quizContainer.innerHTML = `
+        <div class="phase-result">
+            <div class="result-header">
+                <h3>🎉 ${phase.title} Concluída! 🎉</h3>
+                <div class="score-display">
+                    <h4>Pontuação: ${phaseScore}/${totalQuestions}</h4>
+                    <div class="score-bar">
+                        <div class="score-fill" style="width: ${(phaseScore / totalQuestions) * 100}%"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="result-actions">
+                ${currentPhase < 3 ? `
+                    <button class="btn btn-primary" onclick="nextPhase()">
+                        Continuar para Fase ${currentPhase + 1}
+                    </button>
+                ` : `
+                    <button class="btn btn-success" onclick="finishQuiz()">
+                        Finalizar Quiz
+                    </button>
+                `}
+            </div>
+        </div>
+    `;
+}
+
+// Função para próxima fase
+function nextPhase() {
+    currentPhase++;
+    currentQuestion = 0;
+    showQuizPhase();
+}
+
+// Função para finalizar quiz
+function finishQuiz() {
+    const totalTime = Math.floor((Date.now() - startTime) / 1000);
+    const minutes = Math.floor(totalTime / 60);
+    const seconds = totalTime % 60;
+    
+    // Solicitar nome do usuário
+    const userName = prompt('🎉 Parabéns! Quiz concluído!\n\nDigite seu nome para entrar no placar:');
+    
+    if (userName && userName.trim()) {
+        // Salvar resultado
+        saveQuizResult(userName.trim(), score, phaseScores, totalTime);
+        
+        // Mostrar resultado final
+        showFinalResult(userName.trim(), score, phaseScores, totalTime);
+    } else {
+        alert('Nome é obrigatório para entrar no placar!');
+        finishQuiz();
+    }
+}
+
+// Função para salvar resultado do quiz
+async function saveQuizResult(name, totalScore, phaseScores, time) {
+    try {
+        // Aqui você implementaria a lógica para salvar no GitHub
+        // Por enquanto, vamos simular
+        console.log('Salvando resultado:', { name, totalScore, phaseScores, time });
+        
+        // Em uma implementação real, você faria uma requisição para uma API
+        // que atualizaria o arquivo leaderboard.json no GitHub
+    } catch (error) {
+        console.error('Erro ao salvar resultado:', error);
+    }
+}
+
+// Função para mostrar resultado final
+function showFinalResult(name, totalScore, phaseScores, time) {
+    const quizContainer = document.querySelector('.quiz-container');
+    const minutes = Math.floor(time / 60);
+    const seconds = time % 60;
+    
+    quizContainer.innerHTML = `
+        <div class="final-result">
+            <div class="result-header">
+                <h2>🏆 Quiz Concluído! 🏆</h2>
+                <h3>Parabéns, ${name}!</h3>
+            </div>
+            
+            <div class="result-stats">
+                <div class="stat-item">
+                    <h4>Pontuação Total</h4>
+                    <p class="stat-value">${totalScore}/15</p>
+                </div>
+                
+                <div class="stat-item">
+                    <h4>Fases</h4>
+                    <p class="stat-value">${phaseScores.join('/')}</p>
+                </div>
+                
+                <div class="stat-item">
+                    <h4>Tempo</h4>
+                    <p class="stat-value">${minutes}:${seconds.toString().padStart(2, '0')}</p>
+                </div>
+            </div>
+            
+            <div class="result-actions">
+                <button class="btn btn-primary" onclick="showLeaderboard()">
+                    Ver Placar
+                </button>
+                <button class="btn btn-secondary" onclick="startQuiz()">
+                    Fazer Novamente
+                </button>
+            </div>
+        </div>
+    `;
+}
+
+// Função para mostrar resultado do quiz (compatibilidade)
+function showQuizResult() {
+    showFinalResult(userName, score, phaseScores, Math.floor((Date.now() - startTime) / 1000));
 }
 
 // Função para mostrar pergunta do quiz
