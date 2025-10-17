@@ -615,124 +615,106 @@ const itosData = {
     }
 };
 
-// Sistema de Quiz com Fases
-const quizPhases = {
-    phase1: {
-        title: "Fase 1 - Conceitos Básicos",
-        questions: [
-            {
-                question: "Qual é a frequência recomendada para backup dos arquivos importantes?",
-                options: ["A) Semanalmente", "B) Diariamente", "C) Mensalmente", "D) Anualmente"],
-                correct: "b",
-                explanation: "O backup é feito diariamente para garantir que os arquivos estejam sempre atualizados e seguros."
-            },
-            {
-                question: "O que você deve fazer com documentos sensíveis quando não estiver usando?",
-                options: ["A) Deixar sobre a mesa", "B) Guardar em gaveta trancada", "C) Colocar na prateleira", "D) Deixar no computador"],
-                correct: "b",
-                explanation: "Documentos sensíveis devem ser guardados em gavetas trancadas para proteger as informações."
-            },
-            {
-                question: "Qual nível de classificação permite acesso a qualquer pessoa?",
-                options: ["A) Confidencial", "B) Interna", "C) Pública", "D) Restrita"],
-                correct: "c",
-                explanation: "Informações públicas podem ser acessadas por qualquer pessoa, incluindo o público em geral."
-            },
-            {
-                question: "O que você NÃO deve fazer com suas senhas?",
-                options: ["A) Memorizá-las", "B) Escrevê-las em papéis", "C) Usá-las regularmente", "D) Alterá-las periodicamente"],
-                correct: "b",
-                explanation: "Nunca escreva senhas em papéis ou lembretes, pois isso compromete a segurança."
-            },
-            {
-                question: "Para que serve o treinamento em segurança da informação?",
-                options: ["A) Apenas para funcionários novos", "B) Para ensinar como proteger as informações", "C) Só para a área de TI", "D) Apenas uma vez por ano"],
-                correct: "b",
-                explanation: "O treinamento ensina todos os funcionários sobre como proteger as informações da empresa de forma adequada."
-            }
-        ]
+// Dados do quiz (sistema simples)
+const quizData = [
+    {
+        question: "Qual é a frequência recomendada para backup dos arquivos importantes?",
+        options: ["A) Semanalmente", "B) Diariamente", "C) Mensalmente", "D) Anualmente"],
+        correct: "b",
+        explanation: "O backup é feito diariamente para garantir que os arquivos estejam sempre atualizados e seguros."
     },
-    phase2: {
-        title: "Fase 2 - Práticas Intermediárias",
-        questions: [
-            {
-                question: "Como classificar uma informação confidencial?",
-                options: ["A) Qualquer informação da empresa", "B) Informações que podem causar danos se divulgadas", "C) Apenas documentos com carimbo de confidencial", "D) Informações que todos podem ver"],
-                correct: "b",
-                explanation: "Informações confidenciais são aquelas que podem causar danos à empresa se divulgadas indevidamente."
-            },
-            {
-                question: "Qual é a política correta para uso do email corporativo?",
-                options: ["A) Usar para assuntos pessoais", "B) Apenas para comunicação interna", "C) Usar apenas para comunicação oficial da empresa", "D) Compartilhar com qualquer pessoa"],
-                correct: "c",
-                explanation: "Email corporativo deve ser usado apenas para comunicação oficial da empresa."
-            },
-            {
-                question: "O que fazer ao encontrar um documento confidencial na impressora?",
-                options: ["A) Deixar para o dono pegar", "B) Jogar no lixo", "C) Entregar ao responsável ou destruir adequadamente", "D) Levar para casa"],
-                correct: "c",
-                explanation: "Documentos confidenciais devem ser entregues ao responsável ou destruídos adequadamente."
-            },
-            {
-                question: "Qual é a prática correta para navegação na internet?",
-                options: ["A) Acessar qualquer site", "B) Usar apenas sites aprovados pela empresa", "C) Baixar programas livremente", "D) Compartilhar senhas de acesso"],
-                correct: "b",
-                explanation: "Deve-se usar apenas sites aprovados pela empresa para navegação segura."
-            },
-            {
-                question: "Como proteger informações em reuniões?",
-                options: ["A) Falar alto para todos ouvirem", "B) Discutir em locais públicos", "C) Garantir que apenas pessoas autorizadas estejam presentes", "D) Gravar todas as conversas"],
-                correct: "c",
-                explanation: "Reuniões com informações sensíveis devem ter apenas pessoas autorizadas presentes."
-            }
-        ]
+    {
+        question: "O que você deve fazer com documentos sensíveis quando não estiver usando?",
+        options: ["A) Deixar sobre a mesa", "B) Guardar em gaveta trancada", "C) Colocar na prateleira", "D) Deixar no computador"],
+        correct: "b",
+        explanation: "Documentos sensíveis devem ser guardados em gavetas trancadas para proteger as informações."
     },
-    phase3: {
-        title: "Fase 3 - Práticas Avançadas",
-        questions: [
-            {
-                question: "Qual é a importância da conscientização em segurança?",
-                options: ["A) Apenas para cumprir normas", "B) Reduzir riscos de segurança através do conhecimento", "C) Aumentar custos da empresa", "D) Complicar o trabalho dos funcionários"],
-                correct: "b",
-                explanation: "A conscientização reduz riscos de segurança através do conhecimento adequado dos funcionários."
-            },
-            {
-                question: "Como proceder ao detectar uma violação de segurança?",
-                options: ["A) Esconder o problema", "B) Tentar resolver sozinho", "C) Reportar imediatamente à TI", "D) Ignorar o problema"],
-                correct: "c",
-                explanation: "Violações de segurança devem ser reportadas imediatamente à equipe de TI."
-            },
-            {
-                question: "Qual é a forma correta de abrir um chamado de TI?",
-                options: ["A) Ligar diretamente para o técnico", "B) Enviar email para helpdesk@sterileno.com.br", "C) Falar com qualquer pessoa da TI", "D) Esperar o problema se resolver"],
-                correct: "b",
-                explanation: "Chamados devem ser abertos enviando email para helpdesk@sterileno.com.br."
-            },
-            {
-                question: "Como garantir a segurança da rede corporativa?",
-                options: ["A) Usar redes públicas", "B) Conectar dispositivos pessoais livremente", "C) Seguir as políticas de rede da empresa", "D) Compartilhar credenciais de acesso"],
-                correct: "c",
-                explanation: "A segurança da rede corporativa depende do seguimento das políticas estabelecidas pela empresa."
-            },
-            {
-                question: "Qual é o objetivo final das políticas de segurança?",
-                options: ["A) Complicar o trabalho", "B) Proteger as informações e garantir a continuidade dos negócios", "C) Aumentar custos", "D) Reduzir produtividade"],
-                correct: "b",
-                explanation: "As políticas de segurança visam proteger as informações e garantir a continuidade dos negócios da empresa."
-            }
-        ]
+    {
+        question: "Qual nível de classificação permite acesso a qualquer pessoa?",
+        options: ["A) Confidencial", "B) Interna", "C) Pública", "D) Restrita"],
+        correct: "c",
+        explanation: "Informações públicas podem ser acessadas por qualquer pessoa, incluindo o público em geral."
+    },
+    {
+        question: "O que você NÃO deve fazer com suas senhas?",
+        options: ["A) Memorizá-las", "B) Escrevê-las em papéis", "C) Usá-las regularmente", "D) Alterá-las periodicamente"],
+        correct: "b",
+        explanation: "Nunca escreva senhas em papéis ou lembretes, pois isso compromete a segurança."
+    },
+    {
+        question: "Para que serve o treinamento em segurança da informação?",
+        options: ["A) Apenas para funcionários novos", "B) Para ensinar como proteger as informações", "C) Só para a área de TI", "D) Apenas uma vez por ano"],
+        correct: "b",
+        explanation: "O treinamento ensina todos os funcionários sobre como proteger as informações da empresa de forma adequada."
+    },
+    {
+        question: "Como classificar uma informação confidencial?",
+        options: ["A) Qualquer informação da empresa", "B) Informações que podem causar danos se divulgadas", "C) Apenas documentos com carimbo de confidencial", "D) Informações que todos podem ver"],
+        correct: "b",
+        explanation: "Informações confidenciais são aquelas que podem causar danos à empresa se divulgadas indevidamente."
+    },
+    {
+        question: "Qual é a política correta para uso do email corporativo?",
+        options: ["A) Usar para assuntos pessoais", "B) Apenas para comunicação interna", "C) Usar apenas para comunicação oficial da empresa", "D) Compartilhar com qualquer pessoa"],
+        correct: "c",
+        explanation: "Email corporativo deve ser usado apenas para comunicação oficial da empresa."
+    },
+    {
+        question: "O que fazer ao encontrar um documento confidencial na impressora?",
+        options: ["A) Deixar para o dono pegar", "B) Jogar no lixo", "C) Entregar ao responsável ou destruir adequadamente", "D) Levar para casa"],
+        correct: "c",
+        explanation: "Documentos confidenciais devem ser entregues ao responsável ou destruídos adequadamente."
+    },
+    {
+        question: "Qual é a prática correta para navegação na internet?",
+        options: ["A) Acessar qualquer site", "B) Usar apenas sites aprovados pela empresa", "C) Baixar programas livremente", "D) Compartilhar senhas de acesso"],
+        correct: "b",
+        explanation: "Deve-se usar apenas sites aprovados pela empresa para navegação segura."
+    },
+    {
+        question: "Como proteger informações em reuniões?",
+        options: ["A) Falar alto para todos ouvirem", "B) Discutir em locais públicos", "C) Garantir que apenas pessoas autorizadas estejam presentes", "D) Gravar todas as conversas"],
+        correct: "c",
+        explanation: "Reuniões com informações sensíveis devem ter apenas pessoas autorizadas presentes."
+    },
+    {
+        question: "Qual é a importância da conscientização em segurança?",
+        options: ["A) Apenas para cumprir normas", "B) Reduzir riscos de segurança através do conhecimento", "C) Aumentar custos da empresa", "D) Complicar o trabalho dos funcionários"],
+        correct: "b",
+        explanation: "A conscientização reduz riscos de segurança através do conhecimento adequado dos funcionários."
+    },
+    {
+        question: "Como proceder ao detectar uma violação de segurança?",
+        options: ["A) Esconder o problema", "B) Tentar resolver sozinho", "C) Reportar imediatamente à TI", "D) Ignorar o problema"],
+        correct: "c",
+        explanation: "Violações de segurança devem ser reportadas imediatamente à equipe de TI."
+    },
+    {
+        question: "Qual é a forma correta de abrir um chamado de TI?",
+        options: ["A) Ligar diretamente para o técnico", "B) Enviar email para helpdesk@sterileno.com.br", "C) Falar com qualquer pessoa da TI", "D) Esperar o problema se resolver"],
+        correct: "b",
+        explanation: "Chamados devem ser abertos enviando email para helpdesk@sterileno.com.br."
+    },
+    {
+        question: "Como garantir a segurança da rede corporativa?",
+        options: ["A) Usar redes públicas", "B) Conectar dispositivos pessoais livremente", "C) Seguir as políticas de rede da empresa", "D) Compartilhar credenciais de acesso"],
+        correct: "c",
+        explanation: "A segurança da rede corporativa depende do seguimento das políticas estabelecidas pela empresa."
+    },
+    {
+        question: "Qual é o objetivo final das políticas de segurança?",
+        options: ["A) Complicar o trabalho", "B) Proteger as informações e garantir a continuidade dos negócios", "C) Aumentar custos", "D) Reduzir produtividade"],
+        correct: "b",
+        explanation: "As políticas de segurança visam proteger as informações e garantir a continuidade dos negócios da empresa."
     }
-};
+];
 
 // Variáveis globais
 let currentQuestion = 0;
-let currentPhase = 1;
 let score = 0;
 let userAnswers = [];
 let userName = '';
 let startTime = 0;
-let phaseScores = [0, 0, 0]; // Pontuação de cada fase
-let totalQuestions = 15; // 5 perguntas por fase, 3 fases
 
 // Função para abrir modal da ITO
 function openITO(itoId) {
@@ -820,69 +802,38 @@ function closeITO() {
 }
 
 // Função para selecionar resposta do quiz
-// Função para iniciar o quiz
+// Função para iniciar o quiz (solicitar nome primeiro)
 function startQuiz() {
-    currentQuestion = 0;
-    currentPhase = 1;
-    score = 0;
-    userAnswers = [];
-    phaseScores = [0, 0, 0];
-    startTime = Date.now();
+    // Solicitar nome primeiro
+    userName = prompt('🎮 Bem-vindo ao Quiz de Segurança da Informação!\n\nDigite seu nome para começar:');
     
-    showQuizPhase();
-}
-
-// Função para mostrar a fase atual do quiz
-function showQuizPhase() {
-    const phaseKey = `phase${currentPhase}`;
-    const phase = quizPhases[phaseKey];
-    
-    if (!phase) {
-        // Quiz completo - mostrar resultado
-        showQuizResult();
+    if (!userName || !userName.trim()) {
+        alert('Nome é obrigatório para participar do quiz!');
         return;
     }
     
-    // Atualizar interface da fase
-    updateQuizInterface(phase);
+    // Inicializar quiz
+    currentQuestion = 0;
+    score = 0;
+    userAnswers = [];
+    startTime = Date.now();
+    
+    showQuestion();
 }
 
-// Função para atualizar interface do quiz
-function updateQuizInterface(phase) {
-    const quizContainer = document.querySelector('.quiz-container');
-    if (!quizContainer) return;
+// Função para mostrar pergunta do quiz
+function showQuestion() {
+    const questionDiv = document.getElementById('quiz-question');
+    const question = quizData[currentQuestion];
     
-    const question = phase.questions[currentQuestion];
-    const questionNumber = currentQuestion + 1;
-    const totalQuestions = phase.questions.length;
-    
-    quizContainer.innerHTML = `
-        <div class="quiz-header">
-            <h3>${phase.title}</h3>
-            <div class="quiz-progress">
-                <span>Pergunta ${questionNumber} de ${totalQuestions}</span>
-                <div class="progress-bar">
-                    <div class="progress-fill" style="width: ${(questionNumber / totalQuestions) * 100}%"></div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="quiz-question">
-            <h4>${question.question}</h4>
-        </div>
-        
+    questionDiv.innerHTML = `
+        <h3>Pergunta ${currentQuestion + 1} de ${quizData.length}</h3>
+        <p>${question.question}</p>
         <div class="quiz-options">
-            ${question.options.map((option, index) => `
-                <div class="quiz-option" onclick="selectAnswer('${option.charAt(0).toLowerCase()}')">
-                    ${option}
-                </div>
-            `).join('')}
-        </div>
-        
-        <div class="quiz-actions">
-            <button class="btn btn-primary" onclick="nextQuestion()" id="next-btn" disabled>
-                ${currentQuestion === phase.questions.length - 1 ? 'Finalizar Fase' : 'Avançar'}
-            </button>
+            <button class="quiz-option" onclick="selectAnswer('a')">${question.options[0]}</button>
+            <button class="quiz-option" onclick="selectAnswer('b')">${question.options[1]}</button>
+            <button class="quiz-option" onclick="selectAnswer('c')">${question.options[2]}</button>
+            <button class="quiz-option" onclick="selectAnswer('d')">${question.options[3]}</button>
         </div>
     `;
 }
@@ -895,189 +846,64 @@ function selectAnswer(answer) {
     event.target.classList.add('selected');
     userAnswers[currentQuestion] = answer;
     
-    // Habilitar botão próximo
-    const nextBtn = document.getElementById('next-btn');
-    if (nextBtn) {
-        nextBtn.disabled = false;
-        nextBtn.style.opacity = '1';
-        nextBtn.style.cursor = 'pointer';
-        nextBtn.style.background = 'linear-gradient(135deg, #667eea, #764ba2)';
-        nextBtn.style.color = 'white';
-        nextBtn.style.boxShadow = '0 4px 15px rgba(102, 126, 234, 0.3)';
-    }
-    
-    console.log('Resposta selecionada:', answer);
-    console.log('Botão habilitado:', nextBtn ? 'Sim' : 'Não');
+    // Auto avançar para próxima pergunta após 1 segundo
+    setTimeout(() => {
+        if (currentQuestion < quizData.length - 1) {
+            currentQuestion++;
+            showQuestion();
+        } else {
+            showQuizResult();
+        }
+    }, 1000);
 }
 
-// Função para próxima pergunta
-function nextQuestion() {
-    const phaseKey = `phase${currentPhase}`;
-    const phase = quizPhases[phaseKey];
-    
-    if (!phase || !phase.questions[currentQuestion]) {
-        console.error('Erro: Fase ou pergunta não encontrada');
-        return;
-    }
-    
-    const question = phase.questions[currentQuestion];
-    
-    // Verificar resposta
-    if (userAnswers[currentQuestion] === question.correct) {
-        score++;
-        phaseScores[currentPhase - 1]++;
-    }
-    
-    currentQuestion++;
-    
-    // Verificar se terminou a fase
-    if (currentQuestion >= phase.questions.length) {
-        // Fase terminada
-        showPhaseResult();
-    } else {
-        // Próxima pergunta
-        showQuizPhase();
-    }
-}
-
-// Função para mostrar resultado da fase
-function showPhaseResult() {
-    const phaseKey = `phase${currentPhase}`;
-    const phase = quizPhases[phaseKey];
-    const phaseScore = phaseScores[currentPhase - 1];
-    const totalQuestions = phase.questions.length;
-    
-    const quizContainer = document.querySelector('.quiz-container');
-    quizContainer.innerHTML = `
-        <div class="phase-result">
-            <div class="result-header">
-                <h3>🎉 ${phase.title} Concluída! 🎉</h3>
-                <div class="score-display">
-                    <h4>Pontuação: ${phaseScore}/${totalQuestions}</h4>
-                    <div class="score-bar">
-                        <div class="score-fill" style="width: ${(phaseScore / totalQuestions) * 100}%"></div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="result-actions">
-                ${currentPhase < 3 ? `
-                    <button class="btn btn-primary" onclick="nextPhase()">
-                        Continuar para Fase ${currentPhase + 1}
-                    </button>
-                ` : `
-                    <button class="btn btn-success" onclick="finishQuiz()">
-                        Finalizar Quiz
-                    </button>
-                `}
-            </div>
-        </div>
-    `;
-}
-
-// Função para próxima fase
-function nextPhase() {
-    currentPhase++;
-    currentQuestion = 0;
-    showQuizPhase();
-}
-
-// Função para finalizar quiz
-function finishQuiz() {
-    const totalTime = Math.floor((Date.now() - startTime) / 1000);
-    const minutes = Math.floor(totalTime / 60);
-    const seconds = totalTime % 60;
-    
-    // Solicitar nome do usuário
-    const userName = prompt('🎉 Parabéns! Quiz concluído!\n\nDigite seu nome para entrar no placar:');
-    
-    if (userName && userName.trim()) {
-        // Salvar resultado
-        saveQuizResult(userName.trim(), score, phaseScores, totalTime);
-        
-        // Mostrar resultado final
-        showFinalResult(userName.trim(), score, phaseScores, totalTime);
-    } else {
-        alert('Nome é obrigatório para entrar no placar!');
-        finishQuiz();
-    }
-}
-
-// Função para salvar resultado do quiz
-async function saveQuizResult(name, totalScore, phaseScores, time) {
-    try {
-        // Aqui você implementaria a lógica para salvar no GitHub
-        // Por enquanto, vamos simular
-        console.log('Salvando resultado:', { name, totalScore, phaseScores, time });
-        
-        // Em uma implementação real, você faria uma requisição para uma API
-        // que atualizaria o arquivo leaderboard.json no GitHub
-    } catch (error) {
-        console.error('Erro ao salvar resultado:', error);
-    }
-}
-
-// Função para mostrar resultado final
-function showFinalResult(name, totalScore, phaseScores, time) {
-    const quizContainer = document.querySelector('.quiz-container');
-    const minutes = Math.floor(time / 60);
-    const seconds = time % 60;
-    
-    quizContainer.innerHTML = `
-        <div class="final-result">
-            <div class="result-header">
-                <h2>🏆 Quiz Concluído! 🏆</h2>
-                <h3>Parabéns, ${name}!</h3>
-            </div>
-            
-            <div class="result-stats">
-                <div class="stat-item">
-                    <h4>Pontuação Total</h4>
-                    <p class="stat-value">${totalScore}/15</p>
-                </div>
-                
-                <div class="stat-item">
-                    <h4>Fases</h4>
-                    <p class="stat-value">${phaseScores.join('/')}</p>
-                </div>
-                
-                <div class="stat-item">
-                    <h4>Tempo</h4>
-                    <p class="stat-value">${minutes}:${seconds.toString().padStart(2, '0')}</p>
-                </div>
-            </div>
-            
-            <div class="result-actions">
-                <button class="btn btn-primary" onclick="showLeaderboard()">
-                    Ver Placar
-                </button>
-                <button class="btn btn-secondary" onclick="startQuiz()">
-                    Fazer Novamente
-                </button>
-            </div>
-        </div>
-    `;
-}
-
-// Função para mostrar resultado do quiz (compatibilidade)
+// Função para mostrar resultado do quiz
 function showQuizResult() {
-    showFinalResult(userName, score, phaseScores, Math.floor((Date.now() - startTime) / 1000));
-}
-
-// Função para iniciar quiz automaticamente
-function startQuizAutomatically() {
-    // Verificar se já existe um quiz em andamento
-    if (currentQuestion > 0 || currentPhase > 1) {
-        return; // Já em andamento
+    score = 0;
+    for (let i = 0; i < quizData.length; i++) {
+        if (userAnswers[i] === quizData[i].correct) {
+            score++;
+        }
     }
     
-    // Iniciar novo quiz
-    startQuiz();
+    const questionDiv = document.getElementById('quiz-question');
+    const resultDiv = document.getElementById('quiz-result');
+    
+    questionDiv.style.display = 'none';
+    resultDiv.style.display = 'block';
+    
+    document.getElementById('quiz-score-text').textContent = `${score}/${quizData.length}`;
+    
+    let feedback = '';
+    if (score === quizData.length) {
+        feedback = 'Parabéns! Você acertou todas as perguntas! 🎉';
+    } else if (score >= quizData.length * 0.8) {
+        feedback = 'Muito bem! Você tem um bom conhecimento sobre segurança da informação! 👍';
+    } else if (score >= quizData.length * 0.6) {
+        feedback = 'Bom trabalho! Continue estudando para melhorar ainda mais! 📚';
+    } else {
+        feedback = 'Que tal revisar as ITOs para melhorar seu conhecimento? 📖';
+    }
+    
+    document.getElementById('quiz-feedback').textContent = feedback;
 }
 
-// Função removida - usando sistema de fases
+// Função para reiniciar quiz
+function restartQuiz() {
+    currentQuestion = 0;
+    score = 0;
+    userAnswers = [];
+    
+    const questionDiv = document.getElementById('quiz-question');
+    const resultDiv = document.getElementById('quiz-result');
+    
+    questionDiv.style.display = 'block';
+    resultDiv.style.display = 'none';
+    
+    showQuestion();
+}
 
-// Função removida - usando sistema de fases
+// Sistema restaurado para funcionamento simples
 
 // Função removida - usando sistema de fases
 
