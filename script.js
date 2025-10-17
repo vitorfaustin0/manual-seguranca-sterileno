@@ -982,6 +982,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Verificar autenticação ao carregar a página
     checkAuthentication();
     
+    // Carregar placar ao inicializar
+    loadLeaderboard();
+    
     // Adicionar evento de Enter nos campos de login
     const usernameInput = document.getElementById('username-input');
     const passwordInput = document.getElementById('password-input');
@@ -1142,7 +1145,7 @@ async function loadFullLeaderboard() {
                 <td>${index + 1}</td>
                 <td>${player.name}</td>
                 <td>${player.score}</td>
-                <td>${player.phaseScores.join('/')}</td>
+                <td>${player.time ? `${player.time}s` : '-'}</td>
             </tr>
         `).join('');
     } catch (error) {
