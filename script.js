@@ -1069,68 +1069,11 @@ function startQuizAutomatically() {
     startQuiz();
 }
 
-// Função para mostrar pergunta do quiz
-function showQuestion() {
-    const questionDiv = document.getElementById('quiz-question');
-    const question = quizData[currentQuestion];
-    
-    questionDiv.innerHTML = `
-        <h3>Pergunta ${currentQuestion + 1} de ${quizData.length}</h3>
-        <p>${question.question}</p>
-        <div class="quiz-options">
-            <button class="quiz-option" onclick="selectAnswer('a')">${question.options[0]}</button>
-            <button class="quiz-option" onclick="selectAnswer('b')">${question.options[1]}</button>
-            <button class="quiz-option" onclick="selectAnswer('c')">${question.options[2]}</button>
-            <button class="quiz-option" onclick="selectAnswer('d')">${question.options[3]}</button>
-        </div>
-    `;
-}
+// Função removida - usando sistema de fases
 
-// Função para mostrar resultado do quiz
-function showQuizResult() {
-    score = 0;
-    for (let i = 0; i < quizData.length; i++) {
-        if (userAnswers[i] === quizData[i].correct) {
-            score++;
-        }
-    }
-    
-    const questionDiv = document.getElementById('quiz-question');
-    const resultDiv = document.getElementById('quiz-result');
-    
-    questionDiv.style.display = 'none';
-    resultDiv.style.display = 'block';
-    
-    document.getElementById('quiz-score-text').textContent = `${score}/${quizData.length}`;
-    
-    let feedback = '';
-    if (score === quizData.length) {
-        feedback = 'Parabéns! Você acertou todas as perguntas! 🎉';
-    } else if (score >= quizData.length * 0.8) {
-        feedback = 'Muito bem! Você tem um bom conhecimento sobre segurança da informação! 👍';
-    } else if (score >= quizData.length * 0.6) {
-        feedback = 'Bom trabalho! Continue estudando para melhorar ainda mais! 📚';
-    } else {
-        feedback = 'Que tal revisar as ITOs para melhorar seu conhecimento? 📖';
-    }
-    
-    document.getElementById('quiz-feedback').textContent = feedback;
-}
+// Função removida - usando sistema de fases
 
-// Função para reiniciar quiz
-function restartQuiz() {
-    currentQuestion = 0;
-    score = 0;
-    userAnswers = [];
-    
-    const questionDiv = document.getElementById('quiz-question');
-    const resultDiv = document.getElementById('quiz-result');
-    
-    questionDiv.style.display = 'block';
-    resultDiv.style.display = 'none';
-    
-    showQuestion();
-}
+// Função removida - usando sistema de fases
 
 // Navegação suave
 document.addEventListener('DOMContentLoaded', function() {
@@ -1182,8 +1125,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Inicializar quiz
-    showQuestion();
+    // Quiz inicializado pelo sistema de fases
     
     // Animações de entrada
     const observerOptions = {
