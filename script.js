@@ -667,7 +667,7 @@ function openITO(itoId) {
         modal.classList.add('active');
         document.body.style.overflow = 'hidden';
         
-        // Prevenir fechamento com botão voltar do mobile
+        // Prevenir fechamento com botão voltar e gestos do mobile
         window.history.pushState(null, null, window.location.href);
         
         // Função para lidar com o botão voltar
@@ -675,14 +675,29 @@ function openITO(itoId) {
             if (modal.style.display === 'block') {
                 event.preventDefault();
                 window.history.pushState(null, null, window.location.href);
+                return false;
             }
         }
         
-        // Adicionar listener
-        window.addEventListener('popstate', handleBackButton);
+        // Função para lidar com gestos de swipe
+        function handleSwipeGesture(event) {
+            if (modal.style.display === 'block') {
+                event.preventDefault();
+                event.stopPropagation();
+                return false;
+            }
+        }
         
-        // Armazenar referência para remover depois
+        // Adicionar listeners
+        window.addEventListener('popstate', handleBackButton);
+        window.addEventListener('beforeunload', handleBackButton);
+        document.addEventListener('touchstart', handleSwipeGesture, { passive: false });
+        document.addEventListener('touchmove', handleSwipeGesture, { passive: false });
+        document.addEventListener('touchend', handleSwipeGesture, { passive: false });
+        
+        // Armazenar referências para remover depois
         modal._backButtonHandler = handleBackButton;
+        modal._swipeHandler = handleSwipeGesture;
         
         // Mostrar botão flutuante apenas em mobile
         const floatingBtn = document.getElementById('floating-back-btn');
@@ -699,10 +714,18 @@ function closeITO() {
     modal.classList.remove('active');
     document.body.style.overflow = 'auto';
     
-    // Remover listener do botão voltar
+    // Remover todos os listeners
     if (modal._backButtonHandler) {
         window.removeEventListener('popstate', modal._backButtonHandler);
+        window.removeEventListener('beforeunload', modal._backButtonHandler);
         modal._backButtonHandler = null;
+    }
+    
+    if (modal._swipeHandler) {
+        document.removeEventListener('touchstart', modal._swipeHandler);
+        document.removeEventListener('touchmove', modal._swipeHandler);
+        document.removeEventListener('touchend', modal._swipeHandler);
+        modal._swipeHandler = null;
     }
     
     // Esconder botão flutuante
