@@ -669,12 +669,20 @@ function openITO(itoId) {
         
         // Prevenir fechamento com botão voltar do mobile
         window.history.pushState(null, null, window.location.href);
-        window.addEventListener('popstate', function(event) {
+        
+        // Função para lidar com o botão voltar
+        function handleBackButton(event) {
             if (modal.style.display === 'block') {
                 event.preventDefault();
                 window.history.pushState(null, null, window.location.href);
             }
-        });
+        }
+        
+        // Adicionar listener
+        window.addEventListener('popstate', handleBackButton);
+        
+        // Armazenar referência para remover depois
+        modal._backButtonHandler = handleBackButton;
     }
 }
 
@@ -686,7 +694,10 @@ function closeITO() {
     document.body.style.overflow = 'auto';
     
     // Remover listener do botão voltar
-    window.removeEventListener('popstate', arguments.callee);
+    if (modal._backButtonHandler) {
+        window.removeEventListener('popstate', modal._backButtonHandler);
+        modal._backButtonHandler = null;
+    }
 }
 
 // Função para selecionar resposta do quiz
