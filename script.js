@@ -651,8 +651,13 @@ const quizData = [
 
 // Variáveis globais
 let currentQuestion = 0;
+let currentPhase = 1;
 let score = 0;
 let userAnswers = [];
+let userName = '';
+let startTime = 0;
+let phaseScores = [0, 0, 0]; // Pontuação de cada fase
+let totalQuestions = 15; // 5 perguntas por fase, 3 fases
 
 // Função para abrir modal da ITO
 function openITO(itoId) {
@@ -913,3 +918,64 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// Sistema de Placar Global
+const LEADERBOARD_URL = 'https://raw.githubusercontent.com/vitorfaustin0/manual-seguranca-sterileno/main/leaderboard.json';
+
+// Carregar placar ao inicializar
+async function loadLeaderboard() {
+    try {
+        const response = await fetch(LEADERBOARD_URL);
+        const data = await response.json();
+        updateLeaderBanner(data.leaderboard[0]);
+        return data;
+    } catch (error) {
+        console.log('Placar não disponível ainda');
+        document.getElementById('leader-info').textContent = 'Nenhum participante ainda';
+        return { leaderboard: [] };
+    }
+}
+
+// Atualizar banner do líder
+function updateLeaderBanner(leader) {
+    if (leader) {
+        document.getElementById('leader-info').innerHTML = 
+            `<strong>${leader.name}</strong> - ${leader.score} pontos (${leader.phaseScores.join('/')})`;
+    }
+}
+
+// Mostrar placar completo
+function showLeaderboard() {
+    const modal = document.getElementById('leaderboard-modal');
+    modal.style.display = 'block';
+    loadFullLeaderboard();
+}
+
+// Carregar placar completo
+async function loadFullLeaderboard() {
+    try {
+        const data = await loadLeaderboard();
+        const leaderboardBody = document.getElementById('leaderboard-body');
+        
+        if (data.leaderboard.length === 0) {
+            leaderboardBody.innerHTML = '<tr><td colspan="4" class="text-center">Nenhum participante ainda</td></tr>';
+            return;
+        }
+        
+        leaderboardBody.innerHTML = data.leaderboard.map((player, index) => `
+            <tr class="${index < 3 ? 'top-player' : ''}">
+                <td>${index + 1}</td>
+                <td>${player.name}</td>
+                <td>${player.score}</td>
+                <td>${player.phaseScores.join('/')}</td>
+            </tr>
+        `).join('');
+    } catch (error) {
+        console.error('Erro ao carregar placar:', error);
+    }
+}
+
+// Fechar modal do placar
+function closeLeaderboard() {
+    document.getElementById('leaderboard-modal').style.display = 'none';
+}

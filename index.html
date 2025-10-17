@@ -107,6 +107,24 @@
         </div>
     </header>
 
+    <!-- Leaderboard Banner -->
+    <section class="leaderboard-banner">
+        <div class="container">
+            <div class="leaderboard-content">
+                <div class="leaderboard-icon">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <div class="leaderboard-text">
+                    <h3>🏆 Líder do Quiz de Segurança 🏆</h3>
+                    <p id="leader-info">Carregando ranking...</p>
+                </div>
+                <div class="leaderboard-action">
+                    <button class="btn btn-leaderboard" onclick="showLeaderboard()">Ver Placar Completo</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Alert Banner -->
     <section class="alert-banner">
         <div class="container">
@@ -371,6 +389,35 @@
     <button id="floating-back-btn" class="floating-back-btn" onclick="closeITO()" title="Voltar">
         <i class="fas fa-arrow-left"></i>
     </button>
+
+    <!-- Modal do Placar -->
+    <div id="leaderboard-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>🏆 Placar Global - Quiz de Segurança 🏆</h2>
+                <button class="modal-close" onclick="closeLeaderboard()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="leaderboard-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Posição</th>
+                                <th>Nome</th>
+                                <th>Pontos</th>
+                                <th>Fases</th>
+                            </tr>
+                        </thead>
+                        <tbody id="leaderboard-body">
+                            <tr>
+                                <td colspan="4" class="text-center">Carregando...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 
     </div> <!-- Fecha main-content -->
     <script src="script.js"></script>
