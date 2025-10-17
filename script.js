@@ -804,6 +804,11 @@ function closeITO() {
 // Função para selecionar resposta do quiz
 // Função para iniciar o quiz (sem pedir nome primeiro)
 function startQuiz() {
+    // Esconder tela inicial e mostrar quiz
+    document.getElementById('quiz-start').style.display = 'none';
+    document.getElementById('quiz-question').style.display = 'block';
+    document.getElementById('quiz-result').style.display = 'none';
+    
     // Inicializar quiz
     currentQuestion = 0;
     score = 0;
@@ -893,17 +898,15 @@ function showQuizResult() {
 
 // Função para reiniciar quiz
 function restartQuiz() {
+    // Voltar à tela inicial
+    document.getElementById('quiz-start').style.display = 'block';
+    document.getElementById('quiz-question').style.display = 'none';
+    document.getElementById('quiz-result').style.display = 'none';
+    
+    // Resetar variáveis
     currentQuestion = 0;
     score = 0;
     userAnswers = [];
-    
-    const questionDiv = document.getElementById('quiz-question');
-    const resultDiv = document.getElementById('quiz-result');
-    
-    questionDiv.style.display = 'block';
-    resultDiv.style.display = 'none';
-    
-    showQuestion();
 }
 
 // Função para salvar resultado no placar

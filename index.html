@@ -311,9 +311,21 @@
             <p class="section-subtitle">Responda algumas perguntas para verificar seu conhecimento sobre segurança da informação</p>
             
             <div class="quiz-container">
-                <div class="quiz-question" id="quiz-question">
+                <div class="quiz-start" id="quiz-start">
+                    <div class="quiz-welcome">
+                        <h3>🎮 Quiz de Segurança da Informação</h3>
+                        <p>Teste seus conhecimentos sobre as ITOs da empresa!</p>
+                        <p><strong>15 perguntas</strong> baseadas nas políticas de segurança</p>
+                        <button class="btn btn-primary btn-large" onclick="startQuiz()">
+                            <i class="fas fa-play"></i> Iniciar Quiz
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="quiz-question" id="quiz-question" style="display: none;">
                     <!-- Conteúdo será inserido dinamicamente pelo JavaScript -->
                 </div>
+                
                 <div class="quiz-result" id="quiz-result" style="display: none;">
                     <h3>Resultado do Quiz</h3>
                     <div class="quiz-score">

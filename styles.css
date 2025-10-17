@@ -994,6 +994,44 @@ body {
     color: #666;
 }
 
+/* Quiz Welcome Screen */
+.quiz-start {
+    text-align: center;
+    padding: 3rem 2rem;
+}
+
+.quiz-welcome {
+    background: white;
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.quiz-welcome h3 {
+    color: #667eea;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.quiz-welcome p {
+    color: #666;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.btn-large {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+.btn-large i {
+    margin-right: 10px;
+}
+
 /* Quiz com Fases */
 .quiz-header {
     text-align: center;
