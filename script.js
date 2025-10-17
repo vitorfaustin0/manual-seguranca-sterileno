@@ -938,10 +938,11 @@ function saveQuizResult(name, totalScore) {
             localStorage.setItem('quiz_leaderboard', JSON.stringify(leaderboard));
             
             // Atualizar banner do primeiro lugar
-            updateLeaderBanner();
+            updateLeaderBanner(leaderboard.leaderboard[0]);
             
             // Mostrar confirmação
-            alert(`✅ Resultado salvo no placar!\n\n${name}: ${totalScore}/${quizData.length} pontos\n\nPosição: ${leaderboard.leaderboard.findIndex(r => r.name === name && r.score === totalScore) + 1}º lugar`);
+            const position = leaderboard.leaderboard.findIndex(r => r.name === name && r.score === totalScore) + 1;
+            alert(`✅ Resultado salvo no placar!\n\n${name}: ${totalScore}/${quizData.length} pontos\n\nPosição: ${position}º lugar`);
             
         }).catch(error => {
             console.error('Erro ao carregar placar:', error);
@@ -959,6 +960,9 @@ function saveQuizResult(name, totalScore) {
                 localLeaderboard.leaderboard = localLeaderboard.leaderboard.slice(0, 10);
             }
             localStorage.setItem('quiz_leaderboard', JSON.stringify(localLeaderboard));
+            
+            // Atualizar banner com dados locais
+            updateLeaderBanner(localLeaderboard.leaderboard[0]);
             
             alert(`✅ Resultado salvo localmente!\n\n${name}: ${totalScore}/${quizData.length} pontos`);
         });
@@ -1102,11 +1106,16 @@ async function loadLeaderboard() {
 
 // Atualizar banner do líder
 function updateLeaderBanner(leader) {
-    if (leader) {
-        document.getElementById('leader-info').innerHTML = 
+    console.log('Atualizando banner do líder:', leader);
+    const leaderInfo = document.getElementById('leader-info');
+    
+    if (leader && leaderInfo) {
+        leaderInfo.innerHTML = 
             `<strong>${leader.name}</strong> - ${leader.score} pontos`;
-    } else {
-        document.getElementById('leader-info').textContent = 'Nenhum participante ainda';
+        console.log('Banner atualizado com:', leader.name, leader.score);
+    } else if (leaderInfo) {
+        leaderInfo.textContent = 'Nenhum participante ainda';
+        console.log('Banner atualizado: nenhum participante');
     }
 }
 
