@@ -683,6 +683,12 @@ function openITO(itoId) {
         
         // Armazenar referência para remover depois
         modal._backButtonHandler = handleBackButton;
+        
+        // Mostrar botão flutuante apenas em mobile
+        const floatingBtn = document.getElementById('floating-back-btn');
+        if (window.innerWidth <= 768) {
+            floatingBtn.style.display = 'flex';
+        }
     }
 }
 
@@ -698,6 +704,10 @@ function closeITO() {
         window.removeEventListener('popstate', modal._backButtonHandler);
         modal._backButtonHandler = null;
     }
+    
+    // Esconder botão flutuante
+    const floatingBtn = document.getElementById('floating-back-btn');
+    floatingBtn.style.display = 'none';
 }
 
 // Função para selecionar resposta do quiz

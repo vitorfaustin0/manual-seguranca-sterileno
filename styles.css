@@ -806,6 +806,56 @@ body {
     display: flex;
 }
 
+/* Botão voltar flutuante para mobile */
+.floating-back-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    z-index: 3000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+}
+
+.floating-back-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px rgba(0,0,0,0.4);
+}
+
+.floating-back-btn:active {
+    transform: scale(0.95);
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    50% {
+        box-shadow: 0 4px 20px rgba(102, 126, 234, 0.6);
+    }
+    100% {
+        box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+}
+
+/* Mostrar botão apenas em mobile */
+@media (max-width: 768px) {
+    .floating-back-btn {
+        display: flex;
+    }
+}
+
 .modal-content {
     background-color: white;
     margin: 5% auto;
