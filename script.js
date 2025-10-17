@@ -912,16 +912,60 @@ function restartQuiz() {
 // Função para salvar resultado no placar
 function saveQuizResult(name, totalScore) {
     try {
-        // Simular salvamento no placar
         console.log('Salvando resultado no placar:', { name, totalScore });
         
-        // Em uma implementação real, você faria uma requisição para uma API
-        // que atualizaria o arquivo leaderboard.json no GitHub
+        // Carregar placar atual
+        loadLeaderboard().then(leaderboard => {
+            // Adicionar novo resultado
+            const newResult = {
+                name: name,
+                score: totalScore,
+                timestamp: new Date().toISOString(),
+                time: Math.floor((Date.now() - startTime) / 1000) // tempo em segundos
+            };
+            
+            leaderboard.leaderboard.push(newResult);
+            
+            // Ordenar por pontuação (maior primeiro)
+            leaderboard.leaderboard.sort((a, b) => b.score - a.score);
+            
+            // Manter apenas os 10 melhores
+            if (leaderboard.leaderboard.length > 10) {
+                leaderboard.leaderboard = leaderboard.leaderboard.slice(0, 10);
+            }
+            
+            // Salvar no localStorage como backup
+            localStorage.setItem('quiz_leaderboard', JSON.stringify(leaderboard));
+            
+            // Atualizar banner do primeiro lugar
+            updateLeaderBanner();
+            
+            // Mostrar confirmação
+            alert(`✅ Resultado salvo no placar!\n\n${name}: ${totalScore}/${quizData.length} pontos\n\nPosição: ${leaderboard.leaderboard.findIndex(r => r.name === name && r.score === totalScore) + 1}º lugar`);
+            
+        }).catch(error => {
+            console.error('Erro ao carregar placar:', error);
+            // Fallback: salvar apenas no localStorage
+            const fallbackResult = {
+                name: name,
+                score: totalScore,
+                timestamp: new Date().toISOString()
+            };
+            
+            let localLeaderboard = JSON.parse(localStorage.getItem('quiz_leaderboard') || '{"leaderboard":[]}');
+            localLeaderboard.leaderboard.push(fallbackResult);
+            localLeaderboard.leaderboard.sort((a, b) => b.score - a.score);
+            if (localLeaderboard.leaderboard.length > 10) {
+                localLeaderboard.leaderboard = localLeaderboard.leaderboard.slice(0, 10);
+            }
+            localStorage.setItem('quiz_leaderboard', JSON.stringify(localLeaderboard));
+            
+            alert(`✅ Resultado salvo localmente!\n\n${name}: ${totalScore}/${quizData.length} pontos`);
+        });
         
-        // Por enquanto, vamos simular o salvamento
-        alert(`✅ Resultado salvo no placar!\n\n${name}: ${totalScore}/${quizData.length} pontos`);
     } catch (error) {
         console.error('Erro ao salvar resultado:', error);
+        alert('Erro ao salvar resultado no placar. Tente novamente.');
     }
 }
 
@@ -1027,11 +1071,29 @@ const LEADERBOARD_URL = 'https://raw.githubusercontent.com/vitorfaustin0/manual-
 // Carregar placar ao inicializar
 async function loadLeaderboard() {
     try {
+        // Tentar carregar do GitHub primeiro
         const response = await fetch(LEADERBOARD_URL);
-        const data = await response.json();
-        updateLeaderBanner(data.leaderboard[0]);
-        return data;
+        if (response.ok) {
+            const data = await response.json();
+            // Salvar no localStorage como backup
+            localStorage.setItem('quiz_leaderboard', JSON.stringify(data));
+            updateLeaderBanner(data.leaderboard[0]);
+            return data;
+        } else {
+            throw new Error('Erro ao carregar do GitHub');
+        }
     } catch (error) {
+        console.error('Erro ao carregar placar do GitHub:', error);
+        
+        // Fallback: carregar do localStorage
+        const localData = localStorage.getItem('quiz_leaderboard');
+        if (localData) {
+            const data = JSON.parse(localData);
+            updateLeaderBanner(data.leaderboard[0]);
+            return data;
+        }
+        
+        // Se não houver dados locais, retornar estrutura vazia
         console.log('Placar não disponível ainda');
         document.getElementById('leader-info').textContent = 'Nenhum participante ainda';
         return { leaderboard: [] };
@@ -1042,7 +1104,9 @@ async function loadLeaderboard() {
 function updateLeaderBanner(leader) {
     if (leader) {
         document.getElementById('leader-info').innerHTML = 
-            `<strong>${leader.name}</strong> - ${leader.score} pontos (${leader.phaseScores.join('/')})`;
+            `<strong>${leader.name}</strong> - ${leader.score} pontos`;
+    } else {
+        document.getElementById('leader-info').textContent = 'Nenhum participante ainda';
     }
 }
 
