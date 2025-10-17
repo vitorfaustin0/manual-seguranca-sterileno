@@ -1028,6 +1028,17 @@ body {
     margin: 0 0.5rem;
 }
 
+.quiz-actions .btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: #ccc;
+}
+
+.quiz-actions .btn:not(:disabled) {
+    opacity: 1;
+    cursor: pointer;
+}
+
 /* Resultado da Fase */
 .phase-result {
     text-align: center;

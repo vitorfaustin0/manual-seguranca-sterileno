@@ -896,13 +896,24 @@ function selectAnswer(answer) {
     userAnswers[currentQuestion] = answer;
     
     // Habilitar botão próximo
-    document.getElementById('next-btn').disabled = false;
+    const nextBtn = document.getElementById('next-btn');
+    if (nextBtn) {
+        nextBtn.disabled = false;
+        nextBtn.style.opacity = '1';
+        nextBtn.style.cursor = 'pointer';
+    }
 }
 
 // Função para próxima pergunta
 function nextQuestion() {
     const phaseKey = `phase${currentPhase}`;
     const phase = quizPhases[phaseKey];
+    
+    if (!phase || !phase.questions[currentQuestion]) {
+        console.error('Erro: Fase ou pergunta não encontrada');
+        return;
+    }
+    
     const question = phase.questions[currentQuestion];
     
     // Verificar resposta
@@ -1045,6 +1056,17 @@ function showFinalResult(name, totalScore, phaseScores, time) {
 // Função para mostrar resultado do quiz (compatibilidade)
 function showQuizResult() {
     showFinalResult(userName, score, phaseScores, Math.floor((Date.now() - startTime) / 1000));
+}
+
+// Função para iniciar quiz automaticamente
+function startQuizAutomatically() {
+    // Verificar se já existe um quiz em andamento
+    if (currentQuestion > 0 || currentPhase > 1) {
+        return; // Já em andamento
+    }
+    
+    // Iniciar novo quiz
+    startQuiz();
 }
 
 // Função para mostrar pergunta do quiz
