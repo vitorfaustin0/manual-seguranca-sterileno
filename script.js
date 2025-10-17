@@ -615,39 +615,114 @@ const itosData = {
     }
 };
 
-// Dados do quiz
-const quizData = [
-    {
-        question: "Qual é a frequência recomendada para backup dos arquivos importantes?",
-        options: ["A) Semanalmente", "B) Diariamente", "C) Mensalmente", "D) Anualmente"],
-        correct: "b",
-        explanation: "O backup é feito diariamente para garantir que os arquivos estejam sempre atualizados e seguros."
+// Sistema de Quiz com Fases
+const quizPhases = {
+    phase1: {
+        title: "Fase 1 - Conceitos Básicos",
+        questions: [
+            {
+                question: "Qual é a frequência recomendada para backup dos arquivos importantes?",
+                options: ["A) Semanalmente", "B) Diariamente", "C) Mensalmente", "D) Anualmente"],
+                correct: "b",
+                explanation: "O backup é feito diariamente para garantir que os arquivos estejam sempre atualizados e seguros."
+            },
+            {
+                question: "O que você deve fazer com documentos sensíveis quando não estiver usando?",
+                options: ["A) Deixar sobre a mesa", "B) Guardar em gaveta trancada", "C) Colocar na prateleira", "D) Deixar no computador"],
+                correct: "b",
+                explanation: "Documentos sensíveis devem ser guardados em gavetas trancadas para proteger as informações."
+            },
+            {
+                question: "Qual nível de classificação permite acesso a qualquer pessoa?",
+                options: ["A) Confidencial", "B) Interna", "C) Pública", "D) Restrita"],
+                correct: "c",
+                explanation: "Informações públicas podem ser acessadas por qualquer pessoa, incluindo o público em geral."
+            },
+            {
+                question: "O que você NÃO deve fazer com suas senhas?",
+                options: ["A) Memorizá-las", "B) Escrevê-las em papéis", "C) Usá-las regularmente", "D) Alterá-las periodicamente"],
+                correct: "b",
+                explanation: "Nunca escreva senhas em papéis ou lembretes, pois isso compromete a segurança."
+            },
+            {
+                question: "Para que serve o treinamento em segurança da informação?",
+                options: ["A) Apenas para funcionários novos", "B) Para ensinar como proteger as informações", "C) Só para a área de TI", "D) Apenas uma vez por ano"],
+                correct: "b",
+                explanation: "O treinamento ensina todos os funcionários sobre como proteger as informações da empresa de forma adequada."
+            }
+        ]
     },
-    {
-        question: "O que você deve fazer com documentos sensíveis quando não estiver usando?",
-        options: ["A) Deixar sobre a mesa", "B) Guardar em gaveta trancada", "C) Colocar na prateleira", "D) Deixar no computador"],
-        correct: "b",
-        explanation: "Documentos sensíveis devem ser guardados em gavetas trancadas para proteger as informações."
+    phase2: {
+        title: "Fase 2 - Práticas Intermediárias",
+        questions: [
+            {
+                question: "Como classificar uma informação confidencial?",
+                options: ["A) Qualquer informação da empresa", "B) Informações que podem causar danos se divulgadas", "C) Apenas documentos com carimbo de confidencial", "D) Informações que todos podem ver"],
+                correct: "b",
+                explanation: "Informações confidenciais são aquelas que podem causar danos à empresa se divulgadas indevidamente."
+            },
+            {
+                question: "Qual é a política correta para uso do email corporativo?",
+                options: ["A) Usar para assuntos pessoais", "B) Apenas para comunicação interna", "C) Usar apenas para comunicação oficial da empresa", "D) Compartilhar com qualquer pessoa"],
+                correct: "c",
+                explanation: "Email corporativo deve ser usado apenas para comunicação oficial da empresa."
+            },
+            {
+                question: "O que fazer ao encontrar um documento confidencial na impressora?",
+                options: ["A) Deixar para o dono pegar", "B) Jogar no lixo", "C) Entregar ao responsável ou destruir adequadamente", "D) Levar para casa"],
+                correct: "c",
+                explanation: "Documentos confidenciais devem ser entregues ao responsável ou destruídos adequadamente."
+            },
+            {
+                question: "Qual é a prática correta para navegação na internet?",
+                options: ["A) Acessar qualquer site", "B) Usar apenas sites aprovados pela empresa", "C) Baixar programas livremente", "D) Compartilhar senhas de acesso"],
+                correct: "b",
+                explanation: "Deve-se usar apenas sites aprovados pela empresa para navegação segura."
+            },
+            {
+                question: "Como proteger informações em reuniões?",
+                options: ["A) Falar alto para todos ouvirem", "B) Discutir em locais públicos", "C) Garantir que apenas pessoas autorizadas estejam presentes", "D) Gravar todas as conversas"],
+                correct: "c",
+                explanation: "Reuniões com informações sensíveis devem ter apenas pessoas autorizadas presentes."
+            }
+        ]
     },
-    {
-        question: "Qual nível de classificação permite acesso a qualquer pessoa?",
-        options: ["A) Confidencial", "B) Interna", "C) Pública", "D) Restrita"],
-        correct: "c",
-        explanation: "Informações públicas podem ser acessadas por qualquer pessoa, incluindo o público em geral."
-    },
-    {
-        question: "O que você NÃO deve fazer com suas senhas?",
-        options: ["A) Memorizá-las", "B) Escrevê-las em papéis", "C) Usá-las regularmente", "D) Alterá-las periodicamente"],
-        correct: "b",
-        explanation: "Nunca escreva senhas em papéis ou lembretes, pois isso compromete a segurança."
-    },
-    {
-        question: "Para que serve o treinamento em segurança da informação?",
-        options: ["A) Apenas para funcionários novos", "B) Para ensinar como proteger as informações", "C) Só para a área de TI", "D) Apenas uma vez por ano"],
-        correct: "b",
-        explanation: "O treinamento ensina todos os funcionários sobre como proteger as informações da empresa de forma adequada."
+    phase3: {
+        title: "Fase 3 - Práticas Avançadas",
+        questions: [
+            {
+                question: "Qual é a importância da conscientização em segurança?",
+                options: ["A) Apenas para cumprir normas", "B) Reduzir riscos de segurança através do conhecimento", "C) Aumentar custos da empresa", "D) Complicar o trabalho dos funcionários"],
+                correct: "b",
+                explanation: "A conscientização reduz riscos de segurança através do conhecimento adequado dos funcionários."
+            },
+            {
+                question: "Como proceder ao detectar uma violação de segurança?",
+                options: ["A) Esconder o problema", "B) Tentar resolver sozinho", "C) Reportar imediatamente à TI", "D) Ignorar o problema"],
+                correct: "c",
+                explanation: "Violações de segurança devem ser reportadas imediatamente à equipe de TI."
+            },
+            {
+                question: "Qual é a forma correta de abrir um chamado de TI?",
+                options: ["A) Ligar diretamente para o técnico", "B) Enviar email para helpdesk@sterileno.com.br", "C) Falar com qualquer pessoa da TI", "D) Esperar o problema se resolver"],
+                correct: "b",
+                explanation: "Chamados devem ser abertos enviando email para helpdesk@sterileno.com.br."
+            },
+            {
+                question: "Como garantir a segurança da rede corporativa?",
+                options: ["A) Usar redes públicas", "B) Conectar dispositivos pessoais livremente", "C) Seguir as políticas de rede da empresa", "D) Compartilhar credenciais de acesso"],
+                correct: "c",
+                explanation: "A segurança da rede corporativa depende do seguimento das políticas estabelecidas pela empresa."
+            },
+            {
+                question: "Qual é o objetivo final das políticas de segurança?",
+                options: ["A) Complicar o trabalho", "B) Proteger as informações e garantir a continuidade dos negócios", "C) Aumentar custos", "D) Reduzir produtividade"],
+                correct: "b",
+                explanation: "As políticas de segurança visam proteger as informações e garantir a continuidade dos negócios da empresa."
+            }
+        ]
     }
-];
+};
 
 // Variáveis globais
 let currentQuestion = 0;
