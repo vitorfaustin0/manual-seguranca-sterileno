@@ -1022,21 +1022,38 @@ body {
 .quiz-actions {
     text-align: center;
     margin-top: 2rem;
+    padding: 1rem;
 }
 
 .quiz-actions .btn {
     margin: 0 0.5rem;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    border: none;
+    transition: all 0.3s ease;
+    min-width: 120px;
 }
 
 .quiz-actions .btn:disabled {
     opacity: 0.5;
     cursor: not-allowed;
     background: #ccc;
+    color: #666;
 }
 
 .quiz-actions .btn:not(:disabled) {
     opacity: 1;
     cursor: pointer;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.quiz-actions .btn:not(:disabled):hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
 }
 
 /* Resultado da Fase */

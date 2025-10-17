@@ -881,7 +881,7 @@ function updateQuizInterface(phase) {
         
         <div class="quiz-actions">
             <button class="btn btn-primary" onclick="nextQuestion()" id="next-btn" disabled>
-                ${currentQuestion === phase.questions.length - 1 ? 'Finalizar Fase' : 'Próxima Pergunta'}
+                ${currentQuestion === phase.questions.length - 1 ? 'Finalizar Fase' : 'Avançar'}
             </button>
         </div>
     `;
@@ -901,7 +901,13 @@ function selectAnswer(answer) {
         nextBtn.disabled = false;
         nextBtn.style.opacity = '1';
         nextBtn.style.cursor = 'pointer';
+        nextBtn.style.background = 'linear-gradient(135deg, #667eea, #764ba2)';
+        nextBtn.style.color = 'white';
+        nextBtn.style.boxShadow = '0 4px 15px rgba(102, 126, 234, 0.3)';
     }
+    
+    console.log('Resposta selecionada:', answer);
+    console.log('Botão habilitado:', nextBtn ? 'Sim' : 'Não');
 }
 
 // Função para próxima pergunta
