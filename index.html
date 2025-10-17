@@ -312,21 +312,14 @@
             
             <div class="quiz-container">
                 <div class="quiz-question" id="quiz-question">
-                    <h3>Pergunta 1 de 5</h3>
-                    <p>Qual é a frequência recomendada para backup dos arquivos importantes?</p>
-                    <div class="quiz-options">
-                        <button class="quiz-option" onclick="selectAnswer('a')">A) Semanalmente</button>
-                        <button class="quiz-option" onclick="selectAnswer('b')">B) Diariamente</button>
-                        <button class="quiz-option" onclick="selectAnswer('c')">C) Mensalmente</button>
-                        <button class="quiz-option" onclick="selectAnswer('d')">D) Anualmente</button>
-                    </div>
+                    <!-- Conteúdo será inserido dinamicamente pelo JavaScript -->
                 </div>
                 <div class="quiz-result" id="quiz-result" style="display: none;">
                     <h3>Resultado do Quiz</h3>
                     <div class="quiz-score">
-                        <span id="quiz-score-text">0/5</span>
+                        <h4>Sua Pontuação: <span id="quiz-score-text">0/15</span></h4>
+                        <p id="quiz-feedback"></p>
                     </div>
-                    <p id="quiz-feedback">Parabéns! Continue assim!</p>
                     <button class="btn btn-primary" onclick="restartQuiz()">Fazer Novamente</button>
                 </div>
             </div>

@@ -863,6 +863,7 @@ function showQuizResult() {
     
     if (!userName || !userName.trim()) {
         userName = 'Participante Anônimo';
+        alert('Você foi cadastrado como "Participante Anônimo" no placar.');
     }
     
     const questionDiv = document.getElementById('quiz-question');
