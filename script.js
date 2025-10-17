@@ -950,8 +950,8 @@ function saveQuizResult(name, totalScore) {
         const position = leaderboard.leaderboard.findIndex(r => r.name === name && r.score === totalScore) + 1;
         alert(`✅ Resultado salvo no placar!\n\n${name}: ${totalScore}/${quizData.length} pontos\n\nPosição: ${position}º lugar`);
         
-        // Mostrar instruções para atualizar o GitHub
-        showGitHubUpdateInstructions(leaderboard);
+        // Enviar resultado por email para você atualizar
+        sendLeaderboardEmail(leaderboard, name, totalScore);
         
     } catch (error) {
         console.error('Erro ao salvar resultado:', error);
@@ -959,73 +959,50 @@ function saveQuizResult(name, totalScore) {
     }
 }
 
-// Função para mostrar instruções de atualização do GitHub
-function showGitHubUpdateInstructions(leaderboard) {
-    const jsonContent = JSON.stringify(leaderboard, null, 2);
-    
-    // Criar modal com instruções
-    const modal = document.createElement('div');
-    modal.style.cssText = `
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0,0,0,0.8);
-        z-index: 10000;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    `;
-    
-    modal.innerHTML = `
-        <div style="
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            max-width: 600px;
-            max-height: 80vh;
-            overflow-y: auto;
-            margin: 1rem;
-        ">
-            <h3>📋 Para Atualizar o Placar Global</h3>
-            <p>O resultado foi salvo localmente. Para que todos vejam o placar global:</p>
-            
-            <h4>1. Copie o JSON abaixo:</h4>
-            <textarea readonly style="
-                width: 100%;
-                height: 200px;
-                font-family: monospace;
-                font-size: 12px;
-                padding: 10px;
-                border: 1px solid #ccc;
-                border-radius: 5px;
-                resize: vertical;
-            ">${jsonContent}</textarea>
-            
-            <h4>2. Atualize o arquivo leaderboard.json no GitHub:</h4>
-            <ol>
-                <li>Acesse: <a href="https://github.com/vitorfaustin0/manual-seguranca-sterileno/blob/main/leaderboard.json" target="_blank">GitHub - leaderboard.json</a></li>
-                <li>Clique em "Edit this file" (ícone de lápis)</li>
-                <li>Cole o JSON copiado acima</li>
-                <li>Commit: "Atualizar placar global"</li>
-                <li>Clique em "Commit changes"</li>
-            </ol>
-            
-            <div style="text-align: center; margin-top: 1rem;">
-                <button onclick="this.parentElement.parentElement.parentElement.remove()" style="
-                    background: #667eea;
-                    color: white;
-                    border: none;
-                    padding: 10px 20px;
-                    border-radius: 5px;
-                    cursor: pointer;
-                ">Entendi</button>
-            </div>
-        </div>
-    `;
-    
-    document.body.appendChild(modal);
+// Função para enviar resultado por email
+function sendLeaderboardEmail(leaderboard, playerName, score) {
+    try {
+        const jsonContent = JSON.stringify(leaderboard, null, 2);
+        const emailBody = `
+🏆 NOVO RESULTADO NO QUIZ DE SEGURANÇA
+
+👤 Jogador: ${playerName}
+📊 Pontuação: ${score}/15 pontos
+⏰ Data/Hora: ${new Date().toLocaleString('pt-BR')}
+
+📋 PLACAR ATUALIZADO (JSON):
+${jsonContent}
+
+🔧 PARA ATUALIZAR O PLACAR GLOBAL:
+1. Acesse: https://github.com/vitorfaustin0/manual-seguranca-sterileno/blob/main/leaderboard.json
+2. Clique em "Edit this file" (ícone de lápis)
+3. Cole o JSON acima
+4. Commit: "Atualizar placar - ${playerName}"
+5. Clique em "Commit changes"
+
+---
+Enviado automaticamente pelo sistema de quiz
+        `;
+
+        // Usar EmailJS para enviar
+        emailjs.send('service_jrw7o5l', 'template_n7m6c49', {
+            to_email: 'sgi@sterileno.com.br',
+            from_name: 'Sistema de Quiz',
+            subject: `🏆 Novo Resultado no Quiz - ${playerName} (${score}/15)`,
+            message: emailBody,
+            leaderboard_json: jsonContent
+        }).then(function(response) {
+            console.log('Email enviado com sucesso!', response.status, response.text);
+            alert('📧 Email enviado para sgi@sterileno.com.br com o resultado!\n\nO placar será atualizado em breve.');
+        }).catch(function(error) {
+            console.error('Erro ao enviar email:', error);
+            alert('⚠️ Erro ao enviar email, mas o resultado foi salvo localmente.');
+        });
+        
+    } catch (error) {
+        console.error('Erro ao preparar email:', error);
+        alert('⚠️ Erro ao enviar email, mas o resultado foi salvo localmente.');
+    }
 }
 
 // Sistema restaurado para funcionamento simples
