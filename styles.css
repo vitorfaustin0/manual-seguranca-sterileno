@@ -801,6 +801,11 @@ body {
     backdrop-filter: blur(5px);
 }
 
+/* Prevenir fechamento com botão voltar do mobile */
+.modal.active {
+    display: flex;
+}
+
 .modal-content {
     background-color: white;
     margin: 5% auto;

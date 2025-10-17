@@ -122,12 +122,22 @@ function processAccessRequest(event) {
         .then(function(response) {
             console.log('Email enviado com sucesso!', response.status, response.text);
             
-            // Mostrar sucesso
-            alert(`✅ Solicitação processada com sucesso!\n\n📧 Email enviado automaticamente para: ${formData.email}\n\n🔐 Credenciais geradas:\nUsuário: ${formData.credentials.username}\nSenha: ${formData.credentials.password}\n\n⚠️ IMPORTANTE: Estas credenciais são temporárias e expiram em 24 horas!`);
+            // Mostrar sucesso e fazer login automático
+            alert(`✅ Solicitação processada com sucesso!\n\n📧 Email enviado automaticamente para: ${formData.email}\n\n🔐 Credenciais geradas:\nUsuário: ${formData.credentials.username}\nSenha: ${formData.credentials.password}\n\n🚀 Fazendo login automático...`);
             
-            // Limpar formulário
-            document.getElementById('access-request-form').reset();
-            hideRequestForm();
+            // Fazer login automático
+            setTimeout(() => {
+                // Preencher campos de login
+                document.getElementById('username-input').value = formData.credentials.username;
+                document.getElementById('password-input').value = formData.credentials.password;
+                
+                // Fazer login automaticamente
+                checkLogin();
+                
+                // Limpar formulário
+                document.getElementById('access-request-form').reset();
+                hideRequestForm();
+            }, 2000);
         })
         .catch(function(error) {
             console.error('Erro ao enviar email:', error);
@@ -654,7 +664,17 @@ function openITO(itoId) {
         modalTitle.textContent = itosData[itoId].title;
         modalBody.innerHTML = itosData[itoId].content;
         modal.style.display = 'block';
+        modal.classList.add('active');
         document.body.style.overflow = 'hidden';
+        
+        // Prevenir fechamento com botão voltar do mobile
+        window.history.pushState(null, null, window.location.href);
+        window.addEventListener('popstate', function(event) {
+            if (modal.style.display === 'block') {
+                event.preventDefault();
+                window.history.pushState(null, null, window.location.href);
+            }
+        });
     }
 }
 
@@ -662,7 +682,11 @@ function openITO(itoId) {
 function closeITO() {
     const modal = document.getElementById('ito-modal');
     modal.style.display = 'none';
+    modal.classList.remove('active');
     document.body.style.overflow = 'auto';
+    
+    // Remover listener do botão voltar
+    window.removeEventListener('popstate', arguments.callee);
 }
 
 // Função para selecionar resposta do quiz
