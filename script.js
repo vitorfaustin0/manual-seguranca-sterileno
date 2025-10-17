@@ -679,21 +679,28 @@ function openITO(itoId) {
             }
         }
         
-        // Função para lidar com gestos de swipe
+        // Função para lidar com gestos de swipe (apenas na área do modal)
         function handleSwipeGesture(event) {
             if (modal.style.display === 'block') {
-                event.preventDefault();
-                event.stopPropagation();
-                return false;
+                // Apenas prevenir se for um gesto de swipe da esquerda para direita
+                if (event.type === 'touchstart') {
+                    modal._startX = event.touches[0].clientX;
+                } else if (event.type === 'touchmove') {
+                    if (modal._startX && event.touches[0].clientX > modal._startX + 50) {
+                        // Swipe da esquerda para direita - prevenir
+                        event.preventDefault();
+                        event.stopPropagation();
+                        return false;
+                    }
+                }
             }
         }
         
-        // Adicionar listeners
+        // Adicionar listeners (apenas os necessários)
         window.addEventListener('popstate', handleBackButton);
         window.addEventListener('beforeunload', handleBackButton);
-        document.addEventListener('touchstart', handleSwipeGesture, { passive: false });
+        document.addEventListener('touchstart', handleSwipeGesture, { passive: true });
         document.addEventListener('touchmove', handleSwipeGesture, { passive: false });
-        document.addEventListener('touchend', handleSwipeGesture, { passive: false });
         
         // Armazenar referências para remover depois
         modal._backButtonHandler = handleBackButton;
@@ -724,7 +731,6 @@ function closeITO() {
     if (modal._swipeHandler) {
         document.removeEventListener('touchstart', modal._swipeHandler);
         document.removeEventListener('touchmove', modal._swipeHandler);
-        document.removeEventListener('touchend', modal._swipeHandler);
         modal._swipeHandler = null;
     }
     
