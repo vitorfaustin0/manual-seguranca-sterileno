@@ -914,63 +914,56 @@ function saveQuizResult(name, totalScore) {
     try {
         console.log('Salvando resultado no placar:', { name, totalScore });
         
-        // Carregar placar atual
-        loadLeaderboard().then(leaderboard => {
-            // Adicionar novo resultado
-            const newResult = {
-                name: name,
-                score: totalScore,
-                timestamp: new Date().toISOString(),
-                time: Math.floor((Date.now() - startTime) / 1000) // tempo em segundos
-            };
-            
-            leaderboard.leaderboard.push(newResult);
-            
-            // Ordenar por pontuação (maior primeiro)
-            leaderboard.leaderboard.sort((a, b) => b.score - a.score);
-            
-            // Manter apenas os 10 melhores
-            if (leaderboard.leaderboard.length > 10) {
-                leaderboard.leaderboard = leaderboard.leaderboard.slice(0, 10);
-            }
-            
-            // Salvar no localStorage como backup
-            localStorage.setItem('quiz_leaderboard', JSON.stringify(leaderboard));
-            
-            // Atualizar banner do primeiro lugar
-            updateLeaderBanner(leaderboard.leaderboard[0]);
-            
-            // Mostrar confirmação
-            const position = leaderboard.leaderboard.findIndex(r => r.name === name && r.score === totalScore) + 1;
-            alert(`✅ Resultado salvo no placar!\n\n${name}: ${totalScore}/${quizData.length} pontos\n\nPosição: ${position}º lugar`);
-            
-        }).catch(error => {
-            console.error('Erro ao carregar placar:', error);
-            // Fallback: salvar apenas no localStorage
-            const fallbackResult = {
-                name: name,
-                score: totalScore,
-                timestamp: new Date().toISOString()
-            };
-            
-            let localLeaderboard = JSON.parse(localStorage.getItem('quiz_leaderboard') || '{"leaderboard":[]}');
-            localLeaderboard.leaderboard.push(fallbackResult);
-            localLeaderboard.leaderboard.sort((a, b) => b.score - a.score);
-            if (localLeaderboard.leaderboard.length > 10) {
-                localLeaderboard.leaderboard = localLeaderboard.leaderboard.slice(0, 10);
-            }
-            localStorage.setItem('quiz_leaderboard', JSON.stringify(localLeaderboard));
-            
-            // Atualizar banner com dados locais
-            updateLeaderBanner(localLeaderboard.leaderboard[0]);
-            
-            alert(`✅ Resultado salvo localmente!\n\n${name}: ${totalScore}/${quizData.length} pontos`);
-        });
+        // Criar novo resultado
+        const newResult = {
+            name: name,
+            score: totalScore,
+            timestamp: new Date().toISOString(),
+            time: Math.floor((Date.now() - startTime) / 1000) // tempo em segundos
+        };
+        
+        // Carregar placar do localStorage
+        let leaderboard = JSON.parse(localStorage.getItem('quiz_leaderboard') || '{"leaderboard":[]}');
+        
+        // Adicionar novo resultado
+        leaderboard.leaderboard.push(newResult);
+        
+        // Ordenar por pontuação (maior primeiro)
+        leaderboard.leaderboard.sort((a, b) => b.score - a.score);
+        
+        // Manter apenas os 10 melhores
+        if (leaderboard.leaderboard.length > 10) {
+            leaderboard.leaderboard = leaderboard.leaderboard.slice(0, 10);
+        }
+        
+        // Atualizar metadados
+        leaderboard.lastUpdated = new Date().toISOString();
+        leaderboard.totalParticipants = leaderboard.leaderboard.length;
+        
+        // Salvar no localStorage
+        localStorage.setItem('quiz_leaderboard', JSON.stringify(leaderboard));
+        
+        // Atualizar banner do primeiro lugar
+        updateLeaderBanner(leaderboard.leaderboard[0]);
+        
+        // Mostrar confirmação
+        const position = leaderboard.leaderboard.findIndex(r => r.name === name && r.score === totalScore) + 1;
+        alert(`✅ Resultado salvo no placar!\n\n${name}: ${totalScore}/${quizData.length} pontos\n\nPosição: ${position}º lugar`);
+        
+        // Tentar salvar no GitHub (opcional)
+        saveToGitHub(leaderboard);
         
     } catch (error) {
         console.error('Erro ao salvar resultado:', error);
         alert('Erro ao salvar resultado no placar. Tente novamente.');
     }
+}
+
+// Função para tentar salvar no GitHub (opcional)
+function saveToGitHub(leaderboard) {
+    // Esta função seria implementada com uma API que atualiza o GitHub
+    // Por enquanto, apenas logamos que seria salvo
+    console.log('Dados que seriam salvos no GitHub:', leaderboard);
 }
 
 // Sistema restaurado para funcionamento simples
@@ -1078,7 +1071,15 @@ const LEADERBOARD_URL = 'https://raw.githubusercontent.com/vitorfaustin0/manual-
 // Carregar placar ao inicializar
 async function loadLeaderboard() {
     try {
-        // Tentar carregar do GitHub primeiro
+        // Priorizar localStorage (dados mais recentes)
+        const localData = localStorage.getItem('quiz_leaderboard');
+        if (localData) {
+            const data = JSON.parse(localData);
+            updateLeaderBanner(data.leaderboard[0]);
+            return data;
+        }
+        
+        // Fallback: tentar carregar do GitHub
         const response = await fetch(LEADERBOARD_URL);
         if (response.ok) {
             const data = await response.json();
@@ -1090,17 +1091,9 @@ async function loadLeaderboard() {
             throw new Error('Erro ao carregar do GitHub');
         }
     } catch (error) {
-        console.error('Erro ao carregar placar do GitHub:', error);
+        console.error('Erro ao carregar placar:', error);
         
-        // Fallback: carregar do localStorage
-        const localData = localStorage.getItem('quiz_leaderboard');
-        if (localData) {
-            const data = JSON.parse(localData);
-            updateLeaderBanner(data.leaderboard[0]);
-            return data;
-        }
-        
-        // Se não houver dados locais, retornar estrutura vazia
+        // Se não houver dados, retornar estrutura vazia
         console.log('Placar não disponível ainda');
         document.getElementById('leader-info').textContent = 'Nenhum participante ainda';
         return { leaderboard: [] };

@@ -1,12 +1,5 @@
 {
-  "leaderboard": [
-    {
-      "name": "Exemplo Líder",
-      "score": 15,
-      "phaseScores": [5, 5, 5],
-      "timestamp": "2025-01-16T20:00:00Z"
-    }
-  ],
+  "leaderboard": [],
   "lastUpdated": "2025-01-16T20:00:00Z",
-  "totalParticipants": 1
+  "totalParticipants": 0
 }
