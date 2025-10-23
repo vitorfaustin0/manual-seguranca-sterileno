@@ -838,6 +838,30 @@ const quizData = [
         options: ["A) Complicar o trabalho", "B) Proteger as informações e garantir a continuidade dos negócios", "C) Aumentar custos", "D) Reduzir produtividade"],
         correct: "b",
         explanation: "As políticas de segurança visam proteger as informações e garantir a continuidade dos negócios da empresa."
+    },
+    {
+        question: "O que você deve fazer antes de usar um dispositivo USB na rede da empresa?",
+        options: ["A) Conectar diretamente", "B) Pedir autorização ao TI", "C) Usar qualquer USB pessoal", "D) Ignorar as regras"],
+        correct: "b",
+        explanation: "Dispositivos USB devem ser autorizados pelo TI antes do uso para evitar vírus e ameaças à rede."
+    },
+    {
+        question: "Como descartar equipamentos eletrônicos antigos da empresa?",
+        options: ["A) Jogar no lixo comum", "B) Vender para terceiros", "C) Entregar ao departamento de TI", "D) Levar para casa"],
+        correct: "c",
+        explanation: "Equipamentos eletrônicos devem ser entregues ao TI para descarte seguro e proteção de dados confidenciais."
+    },
+    {
+        question: "Segundo a LGPD, o que fazer com dados pessoais quando não precisar mais?",
+        options: ["A) Guardar indefinidamente", "B) Devolver ou destruir adequadamente", "C) Compartilhar com outros", "D) Ignorar a lei"],
+        correct: "b",
+        explanation: "A LGPD exige que dados pessoais sejam devolvidos ou destruídos adequadamente quando não forem mais necessários."
+    },
+    {
+        question: "Quem pode acessar o data center da empresa?",
+        options: ["A) Qualquer funcionário", "B) Apenas pessoas autorizadas", "C) Visitantes sem acompanhamento", "D) Funcionários de outras empresas"],
+        correct: "b",
+        explanation: "O data center tem acesso restrito apenas para pessoas autorizadas, pois contém sistemas críticos da empresa."
     }
 ];
 
