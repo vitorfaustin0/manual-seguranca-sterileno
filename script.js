@@ -612,6 +612,138 @@ const itosData = {
                 </ul>
             </div>
         `
+    },
+    'usb': {
+        title: 'Uso de Dispositivos USB e Armazenamento Removível',
+        content: `
+            <div class="ito-content">
+                <h3>🎯 Por que é importante?</h3>
+                <p>Dispositivos USB podem trazer vírus e ameaças para a rede da empresa. É importante usar com cuidado!</p>
+                
+                <h3>📋 Regras para uso de USB:</h3>
+                <ul>
+                    <li><strong>Autorização:</strong> Só use dispositivos USB autorizados pelo TI</li>
+                    <li><strong>Verificação:</strong> Sempre verifique se o dispositivo está limpo antes de usar</li>
+                    <li><strong>Uso pessoal:</strong> Não use seus próprios pen drives na rede da empresa</li>
+                </ul>
+                
+                <div class="highlight">
+                    <h4>💡 Dica Importante:</h4>
+                    <p>Se precisar transferir arquivos, use a rede interna ou solicite ajuda ao TI. É mais seguro!</p>
+                </div>
+                
+                <h3>⚠️ O que fazer:</h3>
+                <ul>
+                    <li>Peça autorização ao TI antes de usar qualquer dispositivo USB</li>
+                    <li>Não conecte dispositivos pessoais (celular, pen drive pessoal)</li>
+                    <li>Se encontrar um USB perdido, entregue ao TI</li>
+                </ul>
+                
+                <div class="warning">
+                    <h4>🚨 Atenção:</h4>
+                    <p>Dispositivos USB não autorizados podem conter vírus que podem danificar a rede da empresa!</p>
+                </div>
+            </div>
+        `
+    },
+    'descarte': {
+        title: 'Descarte Seguro de Unidades de Armazenamento e Mídias',
+        content: `
+            <div class="ito-content">
+                <h3>🎯 Por que é importante?</h3>
+                <p>Quando descartamos equipamentos antigos, precisamos garantir que nenhuma informação confidencial fique exposta.</p>
+                
+                <h3>📋 Como descartar corretamente:</h3>
+                <ul>
+                    <li><strong>Não jogue no lixo:</strong> Equipamentos eletrônicos não vão para o lixo comum</li>
+                    <li><strong>Entrega ao TI:</strong> Sempre entregue equipamentos antigos ao departamento de TI</li>
+                    <li><strong>Limpeza segura:</strong> O TI fará a limpeza segura dos dados antes do descarte</li>
+                </ul>
+                
+                <div class="highlight">
+                    <h4>💡 Dica Importante:</h4>
+                    <p>Mesmo que o equipamento não funcione mais, ele ainda pode conter informações importantes que precisam ser protegidas!</p>
+                </div>
+                
+                <h3>⚠️ O que fazer:</h3>
+                <ul>
+                    <li>Nunca jogue equipamentos eletrônicos no lixo</li>
+                    <li>Entregue ao TI qualquer equipamento que não for mais usar</li>
+                    <li>Não tente "consertar" ou "limpar" você mesmo</li>
+                </ul>
+                
+                <div class="warning">
+                    <h4>🚨 Atenção:</h4>
+                    <p>Equipamentos mal descartados podem expor informações confidenciais da empresa!</p>
+                </div>
+            </div>
+        `
+    },
+    'dados-pessoais': {
+        title: 'Devolução e Destruição de Informações Pessoais',
+        content: `
+            <div class="ito-content">
+                <h3>🎯 Por que é importante?</h3>
+                <p>A LGPD (Lei Geral de Proteção de Dados) exige que tratemos informações pessoais com muito cuidado e as destruamos quando não precisarmos mais.</p>
+                
+                <h3>📋 O que são dados pessoais:</h3>
+                <ul>
+                    <li><strong>Informações básicas:</strong> Nome, CPF, RG, endereço</li>
+                    <li><strong>Dados de contato:</strong> Telefone, email, WhatsApp</li>
+                    <li><strong>Informações profissionais:</strong> Cargo, salário, histórico</li>
+                </ul>
+                
+                <div class="highlight">
+                    <h4>💡 Dica Importante:</h4>
+                    <p>Quando não precisarmos mais de informações pessoais, devemos devolvê-las ou destruí-las de forma segura!</p>
+                </div>
+                
+                <h3>⚠️ O que fazer:</h3>
+                <ul>
+                    <li>Não guarde informações pessoais desnecessárias</li>
+                    <li>Quando terminar um projeto, devolva ou destrua os dados pessoais</li>
+                    <li>Em caso de dúvida, consulte o departamento de TI</li>
+                </ul>
+                
+                <div class="warning">
+                    <h4>🚨 Atenção:</h4>
+                    <p>Guardar dados pessoais sem necessidade pode gerar multas pesadas para a empresa!</p>
+                </div>
+            </div>
+        `
+    },
+    'data-center': {
+        title: 'Segurança Física do Data Center',
+        content: `
+            <div class="ito-content">
+                <h3>🎯 Por que é importante?</h3>
+                <p>O data center é o "coração" da empresa onde ficam todos os servidores e dados importantes. Precisa ser muito protegido!</p>
+                
+                <h3>📋 Regras de acesso:</h3>
+                <ul>
+                    <li><strong>Acesso restrito:</strong> Só pessoas autorizadas podem entrar</li>
+                    <li><strong>Identificação:</strong> Sempre use crachá e identifique-se</li>
+                    <li><strong>Acompanhamento:</strong> Nunca entre sozinho no data center</li>
+                </ul>
+                
+                <div class="highlight">
+                    <h4>💡 Dica Importante:</h4>
+                    <p>O data center tem sistemas de segurança como câmeras e alarmes. Qualquer movimento suspeito é detectado!</p>
+                </div>
+                
+                <h3>⚠️ O que fazer:</h3>
+                <ul>
+                    <li>Peça autorização antes de entrar no data center</li>
+                    <li>Sempre seja acompanhado por alguém do TI</li>
+                    <li>Não toque em equipamentos sem autorização</li>
+                </ul>
+                
+                <div class="warning">
+                    <h4>🚨 Atenção:</h4>
+                    <p>Qualquer problema no data center pode afetar toda a empresa! Por isso, o acesso é muito restrito.</p>
+                </div>
+            </div>
+        `
     }
 };
 

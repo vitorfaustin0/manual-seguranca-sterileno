@@ -1,0 +1,92 @@
+ INSTRUÇÃO DE OPERAÇÃO  ITO-270 
+Título:   
+ 
+DESCARTE SEGURO DE UNIDADES DE 
+ARMAZENAMENTO E MÍDIAS  Revisão:         B 
+Página:           1 de 2   
+Data de efetivação:  
+12/02/25  Departamento:           T.I 
+Elaborador  Revisor  Aprovador   
+Vitor Faustino  André Munerato  Carina Affonso  
+ 
+ 
+ 
+Este documento contém informações de uso exclusivo da STERILENO e não deve ser reproduzido sem autorização  
+ 1. OBJETIVO  
+O objetivo deste procedimento é garantir que as unidades de armazenamento sejam descartadas de 
+maneira segura, de acordo com as melhores práticas de segurança de dados e as regulamentações 
+ambientais. Isso visa proteger informações sensíveis e reduzir o impacto ambiental do descarte de 
+eletrônicos.  
+ 
+2. REFERÊNCIAS  
+• NBR ISO/IEC 27001 . 
+• NBR ISO/IEC 27002 . 
+• NBR ISO/IEC 27005 . 
+• ITO-259 Classificação da Informação . 
+ 
+3. ABRANGÊNCIA  
+Esta Política se aplica:  
+• a todos os usuários ( sócios, prepostos, empregados, estagiários, aprendizes e contratados ) que 
+utilizam as informações da ORGANIZAÇÃO;  
+• a todas as organizações que compõem o Grupo da ORGANIZAÇÃO . 
+ 
+4. RESPONSABILIDADES  
+A área responsável pela segurança da informação e de apoio ao usuário final são responsáveis pela 
+implementação e continuidade das normas de segurança, das instruções de operação e das normas e 
+legislação em geral . 
+ 
+5. AUTORIDADE  
+O superior imediato tem autoridade definida para assegurar o cumprimento dessa instrução.  
+ 
+6. DEFINIÇÕES  
+     N/A 
+ 
+7. EPI  
+N/A 
+ 
+8. DESCRIÇÃO DA ATIVIDADE  
+• A pessoa ou departamento que possui a unidade de armazenamento deve avaliar se a unidade não 
+é mais necessária. Eles devem determinar se todos os dados importantes foram copiados e se o 
+descarte é apropriado.  
+ 
+• O usuário da unidade de armazenamento é responsável por fazer um backup completo de todos os 
+dados críticos em um local seguro. Eles devem garantir que o backup esteja atualizado e acessível.  
+ 
+• Se a unidade estiver criptografada, o usuário deve ser responsável por descriptografá -la de acordo 
+com as instruções do software de criptografia , podendo solicitar ao T.I quando necessário.  
+ 
+• O responsável pelo descarte deve escolher o método apropriado para a eliminação segura dos 
+dados. Isso pode ser feito por meio de software de higienização confiável ou destruição física.  
+• O responsável pelo descarte, se desejar, pode realizar um teste de verificação para garantir que 
+nenhum dado seja recuperável após a eliminação.  
+ 
+• O responsável pelo descarte é responsável por descartar a unidade de acordo com as 
+regulamentações locais para resíduos eletrônicos. Isso pode envolver a entrega da unidade a 
+serviços de reciclagem eletrônica certificados ou pontos de reciclagem designados.  
+ INSTRUÇÃO DE OPERAÇÃO  ITO-270 
+Título:  
+DESCARTE SEGURO DE UNIDADES DE 
+ARMAZENAMENTO E MÍDIAS  Revisão:       B    
+Página:           2 de 2   
+ 
+ 
+   
+ 
+Este documento contém informações de uso exclusivo da STERILENO e não deve ser reproduzido sem autorização  
+  
+• Durante todo o processo, o usuário e o responsável pelo descarte devem garantir a segurança das 
+informações sensíveis e da unidade de armazenamento, evitando o acesso não autorizado.  
+ 
+• O responsável pelo descarte deve garantir que o descarte seja feito de acordo com todas as 
+regulamentações locais e ambientais aplicáveis.  
+ 
+ 
+ 
+ 
+ 
+9. REGISTRO DE ALTERAÇÕES  
+ 
+Revisão  Alteração  Data  Responsável  
+A Criação  25/01/23 Vitor Faustino  
+B Revisão periódica a cada 02 anos  12/02/25  Vitor Faustino  
+ 

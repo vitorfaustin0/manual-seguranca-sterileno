@@ -1,0 +1,160 @@
+ INSTRUÇÃO DE OPERAÇÃO  ITO-265 
+Título:   
+ 
+UTILIZAÇÃO DO AMBIENTE  
+INTERNET PELO USUÁRIO  Revisão:         B 
+Página:           1 de 3   
+Data de efetivação:  
+01/09/24  Departamento:           T.I 
+Elaborador  Revisor  Aprovador   
+Vitor Faustino  André  Munerato  Carla Garcia  
+ 
+ 
+ 
+Este documento contém informações de uso exclusivo da STERILENO e não deve ser reproduzido sem autorização  
+ 1. OBJETIVO  
+Descrever os  requisitos e as regras de segurança definidas para o uso do ambiente de Internet, Intranet 
+e Extranet da ORGANIZAÇÃO.  
+ 
+2. REFERÊNCIAS  
+• NBR ISO/IEC 27001  
+• NBR ISO/IEC 27002  
+• NBR ISO/IEC 27005  
+• FO-89 Check List Auditoria de TI  
+• FO-142 Solicitação de Acesso de Usuário  
+• FO-143 Solicitação Baixa de Usuário  
+• FO-302 Termo de responsabilidade para uso da informação  
+• ITO-77 Acesso m aster ao sistema Memphis  
+• ITO-96 Política de Uso Aceitável da Internet  
+• ITO-97 Segurança de sistemas de informação e redes  
+• ITO-260 Segurança e Proteção da Informação  
+• ITO-261 Uso de Correio Eletrônico  
+• ITO-265 Utilização do Ambiente Internet pelo Usuário  
+ 
+3. ABRANGÊNCIA  
+• Todos os usuários ( sócios, prepostos, empregados, estagiários, aprendizes e contratados ) que 
+utilizam as informações da ORGANIZAÇÃO;  
+• Todas as organizações que compõem o Grupo da ORGANIZAÇÃO . 
+ 
+4. RESPONSABILIDADES  
+A área responsável pela segurança da informação e de apoio ao usuário final são responsáveis pela 
+implementação e continuidade das normas de segurança, das instruções de operação e das normas e 
+legislação em geral . 
+ 
+5. AUTORIDADE  
+O superior imediato tem autoridade definida para assegurar o cumprimento das normas de segurança, 
+das instruções de operação e das normas e legislação em geral . 
+ 
+6. DEFINIÇÕES  
+• Internet : É o ambiente virtual onde diferentes computadores de várias partes do mundo se 
+comunicam através de protocolos padrões, permitindo a troca de informações e o compartilhamento 
+de conhecimento. Existem vários serviços disponibilizados na Internet, sendo o correio eletrônico e 
+o ambiente gráfico www (World Wide Web) os mais conhecidos.  
+• Intranet : E um ambiente semelhante ao da Internet, porém restrito ao ambiente de tecnologia da 
+ORGANIZAÇÃO . 
+• Extranet : É o ambiente com o mesmo conteúdo da Intranet, porém extensivo ao ambiente de rede 
+corporativa ORGANIZAÇÃO pela Internet. Esse ambiente está logicamente restrito aos usuários da 
+ORGANIZAÇÃO.  
+• Ambiente Web: É o conjunto dos ambientes Internet, Intranet, Extranet.  
+Site:  É o local virtual onde se encontram as informações relativas a um endereço do Ambiente  Web. No 
+mundo real é suportado por um ou vários equipamentos, que estão ligados a rede dentro do ambiente 
+considerado.  
+  
+7. EPI  
+N/A 
+ 
+ INSTRUÇÃO DE OPERAÇÃO  ITO-265 
+Título:  
+UTILIZAÇÃO DO AMBIENTE  
+INTERNET PELO USUÁRIO  Revisão:       B    
+Página:           2 de 3   
+ 
+ 
+   
+ 
+Este documento contém informações de uso exclusivo da STERILENO e não deve ser reproduzido sem autorização  
+ 8. DESCRIÇÃO DA ATIVIDADE  
+8.1. Como solicitar/cancelar o acesso do usuário  
+• O acesso da informação deve ser autorizado apenas para os usuários que necessitam dela para o 
+desempenho das suas atividades profissionais na ORGANIZAÇÃO . 
+• O acesso deve ser solicitado ao TI por meio dos documentos relativos à criação e revogação de 
+usuários (FO -142, FO -143). 
+ 
+8.2. Regras para utilização  
+• Esse acesso  do usuário deve ser utilizado apenas para o desenvolvimento e a operacionalização 
+do negócio da ORGANIZAÇÃO.  
+• O ambiente da Internet deve ser usado para o desempenho das atividades profissionais do usuário 
+para a ORGANIZAÇÃO.  
+• Sites que não contenham informações que não agreguem conhecimento profissional  para o negócio 
+não devem ser acessados.  
+• O usuário não deve alterar a configuração do navegador da sua máquina no que diz respeito aos 
+parâmetros de segurança. Havendo necessidade, o TI deve ser acionado para informar o 
+procedimento a ser seguido.  
+• Quando estiver acessando a Internet o usuário não deve acessar sites ou executar ações que 
+possam infringir direitos autorais, marcas, licenças de software ou patentes existentes.  
+• Apenas os softwares e suas versões homologadas para a função de navegadores no Ambiente 
+Web devem ser utilizados pelos usuários.  
+• Todos os arquivos recebidos a partir do ambiente da Internet para o ambiente do computador do 
+usuário devem ser analisados por produto antivírus homologado para a ORGANIZAÇÃO.  
+• Nenhum material com nível de sigilo “Confidencial” ou superior, pode ser disponibilizado fora das 
+áreas seguras da Intranet.  
+• Nenhum material ofensivo ou hostil pode ser disponibilizado nos sites da ORGANIZAÇÃO no 
+Ambiente Web.  
+• A utilização dos recursos de tecnologia com finalidade pessoal é permitida, desde que seja em um 
+nível mínimo e que não viole a Política de Segurança e Proteção da Informação , Lei nº 13.709/2018 
+- LGPD  (Lei Geral de Proteção de Dados  Pessoais ) e o C ompliance  da ORGANIZAÇÃO.  
+• A utilização das informações do ambiente de tecnologia ou do ambiente convencional pelos 
+usuários da ORGANIZAÇÃO deve estar de acordo com os documentos institucionais Política de 
+Segurança e Proteção da Informação, Lei nº 13.709/2018 - LGPD  (Lei Geral de Proteção de Dados  
+Pessoais ) e o Compliance da ORGANIZAÇÃO.  Todos os usuários devem conhecer e entender 
+esses documentos . 
+• Os acessos realizados nesse ambiente são monitorados pela ORGANIZAÇÃO com o objetivo de 
+garantir o cumprimento dessa política.  
+Nota:  
+• Situações não previstas e sugestões devem ser encaminhadas a área de Segurança da 
+Informação.  
+• Dúvidas e informações adicionais poderão ser encaminhadas ao TI via helpdesk.  
+ 
+8.3. Proibições  
+• A visualização, transferência, cópia  ou qualquer outro tipo de acesso a sites:  
+➢ De conteúdo pornográficos ou relacionados a sexo, bem como a distribuição, interna ou 
+externa, de qualquer tipo de conteúdo proveniente destes sites;  
+➢ Que defendam atividades ilegais;  
+➢ Que menosprezem, depreciem e incitem o preconceito a determinadas classes, como sexo, 
+raça, orientação sexual, religião, nacionalidade.  
+ 
+• A transferência ou cópia de grandes quantidades de arquivos de vídeo, som, ou gráficos não 
+relacionados aos interesses de negócio da ORGANIZAÇÃO. Este tipo de ação afeta diretamente os 
+recursos de rede.  
+• Participação em:  
+➢ Aplicativos de mensagens ou grupos de discussão de assuntos não relacionados aos negócios 
+da ORGANIZAÇÃO;  
+ INSTRUÇÃO DE OPERAÇÃO  ITO-265 
+Título:  
+UTILIZAÇÃO DO AMBIENTE  
+INTERNET PELO USUÁRIO  Revisão:       B    
+Página:           3 de 3   
+ 
+ 
+   
+ 
+Este documento contém informações de uso exclusivo da STERILENO e não deve ser reproduzido sem autorização  
+ ➢ Qualquer discussão pública  sobre os negócios da ORGANIZAÇÃO através do uso de 
+mensagens instantâneas de grupo de discussão ou qualquer outro tipo de fórum de público, a 
+menos que autorizados pela Diretoria.  
+• Distribuição de informações confidenciais da ORGANIZAÇÃO.  
+• Acessar  páginas pessoais de usuários ou qualquer outra propaganda comercial pessoal no 
+Ambiente Web utilizando recursos da ORGANIZAÇÃO.  
+ 
+ 
+8.4. Penalidades  
+O não cumprimento das regras descritas neste documento constitui em falta grave e o usuário está sujeito a 
+penalidades administrativas e/ ou contratuais.  
+ 
+ 
+ 
+9. REGISTRO DE ALTERAÇÕES  
+Revisão  Alteração  Data  Elaborador  
+A Emissão  25/08/22  Vitor Faustino  
+B Revisão periódica a cada 2 anos  01/09/24  Vitor Faustino  
+ 

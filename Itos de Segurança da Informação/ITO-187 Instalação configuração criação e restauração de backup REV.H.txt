@@ -1,0 +1,202 @@
+ INSTRUÇÃO DE OPERAÇÃO  ITO-187 
+Título:   
+ 
+INSTALAÇÃO, CONFIGURAÇÃO, CRIAÇÃO E 
+RESTAURAÇÃO DE BACKUP  Revisão:         H 
+Página:           1 de 4   
+Data de efetivação:  
+07/10/2025  Departamento:          TI 
+Elaborador  Revisor  Aprovador   
+Vitor Faustino  André Munerato  Regina  Affonso  
+ 
+ 
+ 
+Este documento contém informações de uso exclusivo da STERILENO e não deve ser reproduzido sem autorização  
+ 1. Objetivo:  
+Prevenir que os arquivos sejam apagados acidentalmente, seja por falha física ou por falha 
+humana. O backup garante a integridade dos dados de configurações, bancos de dados e 
+arquivos de usuários.  
+ 
+2. Referência:  
+- ABNT NBR ISO/IEC 27001: 2022 - Segurança da Informação  
+- ISO 27002: 2022 - Código de Práticas para Controles de Segurança da Informação  
+- ISO:9001 – 30 de setembro de 2015  
+- GDPR - Regulamento Geral sobre a Proteção de Dados  
+- LGPD - Lei Geral de Proteção de Dados  
+- RDC 665 – 30 de março de 2022  
+- RDC 13485 – 31 de maio de 2016  
+ 
+3. Documentos Relacionados:  
+FO-145 Verificação semanal de integridade dos Backups  
+ 
+4. Abrangência:  
+Este Procedimento se aplica a todos os arquivos dados gerados nos servidores da Organização.  
+ 
+5. Responsabilidades:  
+É de responsabilidade do pessoal da informática ou empresa terceirizada aprovada de cumprir 
+esta instrução.  
+ 
+6. Autoridade:  
+O Superior Imediato do Setor tem autoridade definida para assegurar o cumprimento desta 
+Instrução de Operação  
+ 
+7. Definição:  
+Domínio : é um nome que serve para localizar e identificar conjuntos de computadores em uma 
+rede ou net.  
+ 
+HD: Hard Disk (Disco Rígido ou Disco Duro).  
+ 
+RAID : Redundant Array of Independent Drives (Conjunto Redundante de Discos Independentes).  
+ 
+RAID1 : É um modo que permite usar dois ou mais HDs (desde que seja utilizado sempre um 
+número par) sendo que o segundo armazenará uma imagem idêntica do primeiro. Na prática, 
+será como se você tivesse apenas um disco rígido instalado, mas caso o disco titular falhe por 
+qualquer motivo, você terá uma cópia de segurança armazenada no segundo disco.  
+ 
+SCRIPT : É uma série de instruções escritas para serem seguidas pelo programa de computador.  
+NAS : Network -Attached Storage, em informática, é um dispositivo dedicado ao armazenamento 
+de dados em rede, provendo acesso homogêneo aos dados para os clientes desta rede.  
+ 
+ INSTRUÇÃO DE OPERAÇÃO  ITO-187 
+Título:  
+INSTALAÇÃO, CONFIGURAÇÃO, CRIAÇÃO E 
+RESTAURAÇÃO DE BACKUP  Revisão:      H  
+Página:           2 de 4   
+ 
+ 
+ 
+Este documento contém informações de uso exclusivo da STERILENO e não deve ser reproduzido sem autorização  
+ LDAP : Lightweight Directory Access Protocol, ou LDAP, é um protocolo de aplicação aberto, livre 
+de fornecedor e padrão de indústria para acessar e manter serviços de informação de diretório 
+distribuído sobre uma rede de Protocolo da Internet (IP).  
+ 
+Active Directory : O Active Directory é uma implementação de serviço de diretório no protocolo 
+LDAP que armazena informações sobre objetos em rede de computadores e disponibiliza essas 
+informações a usuários e administradores desta rede. É um software da Microsoft utilizado em 
+ambiente Windows, presentes no active directory.  
+ 
+SYSVOL : Volume do sistema. são um diretório compartilhado que armazena a cópia do servidor 
+dos arquivos públicos do domínio que devem ser compartilhados para acesso comum e 
+replicação em um domínio. A pasta Sysvol em um controlador de domínio contém os seguintes 
+itens: Net Logon compartilhamentos. Geralmente, eles hospedam scripts de logon e objetos de 
+diretiva para computadores cliente de rede.  
+ 
+• Scripts de início de sessão de utilizador para domínios em que o administrador utiliza 
+utilizadores e computadores do Active  Directory.  
+• Diretiva de Grupo do Windows.  
+• Ficheiro de replicação do serviço de replicação de ficheiros (FRS) e ficheiros que devem estar 
+disponíveis e sincronizados entre controladores de domínio.  
+• Junções do sistema de arquivos.  
+ 
+Tipos de Backup:  
+Incremental:  No backup incremental são incluídos todos os arquivos que foram modificados 
+desde o último backup.  
+ 
+Completo:  No backup completo são incluídos todos os arquivos para o diretório de destino.  
+ 
+Sistema:  Inclui apenas os arquivos de dados específicos do sistema na origem.  
+ 
+Criação de Backup:  O programa de backup adotado pela Organização  é o Backup do Windows 
+Server 20 22 
+ 
+Recuperação de Backup:  A recuperação de arquivos ou dados será solicitado através de um 
+chamado para o departamento de T.I  
+Com o chamado aberto, será necessário avaliar o tempo para a restauração desses arquivos de 
+acordo com o tipo de restauração a proceder, conforme desastre a ser recuperado:  
+ 
+8. Frequência:  
+Diariamente é realizado backup incremental no próprio servidor e esse backup é copiado 
+automaticamente para um sistema dedicado de armazenamento (NAS) uma vez por semana, 
+iniciando sempre no sábado.  
+ 
+9. EPI: 
+            N/A 
+ 
+ 
+ 
+ 
+ 
+ 
+ INSTRUÇÃO DE OPERAÇÃO  ITO-187 
+Título:  
+INSTALAÇÃO, CONFIGURAÇÃO, CRIAÇÃO E 
+RESTAURAÇÃO DE BACKUP  Revisão:      H  
+Página:           3 de 4   
+ 
+ 
+ 
+Este documento contém informações de uso exclusivo da STERILENO e não deve ser reproduzido sem autorização  
+ 10. Procedimento:  
+Instalação das Ferramentas de Backup e Recuperação:  
+1.     Clique em Iniciar > Ferramentas Administrativas > Gerenciador de Servidores.  
+2.     No painel esquerdo, clique em Recursos e no painel direito, clique em Adicionar 
+Recursos.  
+3.     No Assistente para Adicionar Recursos, selecione Backup do Windows Server e 
+Ferramentas da Linha de comando.  
+4.     Confirme as seleções e clique em Instalar.  
+ 
+Configuração do Backup:  
+1. Clique em Iniciar > Ferramentas Administrativas > Backup do Windows Server.  
+2. No painel Ações, clique em Agendamento de Backup.  
+3. Siga os passos do assistente, selecionando as opções desejadas:  
+4. Servidor completo  para backup de todos os volumes.  
+5. Personalizado  para backup de itens específicos.  
+6. Configure a frequência do backup (uma vez ao dia ou mais de uma vez ao dia).  
+7. Selecione o tipo de destino (disco rígido dedicado a backups ou NAS).  
+8. Confirme as configurações e conclua a instalação.  
+ 
+Recuperar de Desastres do Sistema Operacional ou o Servidor Completo:  
+1. Verifique se o disco externo ou a pasta compartilhada remota (NAS) está online.  
+2. No menu Iniciar, clique em Ferramentas Administrativas > Backup do Windows 
+Server.  
+3. No painel Ações, clique em Recuperar.  
+4. Siga os passos do assistente, selecionando a data e tipo de recuperação.  
+ 
+ Segurança:  
+1. Todos os backups são salvos e replicados em diferentes localidades físicas para 
+maior segurança.  
+ 
+Tempo de Retenção de Dados:  
+São mantidos por 5 anos disponível para consulta  e recuperação.  
+ 
+  AVISO:  
+O usuário possui uma pasta com o seu respectivo nome no compartilhamento de rede 
+USERS onde ele deve ao final do seu trabalho fazer a cópia de todos os seus arquivos de 
+natureza importante, para que assim em caso de falha na máquina local os dados sejam 
+devidamente recuperados, se o usuário ainda não tem essa pasta ele deverá solicitar ao 
+responsável da T.I, caso contrário a perca desses dados poderá ser irreversível, 
+causando assim um potencial risco.  
+ 
+Procedimento para Salvar Arquivos em Máquina Local:  
+2. No menu Iniciar, clique em Meu Computador, será exibido a janela com todas as 
+unidades, Localizar Users (192.168.0. 5) abrir    a unidade e salvar os arquivos de 
+natureza importante na pasta correspondente ao seu usuário.  
+ 
+ 
+ 
+ 
+ 
+ 
+ INSTRUÇÃO DE OPERAÇÃO  ITO-187 
+Título:  
+INSTALAÇÃO, CONFIGURAÇÃO, CRIAÇÃO E 
+RESTAURAÇÃO DE BACKUP  Revisão:      H  
+Página:           4 de 4   
+ 
+ 
+ 
+Este documento contém informações de uso exclusivo da STERILENO e não deve ser reproduzido sem autorização  
+ 12. Histórico das Revisões:  
+ 
+ 
+Revisão  Alteração  Data  Elaborador  
+A Emissão  28/06/2012  Vitor 
+B Revisão Geral  07/10/2014  Vitor 
+C Revisão/Formatação  12/10/2015  Vitor 
+D Revisão Geral  25/08/ 2017 Vitor 
+E Inclusão dos FO 144, FO 145  10/07/2019  Vitor 
+F Revisão periódica, revisão de alteração Retirada do FO 144 e 
+incluído replicação em NUVEM  23/09/2 021 Vitor 
+G Revisão periódica a cada 2 anos  30/09/23  Vitor 
+H Revisão geral  e adequação de tempo de retenção  07/10/25  Vitor 
+ 

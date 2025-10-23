@@ -1,0 +1,121 @@
+ INSTRUÇÃO DE OPERAÇÃO  ITO-267 
+Título:   
+ 
+UTILIZAÇÃO DE REDE  Revisão:         B 
+Página:           1 de 2   
+Data de efetivação:  
+01/09/24  Departamento:           T.I 
+Elaborador  Revisor  Aprovador   
+Vitor Faustino  André Munerato  Carla Garcia  
+ 
+ 
+Este documento contém informações de uso exclusivo da STERILENO e não deve ser reproduzido sem autorização  
+ 1. OBJETIVO  
+Descrever os  requisitos e as regras definidos para utilização das estações de trabalho.  
+ 
+2. REFERÊNCIAS  
+• NBR ISO/IEC 27001  
+• NBR ISO/IEC 27002  
+• FO-142 Solicitação de acesso de usuário  
+• FO-143 Solicitação de baixa de usuário  
+• FO-189 Check list de auditoria de TI  
+• ITO-187 Instalação, configuração, criação e restauração de backup  
+ 
+3. ABRANGÊNCIA  
+Todos os usuários.  
+ 
+4. RESPONSABILIDADES  
+É responsabilidade de todos os usuários de rede cumprirem esse procedimento.  
+ 
+5. AUTORIDADE  
+O superior imediato tem autoridade definida para assegurar o cumprimento dessa instrução.  
+ 
+6. DEFINIÇÕES  
+TI: Tecnologia da informação.  
+ 
+7. EPI  
+N/A 
+ 
+8. DESCRIÇÃO DA ATIVIDADE  
+8.1. Acesso e identificação na rede  
+• O acesso a rede deve ser solicitado ao TI e registrado no FO-142. 
+• Cada usuário  deve ter seu próprio login de acesso para utilização d os recursos da rede.  
+• Todo computador da  organização  deve receber  um nome exclusivo para identificá -lo na rede  e 
+identificar em qual departamento a estação de trabalho se encontra.  
+• O cancelamento do acesso a rede deve ser solicitado ao TI e registrado no FO -143. 
+ 
+8.2. Recurso de informática particular  
+• Quando autorizado o uso de equipamentos de informática particular  na organização  deve -se 
+comunicar a equipe de informática para cadastrar login de acesso aos recursos da rede.  
+• Não será considerada uma estação de trabalho o equipamento de informática particular, mesmo 
+que esteja configurado para tal utilização.  
+• A organização  não fornecerá acessório, software ou suporte técnico, inclui ndo equipamento de 
+telefonia com acesso à rede , exceto quando  autorizado pela Diretoria e/ou Gerência responsável 
+pela prestação do serviço solicitad o. 
+ 
+8.3. Backup  
+Para arquivos que não são salvos na rede, ou seja, salvos na própria estação de trabalho , é de 
+inteira responsabilidade do usuário fazer backup dos seus arquivos  conforme ITO-187. 
+ 
+ 
+ 
+ 
+ INSTRUÇÃO DE OPERAÇÃO  ITO-267 
+Título:  
+UTILIZAÇÃO DE REDE  Revisão:       B    
+Página:           2 de 2   
+ 
+  
+ 
+Este documento contém informações de uso exclusivo da STERILENO e não deve ser reproduzido sem autorização  
+ 8.4. Restrições de utilização  
+• Não é permitido utilizar, sem a autorização do setor de informática, equipamentos de rede 
+(switches, pontos de acesso etc.) com a finalidade de ampliar o número de pontos de acesso 
+disponíveis no ambiente de trabalho.  
+• Não será permitida a utilização de dados, aplicativos ou serviços que sobrecarreguem a rede de 
+computadores.  
+• Não será permitida a instalação de software ou aplicativo gratuito de uso não comercial, ou 
+crackeado.  
+• Material de natureza pornográfica e racista não pode ser acessado, exposto, reproduzido, 
+armazenado, distribuído, editado ou gravado através do uso de recursos computacionais da rede.  
+• Não será permitida no uso da rede da organização para  a obtenção e/ou propagação intencional de 
+vírus ou arquivos maliciosos que possam prejudicar ou danificar as estações de trabalho ou a rede.  
+• Não é permitido a instalação de jogos ou qualquer tipo de software ou aplicativo que não for 
+relacionado com as tarefas pertinentes ao trabalho.  
+• É proibida a instalação ou remoção de softwares que não forem devidamente acompanhadas pela 
+equipe de TI.  
+• Não é permitida a abertura de computadores para qualquer tipo de reparo . 
+ 
+8.5. Chamados para equipe de TI  
+Toda solicitação de suporte (instalação, manutenção, prevenção, configuração e correção), pelo 
+usuário, deverá ser feita através de um sistema para abertura e acompanhamento de chamados, 
+atendendo a ordem de prioridade do serviço, desde que a rede interna e/ou externa esteja 
+funcionando.  Os chamados para liberação de acessos, instalação de softwares, manutenção de 
+equipamentos e qualquer outro assunto relacionado  a informática e telefonia da organização deve 
+ser realizado por meio do e -mail helpdesk@sterileno.com.br  ou telefone (ramal ou nº de celular 
+coorporativo do TI).  
+ 
+8.6. Monitoramento dos recursos de informática  
+O TI e diretoria poderão auditar as estações de trabalho  de qualquer departamento , a qualquer 
+tempo, para análise de uso dos recursos e serviços de TI, de modo a salvaguardar os interesses da 
+organização, no que diz respeito à segurança da informação, bem como o uso adequado dos 
+recursos de TI.  
+ 
+8.7. Ações para uso indevido  
+• O uso indevido dos recursos de informática por parte do usuário será tratado como infração . 
+• Se o usuário for prestador de serviço será notificado formalmente do descumprimento das normas 
+estabelecidas ; persistindo a infração, a notificação será de responsabilidade da alta direção para 
+apuração de responsabilidade pelas violações da norma de segurança.  
+• Se o usuário for funcionário regular da organização, terá  sua permiss ão de acesso à internet e 
+estações de trabalho bloqueadas e o gestor do funcionário ou direção) serão notificados para  que 
+definam as  penalidades que serão aplicadas.  
+• Medidas legais serão tomadas caso haja indícios de prática criminosa e/ou contrárias à Lei, por 
+parte do usuário.  
+ 
+ 
+9. REGISTRO DE ALTERAÇÕES  
+ 
+Revisão  Alteração  Data  Elaborador  
+A Emissão  baseada no PO 6.4 -2 que foi obsoletado  25/08/22  Vitor Faustino  
+B Revisão periódica a cada 2 anos  01/09/24  Vitor Faustino  
+ 

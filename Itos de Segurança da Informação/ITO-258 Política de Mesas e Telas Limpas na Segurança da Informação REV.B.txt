@@ -1,0 +1,113 @@
+ INSTRUÇÃO DE OPERAÇÃO   ITO-258 
+Título:   
+ 
+POLÍTICA DE MESAS E TELAS LIMPAS NA 
+SEGURANÇA DA INFORMAÇÃO  Revisão:        B 
+Página:           1 de 2   
+Data de efetivação:  
+01/09/24  Departamento:          TI 
+Elaborador  Revisor  Aprovador  
+Vitor Faustino  André Munerato  Carla Garcia  
+ 
+ 
+ 
+Este documento contém informações de uso exclusivo da STERILENO e não deve ser reproduzido sem autorização  
+ 1. OBJETIVO  
+Descrever  os critérios relativos à organização e limpeza dos ambientes de trabalho , a fim de proteger 
+uso e a segurança da informação . 
+ 
+2. REFERÊNCIAS  
+• Portaria 482/99  
+• RDC15  
+• NBR ISO/IEC 27001  
+• NBR ISO/IEC 27002  
+• NBR ISO/IEC 27005  
+• FO-189 Check List  Auditoria de TI  
+• FO-302 Termo de responsabilidade para uso da informação  
+• ITO-259 Classificação da Informação  
+• ITO-260 Segurança e Proteção da Informação  
+ 
+3. ABRANGÊNCIA  
+Esta Política se aplica:  
+• a todos os usuários ( sócios, prepostos, empregados, estagiários, aprendizes e contratados ) que 
+utilizam as informações da ORGANIZAÇÃO;  
+• a todas as organizações que compõem o Grupo da ORGANIZAÇÃO . 
+ 
+4. RESPONSABILIDADES  
+A Gerência de Segurança da Informação  e as Áreas de Apoio ao Usuário Final são responsáveis pela 
+implementação e continuidade das normas de segurança, das instruções de operação e das normas e 
+legislação em geral . 
+ 
+5. AUTORIDADE  
+O superior imediato tem autoridade definida para assegurar o cumprimento das normas de segurança, 
+das instruções de operação e das normas e legislação em geral . 
+ 
+6. DEFINIÇÕES  
+Token: é um sistema gerador de senhas que vários bancos usam para garantir a segurança de quem 
+está usando a conta e evitar fraudes.  O nome real desse recurso é Token OTP, sendo que OTP significa 
+“one time password”, ou seja, senha de uso único . 
+ 
+7. EPI  
+N/A 
+ 
+8. DESCRIÇÃO DA ATIVIDADE  
+A segurança é um direito de todos e responsabilidade de cada um.  Todos devem  adotar medidas de 
+segurança no dia a dia , a fim de evitar  acidentes ou de causar algum tipo de prejuízo a ORGANIZAÇÃO  a 
+qual prestamos serviço ou  a nós mesmos.  
+ 
+Princípios da política de mesa limpa e tela limpa : 
+ 
+• Os documentos em papéis e mídias eletrônicas não devem permanecer sobre a mesa 
+desnecessariamente.  Devem ser armazenados em armários ou gavetas trancados  quando não 
+estiverem em uso, especialmente fora do horário do expediente.  
+• Informações sensíveis ou críticas para o negócio da organização devem ser trancadas em local 
+separado e seguro ( preferencialmente em um ar mário ou cofre à prova de fogo).  
+ INSTRUÇÃO DE OPERAÇÃO  ITO-258 
+Título:  
+POLÍTICA DE MESAS E TELAS LIMPAS NA 
+SEGURANÇA DA INFORMAÇÃO  Revisão:       B    
+Página:           2 de 2   
+ 
+ 
+   
+ 
+Este documento contém informações de uso exclusivo da STERILENO e não deve ser reproduzido sem autorização  
+ • Anotações, recados e lembretes não devem ser deixados em amostra sobre a mesa ou cola dos em 
+paredes, divisórias,  monitor do computador  ou outros locais visíveis.  
+• Não anotar informações sensíveis em quadros brancos . 
+• Não guardar pastas com documentos sensívei s em prateleira de fácil acesso.  
+• Destruir os documentos impressos antes de jogá -los fora. Sempre que possível utilizar máquinas 
+desfragmentadoras ou rasgar de modo que  o torne inutilizável.  
+• Não imprimir documentos apenas para lê -los. Leia -os na tela do computador, se possível.  
+• Informações sensíveis ou confidenciais, quando impressas em local coletivo, devem ser retiradas  
+da impressora imediatamente.  
+• Fotocopiadoras devem ser prote gidas contra uso não autorizado.  
+• Devolver, o quanto antes possível, todos os documentos obtidos por empréstimos de outros 
+departamentos, quand o eles não são mais necessários.  
+• Computadores pessoais e terminais de computador e impressoras não devem ser deixados 
+“logados”, caso o usuário responsável não esteja presente.  
+• Nos computadores, utilizar um protetor de tela que  solicite uma senha para acesso.  
+• Guardar agendas e cadernos de anotações numa gaveta trancada.  
+• Manter os pertences pessoais e m gavetas ou armários trancados.  
+• Nunca deixar crachá de identificação ou chaves em qualquer  lugar.  Mantenha -os junto a você . 
+• Notificar imediatamente se seu crachá ou ch aves sumirem.  
+• Nunca escrever senhas em lembretes e nem tente escondê -las no local de trabalho.  
+• Não deixe mídias de dupla autenticação , como tokens , na mesa.  
+• Mesas e móveis , quando possível,  deverão ser posicionados de forma que dados sensíveis não 
+sejam visíveis de janelas  ou corredores.  
+• Ao final do expediente  ou no caso de ausência prolongada do local de trabalho, limpar a mesa de 
+trabalho, guardar os documentos , trancar as gavetas e armários  e desliga r o computador.  
+• Manter as gavetas e armários fechados e trancados e não deixar as chaves na fechadura.  
+• Não colocar ou comer r efeições e lanches sobre a mesa.  
+• Não colocar copos de água, suco, refrigerante ou café sobre a mesa , quando possível . 
+• Sempre limpar sua áre a de trabalho  ao final do seu turno , garantindo assim a adequada 
+organização dos itens e objetos manipulados.  
+• Não deixar a sala  de trabalho abert a sem que haja um colaborador presento no local.  
+ 
+ 
+9. REGISTRO DE ALTERAÇÕES  
+ 
+Revisão  Alteração  Data  Elaborador  
+A Emissão  25/08/22  Vitor Faustino  
+B Revisão periódica a cada 2 anos  01/09/24  Vitor Faustino  
+ 

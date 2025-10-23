@@ -1,0 +1,335 @@
+ INSTRUÇÃO OPERACIONAL  ITO-259 
+Título:   
+ 
+CLASSIFICAÇÃO DA INFORMAÇÃO  Revisão:         C 
+Página:           1 de 6   
+Data de efetivação:  
+01/09/24  Departamento:           T.I 
+Elaborador  Revisor  Aprovador  
+Vitor Faustino  André  Munerato  Carla Garcia  
+ 
+ 
+ 
+Este documento contém informações de uso exclusivo da TTF ALIMENTOS  e não deve ser reproduzido sem autorização  
+ 
+ 1. OBJETIVO  
+Definir o conceito e estabelecer os critérios relativos à classificação da informação.  
+ 
+2. REFERÊNCIAS  
+• NBR ISO/IEC 27001  
+• NBR ISO/IEC 27002  
+• NBR ISO/IEC 27005  
+• FO-189 Check List Auditoria de TI . 
+• FO-142 Solicitação de Acesso de Usuário . 
+• FO-143 Solicitação Baixa de Usuário . 
+• FO-302 Termo de responsabilidade para uso da informação . 
+• ITO-77 Acesso  master ao sistema Memphis.  
+• ITO-96 Política de Uso Aceitável da Internet . 
+• ITO-258 Política de Mesas Limpas e Telas Limpas na Segurança da Informação  
+• ITO-260 Política  de Segurança e Proteção da Informação  
+• ITO-261 Uso de Correio Eletrônico  
+• ITO-265 Utilização do Ambiente Internet pelo Usuário  
+ 
+3. ABRANGÊNCIA  
+Esta Política se aplica:  
+• a todos os usuários (associados, prestadores de serviços, estagiários e empregados) que utilizam as 
+informações da ORGANIZAÇÃO;  
+• a todas as organizações que compõem o Grupo da ORGANIZAÇÃO . 
+ 
+4. RESPONSABILIDADES  
+A Gerência de Segurança da Informação  e as Área de Apoio ao Usuário Final são responsáveis pela 
+implementação e continuidade dessa norma de segurança .  
+ 
+5. AUTORIDADE  
+O superior imediato tem autoridade definida para assegurar o cumprimento desta instrução.  
+ 
+6. DEFINIÇÕES  
+Classificação da Informação : É a definição do nível de confidencialidade da informação , considerando:  
+• Quais pessoas, áreas organizacionais e/ou organizações clientes que deverão ter acesso à 
+informação;    
+• Quais  procedimentos de proteção da informação devem ser seguidos.  
+ 
+Indicação de parâmetros opcional ou obrigatórios : 
+Os parâmetros descritos na sintaxe do nível de classificação da informação podem ser opcionais ou 
+obrigatórios.  
+• (“Parâmetro”): opcional.  
+• (“Par âmetro”): obrigatório  
+ 
+7. EPI  
+N/A 
+ 
+8. DESCRIÇÃO DA ATIVIDADE  
+A informação pode ser identificada com os Níveis de Classificação (NC) apresentados : 
+1. Publica.  
+2. Interna.  
+3. Confidencial.  
+ INSTRUÇÃO DE OPERAÇÃO  ITO-259 
+Título:  
+CLASSIFICAÇÃO DA INFORMAÇÃO  Revisão:       C    
+Página:           2 de 6   
+ 
+ 
+   
+ 
+Este documento contém informações de uso exclusivo da STERILENO e não deve ser reproduzido sem autorização  
+ 4. Restrita.  
+ 
+Relatórios de sistema s, relatórios elaborados no ambiente de automação de escritório e telas de sistema s 
+deverão indicar o nível de classificação da informação referente à tela ou usuário.  
+ 
+Toda e qualquer outra forma de exposição da informação da ORGANIZAÇÃO deve ser classificada e ter 
+explicito o seu nível de confidencialidade.  
+ 
+Essa indicação do nível de classificação deve ser alocada no rodapé ou no cabeçalho de cada página do 
+relatório ou na tela. No caso de correio eletrônico, deve -se colocar em negrito na primeira linha do texto.  
+ 
+Para essa classificação não foi considerado o seu tempo de validade. Sendo assim, a informação continuará 
+sempre no nível indicado até que o Gestor indique um novo nível e confidencialidade.  
+ 
+8.1. Classificação Informação Pública  
+ 
+Descrição  A informação classificada como “Pública” pode ser acessada por:  
+• Usuários da ORGANIZAÇÃO  
+• Organizações, clientes e prestadores de serviços; e  
+• Público em geral  
+Essa classificação se aplica, normalmente, às informações corporativas da ORGANIZAÇÃO 
+que podem ser divulgadas para o público e para os clientes.  
+As informações sem classificação serão consideradas “Públicas” . 
+Sintaxe  A sintaxe dessa classificação é: Informação Pública  
+Exemplo : 
+• Internamente: qualquer usuário da ORGANIZAÇÃO.  
+• Externamente: qualquer pessoa.  
+Cópia  • Pode ser copiada para fins comerciais e de conhecimento interno na 
+ORGANIZAÇÃO.  
+Guarda física  • Sem restrições.  
+Malote interno  • Não necessita fechar em envelope interno ou embrulho.  
+Correio 
+Convencional  • Não necessita fechar em envelope interno ou embrulho.  
+• Pode ser enviado como impresso.  
+• Usar correspondência simples.  
+Correio 
+eletrônico  • Sem restrições.  
+Destruição  • Normal, sem procedimento especial.  
+Fax • Sem restrições.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ INSTRUÇÃO DE OPERAÇÃO  ITO-259 
+Título:  
+CLASSIFICAÇÃO DA INFORMAÇÃO  Revisão:       C    
+Página:           3 de 6   
+ 
+ 
+   
+ 
+Este documento contém informações de uso exclusivo da STERILENO e não deve ser reproduzido sem autorização  
+  
+8.2. Classificação Informação Interna  
+ 
+ 
+Descrição  A informação classificada como “Interna ORGANIZAÇÃO” indica que esta somente deve ser 
+acessada por usuários da ORGANIZAÇÃO ou de áreas organizacionais explicitadas.  
+Ela se aplica normalmente a informações da ORGANIZAÇÃO que não possuem segredo de 
+negócio ou que não comprometem a imagem da ORGANIZAÇÃO.  
+Sintaxe  A sintaxe dessa classificação é:   Informação Interna ORGANIZAÇÃO (“área”).  
+Exemplos:  
+Informação interna ORGANIZAÇÃO  
+• Internamente: qualquer usuário ORGANIZAÇÃO.  
+• Externamente: não autorizado.  
+ 
+Informação interna ORGANIZAÇÃO (Diretoria, Administrativo, Recebimento de Operações)  
+• Internamente: qualquer usuário da área Administrativa, Diretoria e Recebimento de 
+Operações.  
+• Externamente: não autorizado.  
+Cópia  • Pode ser copiada para fins de conhecimento interno na ORGANIZAÇÃO.  
+Guarda física  • Dentro do ambiente de escritório da ORGANIZAÇÃO.  
+• Não necessita ser mantida trancada quando não estiver sendo usada.  
+Guarda digital  • Dentro do ambiente do ambiente digital (servidor de arquivo) da ORGANIZAÇÃO.  
+Malote interno  • Fechar em envelope ou embrulho. Não precisa indicar o nível de classificação.  
+Correio 
+Convencional  • Fechar em envelope ou embrulho sem identificação do nível de classificação da 
+Informação.  
+• Utilizar correspondência simples.  
+Correio 
+eletrônico  • Enviar sem proteção.  
+Destruição  • Normal. Sem procedimento especial.  
+Fax • Sem restrições.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ INSTRUÇÃO DE OPERAÇÃO  ITO-259 
+Título:  
+CLASSIFICAÇÃO DA INFORMAÇÃO  Revisão:       C    
+Página:           4 de 6   
+ 
+ 
+   
+ 
+Este documento contém informações de uso exclusivo da STERILENO e não deve ser reproduzido sem autorização  
+ 8.3. Classificação Informação Confidencial  
+ 
+Descrição  A informação classificada como “Confidencial” indica que ela tem forte restrição de uso, tem um nível de 
+confidencialidade maior que a Interna e somente pode ser acessada por usuários:  
+• Da ORGANIZAÇÃO; ou  
+• Da ORGANIZAÇÃO e por pessoal do Parceiro (Cliente, Prestador de Serviço, outro).  
+ 
+A divulgação não autorizada dessa informação pode causar impacto (financeiro, de imagem ou 
+operacional) ao negócio da ORGANIZAÇÃO e/ ou ao negócio do parceiro.  
+Caso se deseje que apenas determinadas áreas organizacionais da ORGANIZAÇÃO poderão ter acesso 
+a essa informação.  
+Em relação ao parceiro é obrigatório a indicação da “organização” ou “organização” e sua área 
+específica.  
+Sintaxe  A sintaxe dessa classificação é: Informação Confidencial ORAGANIZAÇÃO (“área”)/parceiro 
+(organização).  
+Exemplos:  
+Informação Confidencial ORGANIZAÇÃO  
+• Internamento: todos os usuários.  
+• Externamente: não autorizado.  
+ 
+Informação confidencial ORGANIZAÇÃO (Diretoria Operações)  
+• Internamente: todos os usuários da área organizacional Diretoria de Operações.  
+• Externamente: não autorizado.  
+ 
+Informação confidencial ORGANIZAÇÃO / Parceiro (ORGANIZAÇÃO PARCEIRA)  
+• Internamente: qualquer usuário ORGANIZAÇÃO.  
+• Externamente: por pessoal da empresa ORGANIZAÇÃO PARCEIRA  
+ 
+Informação confidencial ORGANIZAÇÃO (Financeiro/Gerentes, Comercial) / Parceiro (ORGANIZAÇÃO 
+PARCEIRA)  
+• Internamente: usuários Gerentes da Área Financeira + pessoal da Área Comercial.  
+• Externamente: pessoal da Área Financeira + pessoal da Área Comercial ORGANIZAÇÃO 
+PARCEIRA.  
+ 
+Informação confidencial ORGANIZAÇÃO / Centrais de Material externas  
+• Internamente: qualquer usuário ORGANIZAÇÃO.  
+• Externamente: por pessoal das Centrais de Material externas.  
+Cópia  • Pode ser copiada para fins comerciais e de conhecimento interno na ORGANIZAÇÃO.  
+Guarda física  • Deve ser mantida trancada quando não estiver sendo usada.  
+Guarda digital  • Deve ser mantida em servidor de arquivo quando não estiver sendo acessada.  
+Malote 
+interno  • Fechar em envelope ou embrulho com a marcar da classificação Informação Confidencial 
+ORGANIZAÇÃO / Parceiro e seu detalhamento.  
+Correio 
+Convencional  • Fechar envelope ou embrulho com a marca da classificação Informação Confidencial 
+ORGANIZAÇÃO/Parceiro e seu detalhamento.  
+• Colocar o envelope ou embrulho no interior de outro envelope sem classificação.  
+• O Gestor deve avaliar uso de correspondência simples ou tipo SEDEX ou outro.  
+Correio 
+eletrônico  Origem ou destinatário é um endereço não ORGANIZAÇÃO:  
+• Enviar como arquivo em anexo cifrado com senha;  
+• Enviar senha por outro meio de comunicação;  
+• Utilizar certificado digital assim que estiver disponível.  
+Origem e destinatário são endereços ORGANIZAÇÃO (@organização.com.br):  
+• Normal, sem restrição.  
+Destruição  • Destruir sob supervisão da ORGANIZAÇÃO, de modo a assegurar a eliminação completa da 
+informação usando a Fragmentadora de Papel de  NIVEL 4,  presente na ORGANIZAÇÃO.  
+• Centrais de Material Externas: a ORGANIZAÇÃO deve orientar o Parceiro para destruir essa 
+informação de forma supervisionada, de modo a assegurar a eliminação completa.  
+Fax • Somente com a autorização do Gestor da Informação. No caso de relatórios elaborados no 
+ambiente de automação de escritório, somente com a autorização do autor do relatório.  
+ INSTRUÇÃO DE OPERAÇÃO  ITO-259 
+Título:  
+CLASSIFICAÇÃO DA INFORMAÇÃO  Revisão:       C    
+Página:           5 de 6   
+ 
+ 
+   
+ 
+Este documento contém informações de uso exclusivo da STERILENO e não deve ser reproduzido sem autorização  
+ 8.4. Classificação Informação Restrita Organização (Pessoas)  
+ 
+Descrição  A informação classificada como “Restrita ORGANIZAÇÃO” indica que esta somente pode ser 
+acessada por usuário da informação da ORGANIZAÇÃO explicitamente indicado pelo nome 
+ou por área organizacional a que pertence.  
+ 
+A divulgação não autorizada dessa informação pode causar sérios danos ao negócio e/ ou 
+comprometer a estratégia de negócio da ORGANIZAÇÃO.  
+ 
+É obrigatória a indicação do grupo ou das pessoas que podem acessar essa informação.  
+Sintaxe  A sintaxe dessa classificação é: Informação Restrita ORGANIZAÇÃO (pessoas)  
+Exemplos:  
+Informação Restrita ORGANIZAÇÃO (José Lima, Antonio Silva, Maria Eduarda)  
+• Internamente: Apenas os usuários José Lima, Antonio Silva, Maria Eduarda.  
+• Externamente: Não autorizado.  
+ 
+Informação Restrita ORGANIZAÇÃO (Presidente, Diretoria)  
+• Internamente: Apenas o presidente e diretores da ORGANIZAÇÃO.  
+Cópia  • Não pode ser copiada . Deve ser sempre enviada pelo Gesto r. 
+Guarda física  • Deve ser mantida trancada quando não estiver sendo usada.  
+Guarda digital  • Deve ser mantida em servidor de arquivo com acesso somente a usuários autorizados 
+em FO -142.  
+Malote 
+interno  • Fechar em envelope ou embrulho com a marca da classificação Informação Restrita 
+ORGANIZAÇÃO e seu detalhamento.  
+Correio 
+Convencional  • Fechar em envelope ou embrulho com a marca da classificação Informação Restrita 
+ORGANIZAÇÃO e seu detalhamento.  
+• Colocar o envelope ou embrulho no interior de um outro envelope sem classificação.  
+• Utilizar serviço de correspondência SEDEX ou equivalente  
+Correio 
+eletrônico  Origem ou destinatário é um endereço não ORGANIZAÇÃO:  
+• Enviar como arquivo em anexo cifrado com senha;  
+• Enviar senha por outro meio de comunicação;  
+• Utilizar certificado digital assim que estiver disponível . 
+ 
+Origem e destinatário são endereços ORGANIZAÇÃO (@organização.com.br):  
+• Normal, sem restrição.  
+ 
+Deve se criar uma lista de distribuição contendo os nomes dos destinatários para evitar o 
+envio indevido de e -mail, por erro, para usuário não autorizado a receber essa informação.  
+Destruição  • Destruir sob supervisão da ORGANIZAÇÃO, de modo a assegurar a eliminação 
+completa da informação usando a Fragmentadora de Papel de  NIVEL 4,  presente 
+na ORGANIZAÇÃO.  
+Fax • Não enviar informação classificada nesse nível através de Fax.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ INSTRUÇÃO DE OPERAÇÃO  ITO-259 
+Título:  
+CLASSIFICAÇÃO DA INFORMAÇÃO  Revisão:       C    
+Página:           6 de 6   
+ 
+ 
+   
+ 
+Este documento contém informações de uso exclusivo da STERILENO e não deve ser reproduzido sem autorização  
+ 8.5. Informações gerais  
+• As situações espec íficas devem ser registradas junto a Gerência de Segurança da Informação . 
+• Alteração dos relatórios e telas dos sistemas deverá acontecer ao longo dos próximos meses.   
+• Os novos relatórios e as novas telas deverão se implantados contendo explicitamente o Nível de 
+Confidencialidade da Informação atribuído pelo Gestor dela mesma.  
+• Quando em situações de manutenção, deve -se aproveitar a alteração a ser feita para a inclusão 
+dessa classificação.  
+• Situações não previstas e dúvidas devem ser encaminhadas à Gerência  de Segurança da 
+Informação.  
+ 
+ 
+ 
+9. REGISTRO DE ALTERAÇÕES  
+ 
+Revisão  Alteração  Data  Elaborador  
+A Emissão  14/05/21  Vitor Faustino  
+B Atualização  25/08/22  Vitor Faustino  
+C Revisão  periódica a cada 2 anos  01/09/24  Vitor Faustino  
+ 

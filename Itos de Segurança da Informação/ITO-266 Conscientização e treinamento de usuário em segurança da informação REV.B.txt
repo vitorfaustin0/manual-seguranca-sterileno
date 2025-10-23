@@ -1,0 +1,82 @@
+ INSTRUÇÃO DE OPERAÇÃO  ITO-266 
+Título:   
+ 
+CONSCIENTIZAÇÃO E TREINAMENTO DE 
+USUÁRIO EM SEGURANÇA DA INFORMAÇÃO  Revisão:         B 
+Página:           1 de 2   
+Data de efetivação:  
+01/09/24  Departamento:           T.I 
+Elaborador  Revisor  Aprovador   
+Vitor Faustino  André Munerato  Carla Garcia  
+ 
+ 
+Este documento contém informações de uso exclusivo da STERILENO e não deve ser reproduzido sem autorização  
+ 1. OBJETIVO  
+Descrever os  requisitos e as regras definidos para a existência de um processo de conscientização e 
+treinamento do usuário em segurança da informação.  
+ 
+2. REFERÊNCIAS  
+• NBR ISO/IEC 27001  
+• NBR ISO/IEC 27002  
+• NBR ISO/IEC 27005  
+• FO-302 Termo de responsabilidade para uso da informação . 
+• ITO-260 Segurança e proteção da Informação . 
+ 
+3. ABRANGÊNCIA  
+• Todos os usuários ( sócios, prepostos, empregados, estagiários, aprendizes e contratados ) que 
+utilizam as informações da ORGANIZAÇÃO;  
+• Todas as organizações que compõem o Grupo da ORGANIZAÇÃO . 
+ 
+4. RESPONSABILIDADES  
+A Gerência de Segurança da Informação  e as Áreas de Apoio ao Usuário Final são responsáveis pela 
+implementação e continuidade das normas de segurança, das instruções de operação e das normas e 
+legislação em geral . 
+ 
+5. AUTORIDADE  
+O superior imediato tem autoridade definida para assegurar o cumprimento das normas de segurança, 
+das instruções de operação e das normas e legislação em geral . 
+ 
+6. DEFINIÇÕES  
+     N/A 
+ 
+7. EPI  
+N/A 
+ 
+8. DESCRIÇÃO DA ATIVIDADE  
+• Todo usuário d o sistema da informação da ORGANIZAÇÃO deve ser conscientizado e treinado em 
+segurança da informação com o objetivo de garantir que o aspecto humano será um fator positivo no 
+processo de proteção da informação.  
+• Antes do usuário iniciar suas funções profissionais no acesso ao ambiente computacional , ele deve 
+receber o treinamento de segurança da informação.  
+• O usuário deve conhecer as políticas e normas de segurança da informação (ITO-260) e assinar um 
+termo de declaração de conhecimento  (FO-302), bem como cumprir  e zelar por e sses regulamentos.  
+• Cada encarregado é responsável por garantir que seus subordinados e prestadores de serviços 
+terceirizados recebam o treinamento e a conscientização em segurança da informação.  
+• As áreas de recursos humanos das diversas unidades organizacionais  da ORGANIZAÇÃO deverão 
+participar e eventualmente coordenar as atividades de conscientização e treinamento em segurança da 
+informação . 
+• A ação de conscientização e treinamento em segurança da informação é continua e deve existir 
+enquanto a ORGANIZAÇÃO  existir.  
+• O não cumprimento deste regulamento e/ou dos demais instrumentos normativos que complementarão 
+o processo de segurança constitui em falta grave e o usuário está sujeito a penalidades administrativas 
+e/ou contratuais.  
+ INSTRUÇÃO DE OPERAÇÃO  ITO-266 
+Título:  
+CONSCIENTIZAÇÃO E TREINAMENTO DE 
+USUÁRIO EM SEGURANÇA DA INFORMAÇÃO  Revisão:       B   
+Página:           2 de 2   
+ 
+  
+ 
+Este documento contém informações de uso exclusivo da STERILENO e não deve ser reproduzido sem autorização  
+ • Situações de exceção e não previstas deverão ser definidas pelo Departamento de Segurança da 
+Informação e pela Unidade de Segurança da Informação, considerando as áreas da ORGANIZAÇÃO 
+envolvidas.  
+ 
+ 
+9. REGISTRO DE ALTERAÇÕES  
+ 
+Revisão  Alteração  Data  Elaborador  
+A Emissão  25/08/22  Vitor Faustino  
+B Revisão periódica a cada 2 anos  01/09/24  Vitor Faustino  
+ 

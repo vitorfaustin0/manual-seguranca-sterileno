@@ -1,0 +1,218 @@
+ INSTRUÇÃO DE OPERAÇÃO  ITO-261 
+Título:   
+ 
+USO DE CORREIO ELETRÔNICO  Revisão:         B 
+Página:           1 de 4   
+Data de efetivação:  
+01/09/24  Departamento:           T.I 
+Elaborador  Revisor  Aprovador   
+Vitor Faustino  André  Mune rato Carla Garcia  
+ 
+ 
+ 
+Este documento contém informações de uso exclusivo da STERILENO e não deve ser reproduzido sem autorização  
+ 1. OBJETIVO  
+Descrever os requisitos e as regras para o uso do correio eletrônico (e -mail) no âmbito da 
+ORGANIZAÇÃO.  
+ 
+2. REFERÊNCIAS  
+• NBR ISO/IEC 27001  
+• NBR ISO/IEC 27002  
+• NBR ISO/IEC 27005  
+• FO-304 Solicitação de abertura de conta de e -mail corporativo para colaborador interno  
+• ITO-259 Classificação da Informação  
+ 
+3. ABRANGÊNCIA  
+Esta Política se aplica:  
+• a todos os usuários ( sócios, prepostos, empregados, estagiários, aprendizes e contratados ) que 
+utilizam as informações da ORGANIZAÇÃO;  
+• a todas as organizações que compõem o Grupo da ORGANIZAÇÃO . 
+ 
+4. RESPONSABILIDADES  
+A área responsável pela segurança da informação e de apoio ao usuário final são responsáveis pela 
+implementação e continuidade das normas de segurança, das instruções de operação e das normas e 
+legislação em geral . 
+ 
+5. AUTORIDADE  
+O superior imediato tem autoridade definida para assegurar o cumprimento dessa instrução.  
+ 
+6. DEFINIÇÕES  
+     N/A 
+ 
+7. EPI  
+N/A 
+ 
+8. DESCRIÇÃO DA ATIVIDADE  
+8.1. Utilização do correio eletrônico  
+• O usuário deve ser cadastrado e autorizado a usar correio eletrônico através do formulário FO-304. 
+ 
+• Utilizar somente para comu nicação interna e externa na realização do s negócio s da 
+ORGANIZAÇÃO.  
+ 
+• Escrever as mensagens em linguagem profissional que não comprometa m a imagem da 
+ORGANIZAÇÃO, e que não vá de encontro com a legislação vigente e nem aos princípios éticos da 
+ORGANIZAÇÃO.  
+• O usuário é responsável por toda mensagem enviada pelo seu endereço.  
+ 
+• O conteúdo do correio eletrônico de cada usuário pode ser acessado pela ORGANIZAÇÃO quando 
+em situações que ponham em risco a sua imagem e seu negócio. Este acesso será feito a critério 
+da ORGANIZAÇÃO, mediante comunicação ao superior imediato do usuário à área de TI e deve 
+ser registrado formalmente, permitindo uma auditoria desse procedimento . 
+ 
+• O usuário  pode enviar mensagens relativas aos negócios da empresa para usuários internos ou 
+para pessoas/organizações em endereços externos.  
+ 
+ INSTRUÇÃO DE OPERAÇÃO  ITO-261 
+Título:  
+USO DE CORREIO ELETRÔNICO  Revisão:       B    
+Página:           2 de 4   
+ 
+ 
+   
+ 
+Este documento contém informações de uso exclusivo da STERILENO e não deve ser reproduzido sem autorização  
+ • O usuário p ode utilizar o correio eletrônico para propósitos pessoais incidentais, desde que sejam 
+em um nível mínimo, não prejudiquem o desempenho dos recursos da organização, não interfiram 
+no desempenho das suas atividades profissionais e não violem as regras da ORGANIZAÇÃO.  
+ 
+• Não originar ou encaminhar mensagens ou imagens que:  
+➢ Contenham declarações difamatórias ou linguagem ofensivas de qualquer natureza . 
+➢ Menosprezem, depreciem ou incitem ao preconceito a determinadas classes, como sexo, 
+raça, orientação sexual, idade, religião, nacionalidade ou deficiência física . 
+➢ Possua informação pornográfica, obscena ou imprópria para um ambiente profissional . 
+➢ Possam trazer prejuízos a outras pessoas . 
+➢ Sejam hostis ou inúteis . 
+➢ Que defendam ou possibilitem a realização de atividades ilegais . 
+➢ Sejam ou sugiram a formação ou divulgação de correntes de mensagens . 
+➢ Possam prejudicar a imagem da ORGANIZ AÇÃO ou seus produtos e serviços . 
+➢ Possam prejudicar a imagem de outras campanhas . 
+➢ Sejam incoerentes com as políticas e códigos da ORGANIZAÇÃO.  
+ 
+• Não reproduzir qualquer material recebido pelo correio eletrônico ou outro meio que possa infringir 
+direitos autorais, marcas, licença de software ou patentes existentes, sem que haja permissão por 
+escrito do criador do trabalho.  
+ 
+• Não enviar por correio eletrônico qualquer comunicação que possa ser, de alguma maneira, 
+incorreta ou não apropriada para envio pelo correio regular em papel timbrado da empresa. Uma 
+mensagem eletrônica é considerada um documento formal da empresa.  
+ 
+• Não encaminhar mensagens que representem a opinião pessoal do autor, colocando -a em nome da 
+ORGANIZAÇÃO.  
+ 
+• Não utilizar o endereço do correio eletrônico da ORGANIZAÇÃO para outras atividades 
+profissionais.  
+ 
+• Mensagens recebidas originadas  da Internet de um remetente desconhecido, remover da caixa de 
+entrada, preferencialmente antes mesmo de abri -la e remanejar para pastas de bloqueio.  
+ 
+• Não responder mensagens contendo texto ou imagem não profissional ou de propaganda  mesmo 
+que seja para solicitar o não envi o pois  o remetente saberá que o endereço eletrônico está valido.  
+ 
+• Se o  correio eletrônico não utilizar a Certificação Digital ou qualquer outro processo que garanta a 
+confidencialidade da mensagem e a autenticidade do destinatário/remetente, não enviar 
+mensagens para fora do domínio não conhecido.  
+• Quando envia r uma mensagem de correio eletrônico  com informações que exijam um maior sigilo , 
+indicar , na primeira linha da mensagem, o nível de classificação de confidencialidade dessa 
+informação  (ver ITO -259).  Os arquivos anexados devem possuir o seu nível de confidencialidade . 
+ 
+• Quando receber mensagens enviadas por engano de dentro da organização informe o remetente e 
+delete . Se a mensagem for de fora da organização  somente delete.  
+ 
+• Não abrir arquivos anexados de remetentes desconhecidos. Remova esses arquivos do seu 
+ambiente de correio eletrônico.  
+ 
+• O não cumprimento das regras descritas constitui falta grave e o usuário está sujeito a penalidades 
+administrativas e/ou contratuais.  
+ 
+8.2. Gestão do Correio Eletrônico  
+• Verificar regularmente a caixa de entrada d o correio eletrônico.  
+ 
+ INSTRUÇÃO DE OPERAÇÃO  ITO-261 
+Título:  
+USO DE CORREIO ELETRÔNICO  Revisão:       B    
+Página:           3 de 4   
+ 
+ 
+   
+ 
+Este documento contém informações de uso exclusivo da STERILENO e não deve ser reproduzido sem autorização  
+ • Se precisar manter  a mensagem  e não tiver espaço no servidor de correio eletrônico , transferir a 
+mensagem  para pastas na rede ou no próprio computador , porém, estará sem cópias de segurança 
+que são executadas no servidor . 
+ 
+• Não compartilh ar a sua senha de acesso ao ambiente de rede e ao correio eletrônico com outro 
+usuário. Se necessário que outro  usuário tenha acesso ao seu correio eletrônico, verifique com TI 
+os procedimentos de acesso compartilhado, porém cada usuário deve utilizar sua própria 
+identificação e senha.  
+ 
+• Quando for passar um período sem acessar o correio eletrônico, deix ar programado mensagem  de 
+resposta automática  de ausência e i ndicar  quem pode ser procurado em seu lugar . Caso não saiba 
+como programar a mensagem de ausência , entre em contato com o departamento de TI.  
+ 
+• Consultar e  espaço limitado no servidor para sua s caixa s de entrada, saída e alguns outros 
+recursos. Quando esse espaço for ultrapassado, haverá restrições para envio e recebimento de 
+mensagens.  
+ 
+ 
+8.3. Boas práticas de elaboração  e envio de mensagens  
+• Escreva e -mails curtos . 
+ 
+• Limite o e -mail a apenas um assunto . 
+ 
+• Escreva e -mails claros ; informe exatamente o que você quer.  
+ 
+• Escreva o assunto só depois de terminar o e -mail. 
+ 
+• O(s) destinatário(s) é a última coisa que você deve escrever . 
+ 
+Exemplos:  
+ 
+Mal escrito:  Bem escrito  
+Assunto:  Ei! 
+Texto mensagem:   
+Lembra daquilo que falamos outro dia? Eu 
+preciso saber mais coisas pra fazer aquilo, o 
+que você acha do novo lugar?  Assunto:  Re: Novo local para o seminário – 
+sobre o que falamos ontem sobre a mudança do 
+lugar para o seminário de 30 de agosto.  
+Texto mensagem:  
+Você poderia dizer -me por favor:  
+O nome e o endereço do novo local:  
+Você acha que o espaço é adequado para 500 
+pessoas?  
+ 
+ 
+• Ao digitar o email do destinatário principal ou copiado, certificar que o e -mail digitado está correto,  
+ou seja, é o e -mail para quem se deseja enviar a mensagem.   
+ 
+• Se precisar enviar frequentemente e -mails para o mesmo grupo de  destinatários,  utilize a opção de 
+grupo de endereços evitando erros de endereçamento.  
+ 
+• Ao enviar ou responder uma mensagem para um destinatário com cópia para outros , certificar  se 
+todos devem receber mesmo aquela  mensagem ; cópias desnecessárias sobrecarregam os 
+recursos do ambiente computacional.  
+ 
+• Somente enviar arquivos anexados quando for imprescindível. Cuidado quando estiver repassando 
+(Encaminhar/Forward) mensagens para não repassar desnecessariamente arquivos anexados.  
+ 
+ INSTRUÇÃO DE OPERAÇÃO  ITO-261 
+Título:  
+USO DE CORREIO ELETRÔNICO  Revisão:       B    
+Página:           4 de 4   
+ 
+ 
+   
+ 
+Este documento contém informações de uso exclusivo da STERILENO e não deve ser reproduzido sem autorização  
+ • Quando responder ou encaminhar mensagens, avaliar se é necessário enviar todo o histórico 
+criado com todas as mensagens encadeadas  pois e xiste o risco de quebra de confidencialidade da 
+informação e a ocorrência de situações desagradáveis com a leitura indevida de mensagens do 
+correio eletrônico.  
+ 
+ 
+9. REGISTRO DE ALTERAÇÕES  
+ 
+Revisão  Alteração  Data  Elaborador  
+A Criação  25/08/22  Vitor Faustino  
+B Revisão periódica a cada 2 anos  01/09/2 4 Vitor Faustino  
+ 
