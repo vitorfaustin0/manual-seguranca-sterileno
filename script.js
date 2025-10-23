@@ -1123,7 +1123,7 @@ function sendLeaderboardEmail(leaderboard, playerName, score) {
 🏆 NOVO RESULTADO NO QUIZ DE SEGURANÇA
 
 👤 Jogador: ${playerName}
-📊 Pontuação: ${score}/15 pontos
+📊 Pontuação: ${score}/19 pontos
 ⏰ Data/Hora: ${new Date().toLocaleString('pt-BR')}
 
 📋 PLACAR ATUALIZADO (JSON):
@@ -1144,7 +1144,7 @@ Enviado automaticamente pelo sistema de quiz
         emailjs.send('service_jrw7o5l', 'template_n7m6c49', {
             to_email: 'sgi@sterileno.com.br',
             from_name: 'Sistema de Quiz',
-            subject: `🏆 Novo Resultado no Quiz - ${playerName} (${score}/15)`,
+            subject: `🏆 Novo Resultado no Quiz - ${playerName} (${score}/19)`,
             message: emailBody,
             leaderboard_json: jsonContent
         }).then(function(response) {
