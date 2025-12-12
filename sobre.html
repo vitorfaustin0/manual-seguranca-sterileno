@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre - Manual de Segurança da Informação - STERILENO v2.1</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+    <!-- Login Screen -->
+    <div id="login-screen" class="login-screen">
+        <div class="login-container">
+            <div class="login-content">
+                <div class="login-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h2>Manual de Segurança da Informação</h2>
+                <p>STERILENO</p>
+                <div class="login-form">
+                    <input type="text" id="username-input" placeholder="Digite seu usuário" autocomplete="off">
+                    <input type="password" id="password-input" placeholder="Digite sua senha" autocomplete="off">
+                    <button onclick="checkLogin()" class="btn btn-login">
+                        <i class="fas fa-lock"></i> Acessar
+                    </button>
+                </div>
+                <div id="error-message" class="error-message" style="display: none;">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    Usuário ou senha incorretos! Tente novamente.
+                </div>
+                
+                <div class="login-footer">
+                    <p>Não tem acesso? <a href="#" onclick="showRequestForm()" class="request-link">Solicite aqui</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Request Access Form -->
+    <div id="request-form" class="request-form" style="display: none;">
+        <div class="request-container">
+            <div class="request-content">
+                <div class="request-header">
+                    <h3>🔐 Solicitar Acesso ao Manual</h3>
+                    <button class="request-close" onclick="hideRequestForm()">&times;</button>
+                </div>
+                <div class="request-body">
+                    <p>Preencha os dados abaixo para solicitar acesso temporário:</p>
+                    <form id="access-request-form">
+                        <div class="form-group">
+                            <label for="request-name">Nome Completo:</label>
+                            <input type="text" id="request-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="request-email">Email Corporativo:</label>
+                            <input type="email" id="request-email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="request-department">Departamento:</label>
+                            <input type="text" id="request-department" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="request-reason">Motivo do Acesso:</label>
+                            <select id="request-reason" required>
+                                <option value="">Selecione...</option>
+                                <option value="treinamento">Treinamento em Segurança</option>
+                                <option value="consulta">Consulta às ITOs</option>
+                                <option value="auditoria">Auditoria Interna</option>
+                                <option value="novo-funcionario">Novo Funcionário</option>
+                                <option value="outro">Outro</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="request-notes">Observações (opcional):</label>
+                            <textarea id="request-notes" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-request">
+                            <i class="fas fa-paper-plane"></i> Enviar Solicitação
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="main-content" style="display: none;">
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-shield-alt"></i>
+                    <h1>Manual de Segurança da Informação</h1>
+                </div>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link">Início</a></li>
+                        <li><a href="index.html#itos" class="nav-link">ITOs</a></li>
+                        <li><a href="index.html#quiz" class="nav-link">Quiz</a></li>
+                        <li><a href="index.html#contato" class="nav-link">Contato</a></li>
+                        <li><a href="sobre.html" class="nav-link active">Sobre</a></li>
+                        <li><a href="timeline_visual.html" class="nav-link">Timeline NFS-e</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="hero" style="padding: 3rem 0;">
+        <div class="container">
+            <div class="hero-content">
+                <h2 class="hero-title">Sobre o Manual</h2>
+                <p class="hero-subtitle">Informações sobre este sistema de segurança da informação</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Content -->
+    <section class="itos-section">
+        <div class="container">
+            <div class="ito-content">
+                <h3>🎯 Objetivo</h3>
+                <p>Este manual foi desenvolvido para facilitar o acesso e compreensão das Instruções de Operação (ITOs) relacionadas à segurança da informação na STERILENO. Nosso objetivo é tornar o conhecimento sobre segurança acessível a todos os colaboradores de forma clara e objetiva.</p>
+
+                <h3>📋 Versão</h3>
+                <p><strong>Versão:</strong> 2.1</p>
+                <p><strong>Última atualização:</strong> 2025</p>
+                <p><strong>Desenvolvido para:</strong> STERILENO</p>
+
+                <h3>📚 Conteúdo</h3>
+                <p>O manual contém:</p>
+                <ul>
+                    <li><strong>12 ITOs</strong> resumidas em linguagem simples e acessível</li>
+                    <li><strong>Quiz interativo</strong> para testar seus conhecimentos</li>
+                    <li><strong>Placar global</strong> para acompanhar o desempenho</li>
+                    <li><strong>Informações de contato</strong> para suporte técnico</li>
+                </ul>
+
+                <h3>🔒 Segurança</h3>
+                <p>Este manual é protegido por sistema de autenticação. Para acessar, você precisa de credenciais temporárias fornecidas pela equipe de TI. Se você não possui acesso, pode solicitar através do formulário na tela de login.</p>
+
+                <h3>💡 Como Usar</h3>
+                <ol>
+                    <li><strong>Navegue pelas ITOs:</strong> Clique em "ITOs" no menu e explore as diferentes políticas de segurança</li>
+                    <li><strong>Leia os detalhes:</strong> Clique em "Ver Detalhes" em qualquer ITO para ler o conteúdo completo</li>
+                    <li><strong>Teste seus conhecimentos:</strong> Acesse a seção "Quiz" e responda as perguntas sobre segurança</li>
+                    <li><strong>Entre em contato:</strong> Use a seção "Contato" se tiver dúvidas ou precisar de ajuda</li>
+                </ol>
+
+                <h3>📞 Suporte</h3>
+                <p>Para dúvidas, problemas ou sugestões sobre este manual, entre em contato com a equipe de TI:</p>
+                <ul>
+                    <li><strong>Email:</strong> helpdesk@sterileno.com.br</li>
+                    <li><strong>Ramal:</strong> 3313</li>
+                    <li><strong>WhatsApp:</strong> (15) 99707-4818</li>
+                </ul>
+
+                <h3>🔄 Atualizações</h3>
+                <p>Este manual é atualizado regularmente para refletir as mudanças nas políticas de segurança da empresa. Certifique-se de verificar periodicamente por novas informações e atualizações.</p>
+
+                <div class="highlight">
+                    <h4>💡 Dica Importante:</h4>
+                    <p>Mantenha este manual sempre acessível e consulte-o sempre que tiver dúvidas sobre segurança da informação. A segurança é responsabilidade de todos!</p>
+                </div>
+
+                <div class="info">
+                    <h4>📝 Nota:</h4>
+                    <p>Este manual foi desenvolvido para facilitar o acesso às informações de segurança. Para questões específicas ou situações complexas, sempre consulte a equipe de TI ou seu supervisor imediato.</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="index.html" class="btn btn-primary">
+                    <i class="fas fa-arrow-left"></i> Voltar ao Início
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 STERILENO - Manual de Segurança da Informação. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    </div> <!-- Fecha main-content -->
+    <script src="script.js"></script>
+</body>
+</html>

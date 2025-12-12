@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linha do Tempo – Migração da NFS-e</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Ajustar container quando logado */
+        #main-content .container {
+            margin-top: 20px;
+        }
+        
+        /* Header da timeline dentro do main-content */
+        #main-content header.timeline-header {
+            text-align: center;
+            margin-bottom: 50px;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header.timeline-header {
+            text-align: center;
+            margin-bottom: 50px;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #0d47a1;
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+
+        .date-info {
+            color: #999;
+            font-size: 0.9em;
+            font-style: italic;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, #0d47a1, #d32f2f);
+        }
+
+        .timeline-item {
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: 0;
+            margin-right: 52%;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: 52%;
+            margin-right: 0;
+            text-align: left;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: #0d47a1;
+            border: 4px solid white;
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px #0d47a1;
+            z-index: 10;
+        }
+
+        .timeline-item.critical .timeline-marker {
+            background: #d32f2f;
+            box-shadow: 0 0 0 4px #d32f2f;
+            width: 24px;
+            height: 24px;
+            top: -2px;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid #0d47a1;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item.critical .timeline-content {
+            border-left-color: #d32f2f;
+            background: #fff9f9;
+        }
+
+        .timeline-content:hover {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .timeline-date {
+            color: #0d47a1;
+            font-weight: 700;
+            font-size: 1.1em;
+            margin-bottom: 8px;
+        }
+
+        .timeline-item.critical .timeline-date {
+            color: #d32f2f;
+        }
+
+        .timeline-title {
+            color: #1a1a1a;
+            font-size: 1.3em;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .timeline-description {
+            color: #555;
+            font-size: 0.95em;
+            line-height: 1.7;
+        }
+
+        .timeline-description p {
+            margin-bottom: 10px;
+        }
+
+        .critical-badge {
+            display: inline-block;
+            background: #d32f2f;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 600;
+            margin-top: 12px;
+        }
+
+        .monitoring-section {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 50px 0;
+            border-left: 5px solid #d32f2f;
+        }
+
+        .monitoring-section h2 {
+            color: #d32f2f;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+
+        .monitoring-section p {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 1em;
+        }
+
+        .monitoring-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .conclusion-section {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 50px 0;
+            border-left: 5px solid #0d47a1;
+        }
+
+        .conclusion-section h2 {
+            color: #0d47a1;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+
+        .conclusion-section p {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 1em;
+            line-height: 1.8;
+        }
+
+        .recommendations {
+            background: #f5f7fa;
+            padding: 30px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+
+        .recommendations h3 {
+            color: #0d47a1;
+            font-size: 1.4em;
+            margin-bottom: 20px;
+        }
+
+        .recommendations ol {
+            margin-left: 20px;
+        }
+
+        .recommendations li {
+            color: #555;
+            margin-bottom: 15px;
+            font-size: 0.95em;
+            line-height: 1.7;
+        }
+
+        .footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .footer-date {
+            color: #999;
+            font-size: 0.9em;
+            margin-bottom: 20px;
+        }
+
+        .footer-author {
+            font-size: 1.1em;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .footer-department {
+            color: #0d47a1;
+            font-size: 0.95em;
+        }
+
+        .footer-divider {
+            border-top: 1px solid #444;
+            margin: 20px 0;
+        }
+
+        .footer-note {
+            color: #999;
+            font-size: 0.85em;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-content,
+            .timeline-item:nth-child(even) .timeline-content {
+                margin-left: 60px;
+                margin-right: 0;
+                text-align: left;
+            }
+
+            .timeline-marker {
+                left: 20px;
+            }
+
+            .timeline-item.critical .timeline-marker {
+                left: 18px;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+
+            .container {
+                max-width: 100%;
+            }
+
+            .timeline::before {
+                background: #ccc;
+            }
+
+            header.timeline-header, .monitoring-section, .conclusion-section, .footer {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                page-break-inside: avoid;
+            }
+
+            .timeline-item {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Login Screen -->
+    <div id="login-screen" class="login-screen">
+        <div class="login-container">
+            <div class="login-content">
+                <div class="login-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h2>Linha do Tempo – Migração da NFS-e</h2>
+                <p>STERILENO</p>
+                <div class="login-form">
+                    <input type="text" id="username-input" placeholder="Digite seu usuário" autocomplete="off">
+                    <input type="password" id="password-input" placeholder="Digite sua senha" autocomplete="off">
+                    <button onclick="checkLogin()" class="btn btn-login">
+                        <i class="fas fa-lock"></i> Acessar
+                    </button>
+                </div>
+                <div id="error-message" class="error-message" style="display: none;">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    Usuário ou senha incorretos! Tente novamente.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="main-content" style="display: none;">
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-shield-alt"></i>
+                    <h1>Manual de Segurança da Informação</h1>
+                </div>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link">Início</a></li>
+                        <li><a href="index.html#itos" class="nav-link">ITOs</a></li>
+                        <li><a href="index.html#quiz" class="nav-link">Quiz</a></li>
+                        <li><a href="index.html#contato" class="nav-link">Contato</a></li>
+                        <li><a href="sobre.html" class="nav-link">Sobre</a></li>
+                        <li><a href="timeline_visual.html" class="nav-link active">Timeline NFS-e</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <header class="timeline-header">
+            <h1>Linha do Tempo – Migração da NFS-e</h1>
+            <p class="subtitle">Município: Araçoiaba da Serra – SP</p>
+            <p class="subtitle">Sistema: NFS-e Nacional (Receita Federal / SERPRO)</p>
+            <p class="date-info">Data de Atualização: 12 de dezembro de 2025</p>
+        </header>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">Julho de 2025</div>
+                    <div class="timeline-title">Início das Cobranças Formais</div>
+                    <div class="timeline-description">
+                        <p>Neste mês, iniciaram-se as cobranças formais sobre a migração da NFS-e. O município aparece como conveniado no sistema da Receita Federal, porém não ativo. A Prefeitura iniciou contatos com a Receita Federal, SERPRO e CNM, mas não obteve retorno conclusivo sobre os próximos passos.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">Agosto de 2025</div>
+                    <div class="timeline-title">Confirmação de Adesão Incompleta</div>
+                    <div class="timeline-description">
+                        <p>A Prefeitura confirmou que a adesão ao sistema NFS-e Nacional foi realizada, mas a configuração não foi concluída. O status oficial permanecia como "Em processo de configuração". Até este ponto, nenhum manual técnico ou parâmetro de configuração foi disponibilizado.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">Setembro e Outubro de 2025</div>
+                    <div class="timeline-title">Situação Estagnada</div>
+                    <div class="timeline-description">
+                        <p>A situação permaneceu completamente inalterada durante estes dois meses. Não havia: (1) Ambiente ativo para testes ou homologação; (2) Parametrização oficial do município; (3) Cronograma definido para a implementação; (4) Orientação técnica às empresas do município.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">10 de Novembro de 2025</div>
+                    <div class="timeline-title">Empresa Cobra Confirmação Oficial</div>
+                    <div class="timeline-description">
+                        <p>A empresa responsável pela emissão de notas fiscais cobrou oficialmente da Prefeitura a confirmação da data de 01/01/2026 para a migração obrigatória e a existência de um período de transição. Solicitou também orientações técnicas antecipadas. Nesta comunicação, foi registrado o histórico negativo de uma migração anterior que ocorreu sem aviso prévio adequado.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">10 de Novembro de 2025</div>
+                    <div class="timeline-title">Resposta da Prefeitura</div>
+                    <div class="timeline-description">
+                        <p>A Prefeitura confirmou que o município está conveniado ao sistema NFS-e Nacional, mas não ativo. Relatou que vinha recebendo cobranças desde agosto e que não havia obtido retorno conclusivo da Receita Federal ou SERPRO. Mencionou a possibilidade de prorrogação da data de 01/01/2026, mas sem confirmação oficial.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">28 de Novembro de 2025</div>
+                    <div class="timeline-title">Reforço da Impossibilidade</div>
+                    <div class="timeline-description">
+                        <p>A empresa reforçou à Prefeitura a impossibilidade de permanecer sem emitir notas fiscais em 2026, caso a migração fosse obrigatória. Alertou que nenhuma solução técnica ou plano de contingência havia sido apresentado até aquele momento.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">3 de Dezembro de 2025</div>
+                    <div class="timeline-title">Situação Crítica Confirmada</div>
+                    <div class="timeline-description">
+                        <p>A Prefeitura informou que o status continuava como "Em processo de configuração". Revelou dados alarmantes: (1) Mais de 3.200 municípios estavam na mesma situação; (2) Apenas 685 de 5.569 municípios brasileiros estavam operacionais; (3) Não havia resposta nova dos órgãos federais; (4) Havia possibilidade de prorrogação, mas sem ato normativo oficial.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">4 de Dezembro de 2025</div>
+                    <div class="timeline-title">Confirmação da Mudança para 01/01/2026</div>
+                    <div class="timeline-description">
+                        <p>A Prefeitura informou que a mudança seguia prevista para 01/01/2026. Orientou as empresas a verificarem suas parametrizações no portal GOV.BR. Entretanto, o município ainda não possuía: (1) Ambiente ativo para testes; (2) Manual específico para implementação; (3) Parâmetros definidos do município.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item critical">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">8 de Dezembro de 2025</div>
+                    <div class="timeline-title">Marco Crítico</div>
+                    <div class="timeline-description">
+                        <p>A Prefeitura informou que a Receita Federal liberou o convênio naquele dia e que a parametrização municipal estava sendo iniciada no mesmo momento. A liberação ocorreu <strong>MENOS DE 25 DIAS ANTES DO PRAZO FINAL</strong>. Não houve: (1) Comunicação formal antecipada; (2) Ambiente de testes disponível; (3) Validação conjunta. Houve transferência indevida de responsabilidade técnica, sem entrega prévia dos requisitos mínimos.</p>
+                    </div>
+                    <div class="critical-badge">⚠️ Marco Crítico</div>
+                </div>
+            </div>
+
+            <div class="timeline-item critical">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">12 de Dezembro de 2025</div>
+                    <div class="timeline-title">Situação Atual</div>
+                    <div class="timeline-description">
+                        <p><strong>FALTAM MENOS DE 20 DIAS PARA O PRAZO FINAL.</strong></p>
+                        <p><strong>Município:</strong> Araçoiaba da Serra – SP<br>
+                        <strong>Status Oficial:</strong> Em processo de configuração<br>
+                        <strong>Sistema da Empresa:</strong> Integrado ao WebService da Prefeitura, operacional e estável</p>
+                        <p><strong>CONCLUSÃO TÉCNICA:</strong> Não há tempo hábil para uma migração segura. Não existe base técnica oficial finalizada. A parametrização municipal ainda não está concluída. Alterar o sistema neste momento implica alto risco de paralisação da emissão de notas fiscais.</p>
+                    </div>
+                    <div class="critical-badge">⚠️ Crítico</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="monitoring-section">
+            <h2>Comprovação Oficial – Painel de Monitoramento</h2>
+            <p>Conforme demonstrado no painel oficial da Receita Federal (atualizado em 11/12/2025), o município de Araçoiaba da Serra permanece com status <strong>"Em processo de configuração"</strong>, sem ambiente de testes ou homologação disponível.</p>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" alt="Painel de Monitoramento" class="monitoring-image" style="display:none;">
+            <p style="text-align: center; color: #999; font-style: italic; margin-top: 20px;">[Imagem do Painel de Monitoramento da Receita Federal]</p>
+        </div>
+
+        <div class="conclusion-section">
+            <h2>Conclusão Final da Linha do Tempo</h2>
+            <p>A empresa atuou preventivamente desde julho de 2025, enquanto a Prefeitura só iniciou a parametrização em 08/12/2025. Não houve entrega de requisitos técnicos com antecedência mínima necessária.</p>
+            <p>O problema é <strong>ESTRUTURAL E FEDERAL</strong>. A tentativa de transferência de responsabilidade ocorre em cima do prazo, sem condições reais de execução.</p>
+
+            <div class="recommendations">
+                <h3>Recomendação Técnica Formal</h3>
+                <ol>
+                    <li><strong>Prorrogação da migração</strong> – Adiar o prazo de 01/01/2026 para uma data que permita preparação adequada</li>
+                    <li><strong>Manutenção do modelo atual</strong> – Continuar utilizando o WebService municipal, que está operacional e estável</li>
+                    <li><strong>Migração planejada após 2026</strong> – Executar a migração para o NFS-e Nacional apenas após: (a) Ambiente de testes estável e validado; (b) Documentação técnica completa; (c) Parametrização municipal concluída; (d) Período de transição adequado; (e) Suporte técnico oficial disponível</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-date">Documento preparado em: 12 de dezembro de 2025</div>
+            <div class="footer-divider"></div>
+            <div class="footer-author">Vitor Faustino</div>
+            <div class="footer-department">Departamento de T.I e Tecnologia</div>
+            <div class="footer-note">Linha do Tempo – Migração da NFS-e</div>
+        </div>
+    </div>
+    </div> <!-- Fecha main-content -->
+    <script src="script.js"></script>
+    <script>
+        // Sistema de login fixo para timeline
+        function checkLogin() {
+            const usernameInput = document.getElementById('username-input');
+            const passwordInput = document.getElementById('password-input');
+            const errorMessage = document.getElementById('error-message');
+            const loginScreen = document.getElementById('login-screen');
+            const mainContent = document.getElementById('main-content');
+            
+            const username = usernameInput.value.toLowerCase().trim();
+            const password = passwordInput.value;
+            
+            // Credenciais fixas
+            const FIXED_USERNAME = 'sterileno';
+            const FIXED_PASSWORD = 'nfs2025';
+            
+            // Verificar credenciais fixas
+            if (username === FIXED_USERNAME && password === FIXED_PASSWORD) {
+                // Login correto
+                loginScreen.style.display = 'none';
+                mainContent.style.display = 'block';
+                return;
+            }
+            
+            // Login incorreto - mostrar erro
+            errorMessage.style.display = 'flex';
+            errorMessage.innerHTML = '<i class="fas fa-exclamation-triangle"></i>Usuário ou senha incorretos! Tente novamente.';
+            usernameInput.value = '';
+            passwordInput.value = '';
+            usernameInput.focus();
+            
+            // Esconder erro após 3 segundos
+            setTimeout(() => {
+                errorMessage.style.display = 'none';
+            }, 3000);
+        }
+        
+        // Verificar se já está autenticado
+        function checkAuthentication() {
+            // Sempre mostrar tela de login
+            const loginScreen = document.getElementById('login-screen');
+            const mainContent = document.getElementById('main-content');
+            
+            loginScreen.style.display = 'flex';
+            mainContent.style.display = 'none';
+        }
+        
+        // Permitir login com Enter
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') {
+                checkLogin();
+            }
+        }
+        
+        // Inicializar ao carregar a página
+        document.addEventListener('DOMContentLoaded', function() {
+            checkAuthentication();
+            
+            // Adicionar evento de Enter nos campos de login
+            const usernameInput = document.getElementById('username-input');
+            const passwordInput = document.getElementById('password-input');
+            
+            if (usernameInput) {
+                usernameInput.addEventListener('keypress', handleKeyPress);
+            }
+            if (passwordInput) {
+                passwordInput.addEventListener('keypress', handleKeyPress);
+            }
+        });
+    </script>
+</body>
+</html>
